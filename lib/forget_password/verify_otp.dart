@@ -35,34 +35,26 @@ class _ChangePasswordState extends State<ChangePassword> {
           //   ],
           // ),
           Padding(
-            padding: EdgeInsets.only(top:MediaQuery.of(context).size.height*0.25),
+            padding:
+                EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.25),
             child: Stack(
               alignment: Alignment.center,
-              children:[ 
+              children: [
                 Container(
-                  
-                height: MediaQuery.of(context).size.height*0.12,
-                width: MediaQuery.of(context).size.width*0.25,
-                
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(30),
-                  border: Border.all(width: 2,color: Colors.black)
-                  ), ), 
-                  Container(
-                    
-                    height:MediaQuery.of(context).size.height*0.05 ,
-                    width: MediaQuery.of(context).size.width*0.1,
-                    
+                  height: MediaQuery.of(context).size.height * 0.12,
+                  width: MediaQuery.of(context).size.width * 0.25,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(30),
+                      border: Border.all(width: 2, color: Colors.black)),
+                ),
+                Container(
+                    height: MediaQuery.of(context).size.height * 0.05,
+                    width: MediaQuery.of(context).size.width * 0.1,
                     decoration: BoxDecoration(
-                      color: const Color(0xff9fc7fb),
-                      borderRadius: BorderRadius.circular(10)
-                    ),
-                    child: Image.asset('assets/icons/lock-icon.png')
-                  ),
-                  
-                
-              
-             ],
+                        color: const Color(0xff9fc7fb),
+                        borderRadius: BorderRadius.circular(10)),
+                    child: Image.asset('assets/icons/lock-icon.png')),
+              ],
             ),
           ),
 
@@ -71,22 +63,29 @@ class _ChangePasswordState extends State<ChangePassword> {
             'Enter a Code',
             style: GoogleFonts.ibmPlexSans(
               fontSize: 28,
-              
             ),
           ),
           Padding(
-            padding: EdgeInsets.all(MediaQuery.of(context).size.height * 0.015),
-            child:RichText(
-              textAlign: TextAlign.center,
-            text:  TextSpan(
-              text: 'We sent a verification code to \n your phonr number ',style: GoogleFonts.ibmPlexSans(color: Colors.black,),             
-              children:const [
-                 TextSpan(text: '(+92)3012345678', style:TextStyle(color: Colors.blue,overflow: TextOverflow.ellipsis, ),),
-                
-              ],
-            ),
-            )
-          ),
+              padding:
+                  EdgeInsets.all(MediaQuery.of(context).size.height * 0.015),
+              child: RichText(
+                textAlign: TextAlign.center,
+                text: TextSpan(
+                  text: 'We sent a verification code to \n your phonr number ',
+                  style: GoogleFonts.ibmPlexSans(
+                    color: Colors.black,
+                  ),
+                  children: const [
+                    TextSpan(
+                      text: '(+92)3012345678',
+                      style: TextStyle(
+                        color: Colors.blue,
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                    ),
+                  ],
+                ),
+              )),
           //
           SizedBox(
             height: MediaQuery.of(context).size.height * 0.04,
@@ -97,25 +96,13 @@ class _ChangePasswordState extends State<ChangePassword> {
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.060,
                 width: MediaQuery.of(context).size.width * 0.11,
-                child:  const TextField(
-                  //controller: otpController,
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(20),),
-                    ),
-                    
-                  ),
-                  keyboardType: TextInputType.phone,
-                ),
-              ),
-              SizedBox(
-                height: MediaQuery.of(context).size.height * 0.060,
-                width: MediaQuery.of(context).size.width * 0.11,
                 child: const TextField(
                   //controller: otpController,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(20),),
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(20),
+                      ),
                     ),
                   ),
                   keyboardType: TextInputType.phone,
@@ -128,7 +115,9 @@ class _ChangePasswordState extends State<ChangePassword> {
                   //controller: otpController,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(20),),
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(20),
+                      ),
                     ),
                   ),
                   keyboardType: TextInputType.phone,
@@ -141,7 +130,24 @@ class _ChangePasswordState extends State<ChangePassword> {
                   //controller: otpController,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(20),),
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(20),
+                      ),
+                    ),
+                  ),
+                  keyboardType: TextInputType.phone,
+                ),
+              ),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.060,
+                width: MediaQuery.of(context).size.width * 0.11,
+                child: const TextField(
+                  //controller: otpController,
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(20),
+                      ),
                     ),
                   ),
                   keyboardType: TextInputType.phone,
@@ -167,7 +173,7 @@ class _ChangePasswordState extends State<ChangePassword> {
                   style: GoogleFonts.ibmPlexSans(
                     fontSize: 17,
                     fontWeight: FontWeight.bold,
-                    color:  Colors.white,
+                    color: Colors.white,
                   ),
                 ),
               ),
@@ -175,11 +181,14 @@ class _ChangePasswordState extends State<ChangePassword> {
           ),
           SizedBox(height: MediaQuery.of(context).size.height * 0.04),
           GestureDetector(
-            onTap: () {
-              
-            },
-            child: Text("Resend Code",style: GoogleFonts.ibmPlexSans(
-              color:const Color(0xff3787ff),fontSize: 13,decoration: TextDecoration.underline ),))
+              onTap: () {},
+              child: Text(
+                "Resend Code",
+                style: GoogleFonts.ibmPlexSans(
+                    color: const Color(0xff3787ff),
+                    fontSize: 13,
+                    decoration: TextDecoration.underline),
+              ))
         ],
       ),
     );
