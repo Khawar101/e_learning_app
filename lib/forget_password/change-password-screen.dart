@@ -161,7 +161,9 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
             ),
 
             GestureDetector(
-              onTap: () {},
+              onTap: () {
+                
+              },
               child: Container(
                 decoration: BoxDecoration(
                   color: const Color(0xff3787ff),

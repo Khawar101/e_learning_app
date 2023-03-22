@@ -26,44 +26,35 @@ class _PopularTeacherState extends State<PopularTeacher> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Image.asset('assets/icons/left-arrow.png'),
-                  // ignore: prefer_const_constructors
-                  Stack(
-                    children: const [
-                      Icon(Icons.notifications_outlined, size: 28),
-                      CircleAvatar(
-                        radius: 6,
-                        backgroundColor: Color(0xff3787ff),
+                  // ignore: prefer_const_constructors                
+                      
+                      const CircleAvatar(
+                        radius: 18,
+                       backgroundImage: AssetImage('assets/images/tree.jpg'),
                       ),
-                    ],
-                  ),
+                    
                 ],
               ),
             SizedBox(height:MediaQuery.of(context).size.height*0.05 ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
-                      "Book appointment",
-                      style: GoogleFonts.ibmPlexSans(
-                          fontSize: 15, fontWeight: FontWeight.w500),
-                    ),
+                   RichText(
+             text: TextSpan(
+              text: 'Popular',style: GoogleFonts.ibmPlexSans(fontSize: 22, fontWeight: FontWeight.w600,color: Colors.black),
+                          
+            
+               children:const <TextSpan>[
+               TextSpan(text: '\nteachers!'),
+           
+              ],
+            ),
+          ),
                   Image.asset('assets/icons/adjust-48.png',width: 18,)
                 ],
               ),
             
-             SizedBox(height: MediaQuery.of(context).size.height * 0.025), 
-           RichText(
-             text: TextSpan(
-              text: '3 ',style: GoogleFonts.ibmPlexSans(fontSize: 12, fontWeight: FontWeight.w500,color: Colors.black),
-                          
-            
-               children:<TextSpan>[
-               const TextSpan(text: 'Teacher available on'),
-              TextSpan(text: ' 21 March "2023',style:GoogleFonts.ibmPlexSans( color: const Color(0xff3787ff),)),
-              ],
-            ),
-          ),
-          SizedBox(height:MediaQuery.of(context).size.height*0.02 ),
+             SizedBox(height: MediaQuery.of(context).size.height * 0.060), 
           Expanded(
            child: MediaQuery.removePadding(
                       context: context,
@@ -109,7 +100,7 @@ class _PopularTeacherState extends State<PopularTeacher> {
                                           ),
                                              Container(
                                           height: 100,
-                                          width: 90,
+                                          width: 80,
                                           decoration: BoxDecoration(
                                           borderRadius: BorderRadius.circular(20),
                                           color: Colors.white,

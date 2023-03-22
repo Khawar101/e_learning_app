@@ -16,6 +16,12 @@ import 'courses/comment.dart';
 import 'courses/detail.dart';
 import 'courses/project-data.dart';
 import 'forget_password/verify_otp.dart';
+import 'payment/add-payment.dart';
+import 'payment/checkout-screen.dart';
+import 'payment/enhans-screen1.dart';
+import 'payment/payment-method1.dart';
+import 'payment/payment-success.dart';
+import 'payment/successful-purchased.dart';
 import 'saved-screens/save-list.dart';
 import 'saved-screens/save-screen.dart';
 import 'search-pages/e-book-search.dart';
@@ -49,7 +55,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const PopularTeacher(),
+      home: const CheckOutScreen(),
     );
   }
 }

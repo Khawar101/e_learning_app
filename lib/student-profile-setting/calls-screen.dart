@@ -1,7 +1,7 @@
 // ignore: file_names
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:flutter_feather_icons/flutter_feather_icons.dart';
+
 
 class CallScreen extends StatefulWidget {
   const CallScreen({super.key});
@@ -18,7 +18,7 @@ class _CallScreenState extends State<CallScreen> {
       body: SafeArea(
         child: Stack(
           children: [
-            Container(
+            SizedBox(
               height: double.infinity,
               child: Image.asset(
                 'assets/images/profile_picture.jpeg',
