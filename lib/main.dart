@@ -16,11 +16,18 @@ import 'courses/comment.dart';
 import 'courses/detail.dart';
 import 'courses/project-data.dart';
 import 'forget_password/verify_otp.dart';
+import 'notifications/my-activity.dart';
+import 'notifications/no-network.dart';
+import 'notifications/no-notificatioin.dart';
+import 'notifications/no-products.dart';
+import 'notifications/no-videos.dart';
+import 'notifications/notifications.dart';
 import 'payment/add-payment.dart';
 import 'payment/checkout-screen.dart';
 import 'payment/enhans-screen1.dart';
 import 'payment/payment-method1.dart';
 import 'payment/payment-success.dart';
+import 'payment/scan-card.dart';
 import 'payment/successful-purchased.dart';
 import 'saved-screens/save-list.dart';
 import 'saved-screens/save-screen.dart';
@@ -55,7 +62,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const CheckOutScreen(),
+      home: const MyActivity(),
     );
   }
 }

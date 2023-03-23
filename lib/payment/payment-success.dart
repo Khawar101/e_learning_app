@@ -67,13 +67,13 @@ class _PaymentSuccessState extends State<PaymentSuccess> {
                     ),
                   ),
                 ),
-                Center(
+                const Center(
                   child: Padding(
-                    padding: const EdgeInsets.all(10),
-                    child: Container(
+                    padding: EdgeInsets.all(10),
+                    child: SizedBox(
                       height: 100,
                       width: 100,
-                      child: const CircularProgressIndicator(
+                      child: CircularProgressIndicator(
                         strokeWidth: 5,
                         color: Colors.white,
                         value: 0.8,
@@ -82,11 +82,11 @@ class _PaymentSuccessState extends State<PaymentSuccess> {
                     ),
                   ),
                 ),
-                Center(
-                  child: Container(
+                const Center(
+                  child: SizedBox(
                     height: 120,
                     width: 120,
-                    child: const CircularProgressIndicator(
+                    child: CircularProgressIndicator(
                       strokeWidth: 5,
                       color: Colors.blue,
                       value: 0.8,
