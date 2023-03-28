@@ -51,6 +51,11 @@ dependencies:
   lottie: ^2.3.0
   flutter_svg: ^2.0.4
   syncfusion_flutter_charts: ^20.4.54
+  readmore: ^2.2.0
+  video_player: ^2.6.0
+  flutter_rating_bar: ^4.0.1
+  local_auth: ^2.1.6
+  carousel_slider: ^4.2.1
   
   
 

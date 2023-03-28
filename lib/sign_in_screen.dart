@@ -16,7 +16,7 @@ class _SignInScreenState extends State<SignInScreen> {
       child: Scaffold(
         backgroundColor: const Color(0xffe5f1f8),
         body: SingleChildScrollView(
-          child: Container(
+          child: SizedBox(
             child: Column(
               children: [
                 Padding(
