@@ -29,14 +29,16 @@ class _NoProductState extends State<NoProduct> {
               'assets/images/no-products.svg',
               width: 150,
               height: 150,
-            )),
+            ),
+          ),
             SizedBox(height: MediaQuery.of(context).size.height * 0.06),
             Center(
                 child: Text(
               "No products",
               style: GoogleFonts.ibmPlexSans(
                   fontSize: 22, fontWeight: FontWeight.w500),
-            )),
+            ),
+          ),
             SizedBox(height: MediaQuery.of(context).size.height * 0.009),
             Center(
                 child: Text(
@@ -45,7 +47,8 @@ class _NoProductState extends State<NoProduct> {
               style: GoogleFonts.ibmPlexSans(
                 fontSize: 14,
               ),
-            )),
+            ),
+           ),
           ],
         ),
       ),

@@ -1,3 +1,4 @@
+// ignore: file_names
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -47,7 +48,6 @@ class _SignInPhoneScreenState extends State<SignInPhoneScreen> {
             ),
           ),
           SizedBox(height: MediaQuery.of(context).size.height * 0.03),
-
           Text(
             'Forgot Password',
             style: GoogleFonts.ibmPlexSans(
@@ -85,9 +85,10 @@ class _SignInPhoneScreenState extends State<SignInPhoneScreen> {
           SizedBox(
             height: MediaQuery.of(context).size.height * 0.02,
           ),
-
           GestureDetector(
-            onTap: () {},
+            onTap: () {
+
+            },
             child: Container(
               decoration: BoxDecoration(
                 color: const Color(0xff3787ff),
@@ -103,7 +104,8 @@ class _SignInPhoneScreenState extends State<SignInPhoneScreen> {
                   fontWeight: FontWeight.w500,
                   color: Colors.white,
                 ),
-              )),
+              ),
+             ),
             ),
           ),
           Padding(
@@ -124,7 +126,8 @@ class _SignInPhoneScreenState extends State<SignInPhoneScreen> {
                     TextSpan(text: 'to your\n phone number.'),
                   ],
                 ),
-              )),
+              ),
+            ),
         ],
       ),
     );

@@ -28,14 +28,16 @@ class _NoVideosState extends State<NoVideos> {
               'assets/images/no-videos.png',
               width: 150,
               height: 150,
-            )),
+            ),
+          ),
             SizedBox(height: MediaQuery.of(context).size.height * 0.02),
             Center(
                 child: Text(
               "No videos!",
               style: GoogleFonts.ibmPlexSans(
                   fontSize: 22, fontWeight: FontWeight.w500),
-            )),
+            ),
+          ),
             SizedBox(height: MediaQuery.of(context).size.height * 0.009),
             Center(
                 child: Text(
@@ -44,7 +46,8 @@ class _NoVideosState extends State<NoVideos> {
               style: GoogleFonts.ibmPlexSans(
                 fontSize: 14,
               ),
-            )),
+            ),
+          ),
             SizedBox(height: MediaQuery.of(context).size.height * 0.04),
             Center(
               child: Container(
@@ -60,7 +63,8 @@ class _NoVideosState extends State<NoVideos> {
                       fontSize: 16,
                       fontWeight: FontWeight.w500,
                       color: Colors.white),
-                )),
+                ),
+               ),
               ),
             )
           ],

@@ -80,7 +80,8 @@ class _ProjectInfoState extends State<ProjectInfo> {
                                     fontSize: 22,
                                     color: Colors.white,
                                     fontWeight: FontWeight.w500),
-                              )),
+                              ),
+                             ),
                             ),
                             SizedBox(
                                 width:

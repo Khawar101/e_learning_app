@@ -85,8 +85,8 @@ class _ChangePasswordState extends State<ChangePassword> {
                     ),
                   ],
                 ),
-              )),
-          //
+              ),
+            ),
           SizedBox(
             height: MediaQuery.of(context).size.height * 0.04,
           ),
@@ -181,14 +181,17 @@ class _ChangePasswordState extends State<ChangePassword> {
           ),
           SizedBox(height: MediaQuery.of(context).size.height * 0.04),
           GestureDetector(
-              onTap: () {},
+              onTap: () {
+
+              },
               child: Text(
                 "Resend Code",
                 style: GoogleFonts.ibmPlexSans(
                     color: const Color(0xff3787ff),
                     fontSize: 13,
                     decoration: TextDecoration.underline),
-              ))
+              ),
+            ),
         ],
       ),
     );

@@ -22,7 +22,8 @@ class _PasswordChangedState extends State<PasswordChanged> {
                 padding: const EdgeInsets.only(top: 220),
                 child:
                     Image.asset('assets/icons/icons8-popper-confetti-96.png'),
-              )),
+              ),
+            ),
           SizedBox(height: MediaQuery.of(context).size.height * 0.085),
           Text(
             textAlign: TextAlign.center,
@@ -49,7 +50,8 @@ class _PasswordChangedState extends State<PasswordChanged> {
                     style: GoogleFonts.ibmPlexSans(
                       color: const Color(0xffd0e0fe),
                       fontSize: 18,
-                    )),
+                    ),
+                  ),
               ),
             ),
           ),

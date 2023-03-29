@@ -2,7 +2,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-
 class NoNetwork extends StatefulWidget {
   const NoNetwork({super.key});
 
@@ -14,7 +13,7 @@ class _NoNetworkState extends State<NoNetwork> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: const Color(0xffe5f1f8),
+      backgroundColor: const Color(0xffe5f1f8),
       body: Padding(
         padding: EdgeInsets.symmetric(
             vertical: MediaQuery.of(context).size.height * 0.08,
@@ -25,18 +24,20 @@ class _NoNetworkState extends State<NoNetwork> {
             const Icon(Icons.arrow_back_ios_new),
             SizedBox(height: MediaQuery.of(context).size.height * 0.15),
             Center(
-                child:Image.asset(
+                child: Image.asset(
               'assets/icons/network_icon.png',
               width: 180,
               height: 180,
-            )),
+            ),
+          ),
             SizedBox(height: MediaQuery.of(context).size.height * 0.02),
             Center(
                 child: Text(
               "No Network!",
               style: GoogleFonts.ibmPlexSans(
                   fontSize: 22, fontWeight: FontWeight.w500),
-            )),
+            ),
+           ),
             SizedBox(height: MediaQuery.of(context).size.height * 0.009),
             Center(
                 child: Text(
@@ -45,19 +46,27 @@ class _NoNetworkState extends State<NoNetwork> {
               style: GoogleFonts.ibmPlexSans(
                 fontSize: 14,
               ),
-            )),
-             SizedBox(height: MediaQuery.of(context).size.height * 0.04),
-             Center(
-               child: Container(
+            ),
+          ),
+            SizedBox(height: MediaQuery.of(context).size.height * 0.04),
+            Center(
+              child: Container(
                 height: 45,
-                width: MediaQuery.of(context).size.width*0.6,
+                width: MediaQuery.of(context).size.width * 0.6,
                 decoration: BoxDecoration(
-                  color: Colors.blue,
-                  borderRadius: BorderRadius.circular(30)
+                    color: Colors.blue,
+                    borderRadius: BorderRadius.circular(30)),
+                child: Center(
+                    child: Text(
+                  "Try again",
+                  style: GoogleFonts.ibmPlexSans(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w500,
+                      color: Colors.white),
                 ),
-                child: Center(child: Text("Try again",style: GoogleFonts.ibmPlexSans(fontSize: 16,fontWeight:FontWeight.w500,color: Colors.white),)),
                ),
-             )
+              ),
+            ),
           ],
         ),
       ),

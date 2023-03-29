@@ -47,7 +47,6 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
               ),
             ),
             SizedBox(height: MediaQuery.of(context).size.height * 0.03),
-
             Text(
               'Change Password',
               style: GoogleFonts.ibmPlexSans(
@@ -155,11 +154,9 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                 ],
               ),
             ),
-
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.035,
             ),
-
             GestureDetector(
               onTap: () {
                 
