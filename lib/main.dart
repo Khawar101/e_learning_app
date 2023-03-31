@@ -1,3 +1,4 @@
+
 import 'package:e_learning_app/forget_password/change-password-screen.dart';
 import 'package:e_learning_app/forget_password/password-changed-Done.dart';
 import 'package:e_learning_app/forget_password/phone-number-screen.dart';
@@ -70,7 +71,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home:    const DetailScreen(),
+      home:    const CourseDetailPage(),
     );
   }
 }
