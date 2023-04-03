@@ -16,7 +16,7 @@ class _CourseDetailPageState extends State<CourseDetailPage> {
     return DefaultTabController(
       length: 2,
       child: Scaffold(
-        backgroundColor: const Color(0xffe4f1f8),
+          backgroundColor: const Color(0xffe4f1f8),
           appBar: AppBar(
             backgroundColor: const Color(0xffe4f1f8),
             title: Row(
@@ -39,6 +39,9 @@ class _CourseDetailPageState extends State<CourseDetailPage> {
             ),
           ),
           body: CustomScrollView(
+           
+            shrinkWrap: true,
+          
             slivers: [
               SliverToBoxAdapter(
                 child: Container(
@@ -173,6 +176,7 @@ class _CourseDetailPageState extends State<CourseDetailPage> {
                       ),
                       const SizedBox(height: 40),
                       TabBar(
+                     
                         indicatorWeight: 1,
                         indicatorPadding: const EdgeInsets.only(bottom: 4),
                         indicatorColor: Colors.blue,
@@ -182,11 +186,11 @@ class _CourseDetailPageState extends State<CourseDetailPage> {
                         onTap: (value) {},
                         labelColor: Colors.black,
                         unselectedLabelColor: Colors.black.withOpacity(0.4),
-                        tabs:const [
-                           Tab(
+                        tabs: const [
+                          Tab(
                             text: 'Overview',
                           ),
-                           Tab(
+                          Tab(
                             text: 'completed',
                           ),
                         ],
@@ -195,202 +199,268 @@ class _CourseDetailPageState extends State<CourseDetailPage> {
                   ),
                 ),
               ),
-              SliverFillRemaining(
+             SliverFillRemaining(
+                hasScrollBody: true,
                 fillOverscroll: true,
-                  child: TabBarView(
-                              
-                                controller: controller,
-                                children: [
-                  SingleChildScrollView(
-                                
-                     physics: const NeverScrollableScrollPhysics(),
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal:20.0,vertical: 15),
-                        child: Column(
-                             
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text("Introduction",style: GoogleFonts.ibmPlexSans(color: Colors.black,fontSize: 16,fontWeight:FontWeight.w500),),
-                            const SizedBox(height: 8),
-                            ReadMoreText(
-                                            'The Flutter framework builds its layout via the composition of widgets, everything that you construct programmatically is a widget and these are compiled together to create the user interface. ',
-                                            trimLines: 2,
-                                            trimLength: 80,
-                                            style: TextStyle(color: Colors.black.withOpacity(0.7)),
-                                            colorClickableText: Colors.black,
-                                            trimMode: TrimMode.Length,
-                                            trimCollapsedText: 'Read more',
-                                            moreStyle: const TextStyle(
-                          color: Colors.black, fontWeight: FontWeight.bold),
-                                            trimExpandedText: ' Less',
-                                            lessStyle: const TextStyle(
-                          color: Colors.black, fontWeight: FontWeight.bold),
-                                          ),
-                                           const SizedBox(height: 30),
-                                           Container(
-                                            height: 55,
-                                            width: double.infinity,
-                                            decoration: BoxDecoration(
-                        color: Colors.blue,
-                        borderRadius: BorderRadius.circular(30)
-                                            ),
-                                            child: Center(child: Text("See more",style: GoogleFonts.ibmPlexSans(color: Colors.white,fontSize: 18,fontWeight:FontWeight.w500),)),
-                                           ),
-                                            const SizedBox(height: 30),
-                                             Text("Feedback",style: GoogleFonts.ibmPlexSans(color: Colors.black,fontSize: 16,fontWeight:FontWeight.w500),),
-                                             const SizedBox(height: 20),
-                                             Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Container(
-                            height: 100,
-                            width: MediaQuery.of(context).size.width*0.4,
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(20)
-                            ),
-                            child: Center(
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,  
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  Center(
-                                    child: Row(
-                                      mainAxisAlignment: MainAxisAlignment.center,
-                                      children: [
-                                        Icon(Icons.star,size: 22,color: Colors.yellow[700],),
-                                        const SizedBox(width: 7),
-                                        Text("4.7",style: GoogleFonts.ibmPlexSans(color: Colors.black,fontWeight: FontWeight.w600),),
-                                      ],
-                                    ),                                 
-                                  ),
-                                  
-                                      Text("Reviews",style: GoogleFonts.ibmPlexSans(color: Colors.black,fontWeight: FontWeight.w600),),
-                                ],
-                              ),
-                            ),
-                          ),
-                          Container(
-                            height: 100,
-                            width: MediaQuery.of(context).size.width*0.4,
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(20)
-                            ),
-                            child: Center(
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,  
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  Center(
-                                    child: Row(
-                                      mainAxisAlignment: MainAxisAlignment.center,
-                                      children: [
-                                        const Icon(Icons.person_outline,size: 22,),
-                                        const SizedBox(width: 7),
-                                        Text("753",style: GoogleFonts.ibmPlexSans(color: Colors.black,fontWeight: FontWeight.w600),),
-                                      ],
-                                    ),                                 
-                                  ),
-                                  
-                                      Text("Students",style: GoogleFonts.ibmPlexSans(color: Colors.black,fontWeight: FontWeight.w600),),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ],
-                                             ),
-                                             const SizedBox(height: 20),
-                                             ListView.builder(
-                                             physics: NeverScrollableScrollPhysics(),
-                                             scrollDirection: Axis.vertical,
-                        shrinkWrap: true,
-                         itemCount: 7,
-                         itemBuilder: (BuildContext context, int index) {
-                         return 
-                                            Row(
-                                           crossAxisAlignment: CrossAxisAlignment.center,
-                                           children: [
-                                             const CircleAvatar(
-                                               radius: 25,
-                                               backgroundImage:
-                                                   AssetImage('assets/images/profile-pic.jpg'),
-                                             ),
-                                             SizedBox(
-                                                 width: MediaQuery.of(context).size.width * 0.03),
-                                             Column(
-                                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                               crossAxisAlignment: CrossAxisAlignment.start,
-                                               children: [
-                                                 Text(
-                                                   "@mouni",
-                                                   style: GoogleFonts.ibmPlexSans(
-                                                       fontSize: 16,
-                                                       fontWeight: FontWeight.w600,
-                                                       color: Colors.black),
-                                                 ),
-                                                 const SizedBox(
-                                                   height: 12,
-                                                 ),
-                                                 Row(
-                                                   children: [
-                                                     Text(
-                                                       "11 min ago",
-                                                       style: GoogleFonts.ibmPlexSans(fontSize: 12),
-                                                     ),
-                                                     SizedBox(
-                                                         width: MediaQuery.of(context).size.width *
-                                                             0.03),
-                                                     const CircleAvatar(radius: 1),
-                                                     SizedBox(
-                                                         width: MediaQuery.of(context).size.width *
-                                                             0.03),
-                                                     Text(
-                                                       "Student",
-                                                       style: GoogleFonts.ibmPlexSans(fontSize: 14),
-                                                     ),
-                                                   ],
-                                                 ),
-                                               ],
-                                             ),
-                                           ],
-                                         );
-                                       }),
-                                        Container(color:Colors.black,height: 1000),
-                                        
-                                         ],
-                                        ),
-                                 ),
-                                ),
-                  
-                  
-                  SingleChildScrollView(
+                child: TabBarView(
+                  controller: controller,
+                  children: [
+                    SingleChildScrollView(
                       physics: const NeverScrollableScrollPhysics(),
                       child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal:20.0),
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 20.0, vertical: 15),
                         child: Column(
-                          mainAxisSize : MainAxisSize.max,
-                         
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            const Text(
-                                "These example sentences are selected automatically from various online news sources to reflect current usage of the word 'text.' Views expressed in the examples do not represent the opinion of Merriam-Webster or its editors, These example sentences are selected automatically from various online news sources to reflect current usage of the word 'text.' Views expressed in the examples do not represent the opinion of Merriam-Webster or its editors, These example sentences are selected automatically from various online news sources to reflect current usage of the word 'text.' Views expressed in the examples do not represent the opinion of Merriam-Webster or its editors"),
-                            const Text(
-                                "These example sentences are selected automatically from various online news sources to reflect current usage of the word 'text.' Views expressed in the examples do not represent the opinion of Merriam-Webster or its editors, These example sentences are selected automatically from various online news sources to reflect current usage of the word 'text.' Views expressed in the examples do not represent the opinion of Merriam-Webster or its editors, These example sentences are selected automatically from various online news sources to reflect current usage of the word 'text.' Views expressed in the examples do not represent the opinion of Merriam-Webster or its editors"),
-                            const Text(
-                                "These example sentences are selected automatically from various online news sources to reflect current usage of the word 'text.' Views expressed in the examples do not represent the opinion of Merriam-Webster or its editors, These example sentences are selected automatically from various online news sources to reflect current usage of the word 'text.' Views expressed in the examples do not represent the opinion of Merriam-Webster or its editors, These example sentences are selected automatically from various online news sources to reflect current usage of the word 'text.' Views expressed in the examples do not represent the opinion of Merriam-Webster or its editors"),
-                            const Text(
-                                "These example sentences are selected automatically from various online news sources to reflect current usage of the word 'text.' Views expressed in the examples do not represent the opinion of Merriam-Webster or its editors, These example sentences are selected automatically from various online news sources to reflect current usage of the word 'text.' Views expressed in the examples do not represent the opinion of Merriam-Webster or its editors, These example sentences are selected automatically from various online news sources to reflect current usage of the word 'text.' Views expressed in the examples do not represent the opinion of Merriam-Webster or its editors"),
-                                const Text(
-                                "These example sentences are selected automatically from various online news sources to reflect current usage of the word 'text.' Views expressed in the examples do not represent the opinion of Merriam-Webster or its editors, These example sentences are selected automatically from various online news sources to reflect current usage of the word 'text.' Views expressed in the examples do not represent the opinion of Merriam-Webster or its editors, These example sentences are selected automatically from various online news sources to reflect current usage of the word 'text.' Views expressed in the examples do not represent the opinion of Merriam-Webster or its editors"),
-                            const Text(
-                                "These example sentences are selected automatically from various online news sources to reflect current usage of the word 'text.' Views expressed in the examples do not represent the opinion of Merriam-Webster or its editors, These example sentences are selected automatically from various online news sources to reflect current usage of the word 'text.' Views expressed in the examples do not represent the opinion of Merriam-Webster or its editors, These example sentences are selected automatically from various online news sources to reflect current usage of the word 'text.' Views expressed in the examples do not represent the opinion of Merriam-Webster or its editors"),
-                            const Text(
-                                "These example sentences are selected automatically from various online news sources to reflect current usage of the word 'text.' Views expressed in the examples do not represent the opinion of Merriam-Webster or its editors, These example sentences are selected automatically from various online news sources to reflect current usage of the word 'text.' Views expressed in the examples do not represent the opinion of Merriam-Webster or its editors, These example sentences are selected automatically from various online news sources to reflect current usage of the word 'text.' Views expressed in the examples do not represent the opinion of Merriam-Webster or its editors"),
+                            Text(
+                              "Introduction",
+                              style: GoogleFonts.ibmPlexSans(
+                                  color: Colors.black,
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w500),
+                            ),
+                            const SizedBox(height: 8),
+                            ReadMoreText(
+                              'The Flutter framework builds its layout via the composition of widgets, everything that you construct programmatically is a widget and these are compiled together to create the user interface. ',
+                              trimLines: 2,
+                              trimLength: 80,
+                              style: TextStyle(
+                                  color: Colors.black.withOpacity(0.7)),
+                              colorClickableText: Colors.black,
+                              trimMode: TrimMode.Length,
+                              trimCollapsedText: 'Read more',
+                              moreStyle: const TextStyle(
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold),
+                              trimExpandedText: ' Less',
+                              lessStyle: const TextStyle(
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            const SizedBox(height: 30),
+                            Container(
+                              height: 55,
+                              width: double.infinity,
+                              decoration: BoxDecoration(
+                                  color: Colors.blue,
+                                  borderRadius: BorderRadius.circular(30)),
+                              child: Center(
+                                  child: Text(
+                                "See more",
+                                style: GoogleFonts.ibmPlexSans(
+                                    color: Colors.white,
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.w500),
+                              )),
+                            ),
+                            const SizedBox(height: 30),
+                            Text(
+                              "Feedback",
+                              style: GoogleFonts.ibmPlexSans(
+                                  color: Colors.black,
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w500),
+                            ),
+                            const SizedBox(height: 20),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Container(
+                                  height: 100,
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.4,
+                                  decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.circular(20)),
+                                  child: Center(
+                                    child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.center,
+                                      children: [
+                                        Center(
+                                          child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            children: [
+                                              Icon(
+                                                Icons.star,
+                                                size: 22,
+                                                color: Colors.yellow[700],
+                                              ),
+                                              const SizedBox(width: 7),
+                                              Text(
+                                                "4.7",
+                                                style: GoogleFonts.ibmPlexSans(
+                                                    color: Colors.black,
+                                                    fontWeight:
+                                                        FontWeight.w600),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                        Text(
+                                          "Reviews",
+                                          style: GoogleFonts.ibmPlexSans(
+                                              color: Colors.black,
+                                              fontWeight: FontWeight.w600),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                                Container(
+                                  height: 100,
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.4,
+                                  decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.circular(20)),
+                                  child: Center(
+                                    child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.center,
+                                      children: [
+                                        Center(
+                                          child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            children: [
+                                              const Icon(
+                                                Icons.person_outline,
+                                                size: 22,
+                                              ),
+                                              const SizedBox(width: 7),
+                                              Text(
+                                                "753",
+                                                style: GoogleFonts.ibmPlexSans(
+                                                    color: Colors.black,
+                                                    fontWeight:
+                                                        FontWeight.w600),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                        Text(
+                                          "Students",
+                                          style: GoogleFonts.ibmPlexSans(
+                                              color: Colors.black,
+                                              fontWeight: FontWeight.w600),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                            const SizedBox(height: 20),
+                            ListView.builder(
+                                physics: NeverScrollableScrollPhysics(),
+                                scrollDirection: Axis.vertical,
+                                shrinkWrap: true,
+                                itemCount: 10,
+                                itemBuilder: (BuildContext context, int index) {
+                                  return Row(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
+                                    children: [
+                                      const CircleAvatar(
+                                        radius: 25,
+                                        backgroundImage: AssetImage(
+                                            'assets/images/profile-pic.jpg'),
+                                      ),
+                                      SizedBox(
+                                          width: MediaQuery.of(context)
+                                                  .size
+                                                  .width *
+                                              0.03),
+                                      Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Text(
+                                            "@mouni",
+                                            style: GoogleFonts.ibmPlexSans(
+                                                fontSize: 16,
+                                                fontWeight: FontWeight.w600,
+                                                color: Colors.black),
+                                          ),
+                                          const SizedBox(
+                                            height: 12,
+                                          ),
+                                          Row(
+                                            children: [
+                                              Text(
+                                                "11 min ago",
+                                                style: GoogleFonts.ibmPlexSans(
+                                                    fontSize: 12),
+                                              ),
+                                              SizedBox(
+                                                  width: MediaQuery.of(context)
+                                                          .size
+                                                          .width *
+                                                      0.03),
+                                              const CircleAvatar(radius: 1),
+                                              SizedBox(
+                                                  width: MediaQuery.of(context)
+                                                          .size
+                                                          .width *
+                                                      0.03),
+                                              Text(
+                                                "Student",
+                                                style: GoogleFonts.ibmPlexSans(
+                                                    fontSize: 14),
+                                              ),
+                                            ],
+                                          ),
+                                        ],
+                                      ),
+                                    ],
+                                  );
+                                }),
+                            Container(color: Colors.black, height: 1000),
                           ],
                         ),
-                      )),
-                                ],
-                              ))
+                      ),
+                    ),
+                
+                    // SingleChildScrollView(
+                    //     physics: const NeverScrollableScrollPhysics(),
+                    //child:
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                      child: ListView(
+                       
+                        physics: NeverScrollableScrollPhysics(),
+                        children:[
+                          
+                          Text(
+                              "These example sentences are selected automatically from various online news sources to reflect current usage of the word 'text.' Views expressed in the examples do not represent the opinion of Merriam-Webster or its editors, These example sentences are selected automatically from various online news sources to reflect current usage of the word 'text.' Views expressed in the examples do not represent the opinion of Merriam-Webster or its editors, These example sentences are selected automatically from various online news sources to reflect current usage of the word 'text.' Views expressed in the examples do not represent the opinion of Merriam-Webster or its editors"),
+                          Text(
+                              "These example sentences are selected automatically from various online news sources to reflect current usage of the word 'text.' Views expressed in the examples do not represent the opinion of Merriam-Webster or its editors, These example sentences are selected automatically from various online news sources to reflect current usage of the word 'text.' Views expressed in the examples do not represent the opinion of Merriam-Webster or its editors, These example sentences are selected automatically from various online news sources to reflect current usage of the word 'text.' Views expressed in the examples do not represent the opinion of Merriam-Webster or its editors"),
+                          Text(
+                              "These example sentences are selected automatically from various online news sources to reflect current usage of the word 'text.' Views expressed in the examples do not represent the opinion of Merriam-Webster or its editors, These example sentences are selected automatically from various online news sources to reflect current usage of the word 'text.' Views expressed in the examples do not represent the opinion of Merriam-Webster or its editors, These example sentences are selected automatically from various online news sources to reflect current usage of the word 'text.' Views expressed in the examples do not represent the opinion of Merriam-Webster or its editors"),
+                          Text(
+                              "These example sentences are selected automatically from various online news sources to reflect current usage of the word 'text.' Views expressed in the examples do not represent the opinion of Merriam-Webster or its editors, These example sentences are selected automatically from various online news sources to reflect current usage of the word 'text.' Views expressed in the examples do not represent the opinion of Merriam-Webster or its editors, These example sentences are selected automatically from various online news sources to reflect current usage of the word 'text.' Views expressed in the examples do not represent the opinion of Merriam-Webster or its editors"),
+                           Text(
+                              "These example sentences are selected automatically from various online news sources to reflect current usage of the word 'text.' Views expressed in the examples do not represent the opinion of Merriam-Webster or its editors, These example sentences are selected automatically from various online news sources to reflect current usage of the word 'text.' Views expressed in the examples do not represent the opinion of Merriam-Webster or its editors, These example sentences are selected automatically from various online news sources to reflect current usage of the word 'text.' Views expressed in the examples do not represent the opinion of Merriam-Webster or its editors"),
+                           Text(
+                              "These example sentences are selected automatically from various online news sources to reflect current usage of the word 'text.' Views expressed in the examples do not represent the opinion of Merriam-Webster or its editors, These example sentences are selected automatically from various online news sources to reflect current usage of the word 'text.' Views expressed in the examples do not represent the opinion of Merriam-Webster or its editors, These example sentences are selected automatically from various online news sources to reflect current usage of the word 'text.' Views expressed in the examples do not represent the opinion of Merriam-Webster or its editors"),
+                           Text(
+                              "These example sentences are selected automatically from various online news sources to reflect current usage of the word 'text.' Views expressed in the examples do not represent the opinion of Merriam-Webster or its editors, These example sentences are selected automatically from various online news sources to reflect current usage of the word 'text.' Views expressed in the examples do not represent the opinion of Merriam-Webster or its editors, These example sentences are selected automatically from various online news sources to reflect current usage of the word 'text.' Views expressed in the examples do not represent the opinion of Merriam-Webster or its editors"),
+                        Container(color: Colors.black,height: 200,)
+                        ],
+                      ),
+                    ) //),
+                  ],
+                ),
+              ),
             ],
           )),
     );
