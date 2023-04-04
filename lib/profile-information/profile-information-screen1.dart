@@ -18,7 +18,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
       body: SafeArea(
         // ignore: avoid_unnecessary_containers
         child: SingleChildScrollView(
-          child: Container(
+          child: SizedBox(
             child: Column(
               children: [
                 Container(
