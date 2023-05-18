@@ -326,7 +326,7 @@ class _CommentScreenState extends State<CommentScreen> {
             Icon(
               Icons.send_sharp,
               size: 30,
-              color: const Color(0xff3787ff),
+              color:  Color(0xff3787ff),
             ),
             SizedBox(width: 10),
           ],

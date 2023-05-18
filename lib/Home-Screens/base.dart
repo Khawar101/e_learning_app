@@ -1,4 +1,4 @@
-import 'package:e_learning_app/profile-information/enter-profile-information.dart';
+import 'package:e_learning_app/Home-Screens/enter-profile-information.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_snake_navigationbar/flutter_snake_navigationbar.dart';
 import 'profile-information-screen1.dart';

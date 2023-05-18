@@ -1,9 +1,10 @@
 // ignore: file_names
+import 'package:chips_choice/chips_choice.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:syncfusion_flutter_sliders/sliders.dart';
 import 'package:intl/intl.dart';
-import 'package:chips_choice_null_safety/chips_choice_null_safety.dart';
+
 
 class SearchFilter extends StatefulWidget {
   const SearchFilter({super.key});
@@ -89,17 +90,17 @@ class _SearchFilterState extends State<SearchFilter> {
                       value: (i, v) => v,
                       label: (i, v) => v,
                     ),
-                    choiceActiveStyle: const C2ChoiceStyle(
-                      color: Colors.red,
+                    choiceStyle: const C2ChipStyle(
+                      iconColor: Colors.red,
                       borderRadius: BorderRadius.all(Radius.circular(10)),
                     ),
-                    choiceStyle: const C2ChoiceStyle(
-                      showCheckmark: false,
-                      color: Colors.black,
-                      backgroundColor: Colors.white,
-                      //  borderColor: Color.fromARGB(255, 36, 25, 187),
-                      borderRadius: BorderRadius.all(Radius.circular(15)),
-                    ),
+                    // choiceStyle:  C2ChoiceStyle(
+                    //   showCheckmark: false,
+                    //   color: Colors.black,
+                    //   backgroundColor: Colors.white,
+                    //   //  borderColor: Color.fromARGB(255, 36, 25, 187),
+                    //   borderRadius: BorderRadius.all(Radius.circular(15)),
+                    // ),
                     wrapped: true,
                   ),
                   SizedBox(height: MediaQuery.of(context).size.height * 0.045),
@@ -147,17 +148,18 @@ class _SearchFilterState extends State<SearchFilter> {
                       value: (i, v) => v,
                       label: (i, v) => v,
                     ),
-                    choiceActiveStyle: const C2ChoiceStyle(
-                      color: Colors.red,
+                    choiceStyle:  const C2ChipStyle(
+
+                      iconColor: Colors.red,
                       borderRadius: BorderRadius.all(Radius.circular(10)),
                     ),
-                    choiceStyle: const C2ChoiceStyle(
-                      showCheckmark: false,
-                      color: Colors.black,
-                      backgroundColor: Colors.white,
-                      //  borderColor: Color.fromARGB(255, 36, 25, 187),
-                      borderRadius: BorderRadius.all(Radius.circular(15)),
-                    ),
+                    // choiceStyle: const C2ChoiceStyle(
+                    //   showCheckmark: false,
+                    //   color: Colors.black,
+                    //   backgroundColor: Colors.white,
+                    //   //  borderColor: Color.fromARGB(255, 36, 25, 187),
+                    //   borderRadius: BorderRadius.all(Radius.circular(15)),
+                    // ),
                     wrapped: true,
                   ),
                   SizedBox(height: MediaQuery.of(context).size.height * 0.03),

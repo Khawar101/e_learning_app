@@ -1,186 +1,203 @@
 // ignore: file_names
+import 'package:e_learning_app/Home-Screens/home-screeen1.dart';
+import 'package:e_learning_app/utils/app_utils.dart';
+import 'package:numeric_keyboard/numeric_keyboard.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:numeric_keyboard/numeric_keyboard.dart';
-import 'package:pin_code_fields/pin_code_fields.dart';
 
 class VerifyScreen extends StatefulWidget {
-  const VerifyScreen({super.key});
+  const VerifyScreen({Key? key}) : super(key: key);
 
   @override
   State<VerifyScreen> createState() => _VerifyScreenState();
 }
 
 class _VerifyScreenState extends State<VerifyScreen> {
-  String text = '';
+  List<String> codes = ['', '', '', ''];
+
+  void _onKeyboardTap(String value) {
+    for (var i = 0; i < codes.length; i++) {
+      if (codes[i].isEmpty) {
+        setState(() {
+          codes[i] = value;
+        });
+        if (i < codes.length - 1) {
+          // Move focus to the next text field
+          FocusScope.of(context).nextFocus();
+        } else {
+          // Last text field, perform your logic here (e.g., submitting the code)
+        }
+        break;
+      }
+    }
+  }
+
+  void _clearCodeField(int index) {
+    if (index > 0 && codes[index].isEmpty) {
+      // Clear the current field and move focus to the previous field
+      setState(() {
+        codes[index - 1] = '';
+      });
+      FocusScope.of(context).previousFocus();
+    } else {
+      // Clear the current field
+      setState(() {
+        codes[index] = '';
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xffe4f1f8),
-      body: SafeArea(
-          child: Padding(
-        padding: EdgeInsets.symmetric(
-            horizontal: MediaQuery.of(context).size.width * 0.05,
-            vertical: MediaQuery.of(context).size.height * 0.06),
-        child: Column(
-          children: [
-            Row(
-              children: [
-                Image.asset(
-                  'assets/icons/icons8-multiply-32.png',
-                  width: 20,
-                ),
-                Expanded(
-                    child: Center(
-                        child: Text(
-                  'Verify Phone',
-                  style: GoogleFonts.ibmPlexSans(
-                      color: Colors.black,
-                      fontSize: 16,
-                      fontWeight: FontWeight.w500),
-                  ),
-                 ),
-               ),
-              ],
+      appBar: AppBar(
+        elevation: 0,
+        backgroundColor: const Color(0xffe5f1f8),
+        leading: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+          child: GestureDetector(
+            onTap: () => Navigator.pop(context),
+            child: const Icon(
+              Icons.arrow_back_ios,
+              color: Colors.black,
+              size: 24,
             ),
-            SizedBox(height: MediaQuery.of(context).size.height * 0.06),
-            Padding(
-              padding: EdgeInsets.symmetric(
-                  horizontal: MediaQuery.of(context).size.width * 0.15),
-              child: Column(
-                children: [
-                  RichText(
-                    overflow: TextOverflow.ellipsis,
-                    textAlign: TextAlign.center,
-                    softWrap: true,
-                    maxLines: 1,
-                    text: TextSpan(children: [
-                      TextSpan(
-                          text: "Code is sent to ",
-                          style: GoogleFonts.ibmPlexSans(
+          ),
+        ),
+        title: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+          child: Text(
+            "Verify Phone",
+            textAlign: TextAlign.center,
+            style: GoogleFonts.ibmPlexSans(
+                fontSize: 15, color: Colors.black, fontWeight: FontWeight.w600),
+          ),
+        ),
+        centerTitle: true,
+      ),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(
+            horizontal: 20,
+          ),
+          child: Column(
+            children: [
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.06,
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(
+                  horizontal: MediaQuery.of(context).size.width * 0.12,
+                ),
+                child: Column(
+                  children: [
+                    RichText(
+                      overflow: TextOverflow.ellipsis,
+                      textAlign: TextAlign.center,
+                      softWrap: true,
+                      maxLines: 1,
+                      text: TextSpan(
+                        children: [
+                          TextSpan(
+                            text: "Code is sent to   ",
+                            style: GoogleFonts.ibmPlexSans(
                               color: Colors.black,
                               fontSize: 16,
-                              fontWeight: FontWeight.w500),
-                              ),
-                      TextSpan(
-                          text: "283 835 2999",
-                          style: GoogleFonts.ibmPlexSans(
-                              color: Colors.blue,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                          TextSpan(
+                            text: "283 835 2999",
+                            style: GoogleFonts.ibmPlexSans(
+                             color: const Color(0xff4873a6),
                               fontSize: 16,
-                              fontWeight: FontWeight.w500),
-                              ),
-                    ],
-                   ),
-                  ),
-                  SizedBox(height: MediaQuery.of(context).size.height * 0.015),
-                  PinCodeTextField(
-                    appContext: context,
-                    keyboardType: TextInputType.none,
-
-                    length: 4,
-                    obscureText: false,
-                    animationType: AnimationType.fade,
-                    pinTheme: PinTheme(
-                      shape: PinCodeFieldShape.box,
-                      borderRadius: BorderRadius.circular(10),
-                      fieldHeight: 50,
-                      fieldWidth: 50,
-                      // activeFillColor: Colors.white,
-                      activeColor: Colors.white70,
-                      activeFillColor: Colors.blue,
-                      selectedFillColor: Colors.blue,
-                      inactiveFillColor: Colors.blue,
-                      selectedColor: Colors.white70,
-                      inactiveColor: Colors.white70,
-                      disabledColor: Colors.white70,
-                    ),
-                    animationDuration: const Duration(milliseconds: 300),
-                    // backgroundColor: Colors.blue.shade50,
-                    enableActiveFill: true,
-                    // errorAnimationController: errorController,
-                    // controller: textEditingController,
-                    onCompleted: (v) {
-                      print("Completed");
-                    },
-                    onChanged: (value) {
-                      print(value);
-                      setState(() {
-                        //     currentText = value;
-                      });
-                    },
-                    beforeTextPaste: (text) {
-                      print("Allowing to paste $text");
-                      //if you return true then it will show the paste confirmation dialog. Otherwise if false, then nothing will happen.
-                      //but you can show anything you want here, like your pop up saying wrong paste format or etc
-                      return true;
-                    },
-                  ),
-                  SizedBox(height: MediaQuery.of(context).size.height * 0.017),
-                  Align(
-                      alignment: Alignment.bottomLeft,
-                      child: Text(
-                        "Didn't recieve code?",
-                        style: GoogleFonts.ibmPlexSans(
-                          color: Colors.black,
-                          fontSize: 10,
-                        ),
-                      )),
-                  SizedBox(height: MediaQuery.of(context).size.height * 0.04),
-                  Container(
-                    //  height: 50,
-                    //  width: double.infinity,
-                    decoration: BoxDecoration(
-                      color: Colors.blue,
-                      borderRadius: BorderRadius.circular(30),
-                    ),
-                    child: Padding(
-                      padding: EdgeInsets.symmetric(
-                          horizontal: MediaQuery.of(context).size.width * 0.025,
-                          vertical: MediaQuery.of(context).size.height * 0.014),
-                      child: Center(
-                          child: Text(
-                        'Verify and Create Account',
-                        style: GoogleFonts.ibmPlexSans(
-                            color: Colors.white, fontSize: 16),
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                        ],
                       ),
-                     ),
                     ),
-                  ),
-                ],
+                    SizedBox(
+                      height: MediaQuery.of(context).size.height * 0.02,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        for (var i = 0; i < codes.length; i++)
+                          Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 0),
+                            child: Container(
+                              width: 50,
+                              height: 50,
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              alignment: Alignment.center,
+                              child: Text(
+                                codes[i],
+                                style: const TextStyle(fontSize: 24),
+                              ),
+                            ),
+                          ),
+                      ],
+                    ),
+                    const SizedBox(height: 10),
+                    const Align(
+                        alignment: Alignment.bottomLeft,
+                        child: SmallText(
+                          text: "Didn't receive code?",
+                          color: Colors.black,
+                        )),
+                    SizedBox(
+                      height: MediaQuery.of(context).size.height * 0.04,
+                    ),
+                      GestureDetector(
+                      onTap: () {
+                        Navigator.pushAndRemoveUntil(
+                            context,
+                            MaterialPageRoute(
+                                builder:(BuildContext context)  => const HomeScreen1()),    ModalRoute.withName('/'),);
+                      },
+                      child: Container(
+                        height: 50,
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                          color: const Color(0xff4873a6),
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        child: const Center(
+                            child: ButtonText(
+                          text: 'Verify and Create Account',
+                          color: Colors.white,
+                        )),
+                      ),
+                    ),
+                  ],
+                ),
               ),
-            ),
-            SizedBox(height: MediaQuery.of(context).size.height * 0.06),
-            NumericKeyboard(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              onKeyboardTap: _onKeyboardTap,
-              textColor: Colors.black,
-              rightButtonFn: () {
-                setState(() {
-                  text = text.substring(0, text.length - 1);
-                });
-              },
-              rightIcon: const Icon(
-                Icons.backspace,
-                color: Colors.black,
+              NumericKeyboard(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                onKeyboardTap: _onKeyboardTap,
+                textColor: Colors.black,
+                rightButtonFn: () {
+                  for (var i = codes.length - 1; i >= 0; i--) {
+                    if (codes[i].isNotEmpty) {
+                      _clearCodeField(i);
+                      break;
+                    }
+                  }
+                },
+                rightIcon: const Icon(
+                  Icons.backspace,
+                  color: Colors.black,
+                ),
               ),
-              leftButtonFn: () {
-                print('left button clicked');
-              },
-              leftIcon: const Icon(
-                Icons.check,
-                color: Colors.black,
-              ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
-     ),
     );
-  }
-
-  _onKeyboardTap(String value) {
-    setState(() {
-      text = text + value;
-    });
   }
 }

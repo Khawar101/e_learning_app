@@ -14,8 +14,6 @@ class CourseDetailPage extends StatefulWidget {
 
 class _CourseDetailPageState extends State<CourseDetailPage>
     with TickerProviderStateMixin {
-
-      
   late TabController tabController;
   int _currentIndex = 0;
   @override
@@ -37,22 +35,16 @@ class _CourseDetailPageState extends State<CourseDetailPage>
     });
   }
 
-
   String dataSource =
       "https://storage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4";
-   late VideoPlayerController controller;
+  late VideoPlayerController controller;
   bool _isPlaying = false;
-
-
 
   @override
   void dispose() {
     super.dispose();
     controller.dispose();
   }
-
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -87,61 +79,54 @@ class _CourseDetailPageState extends State<CourseDetailPage>
               Expanded(
                 child: SingleChildScrollView(
                     child: Column(children: [
-
-
-
-
-                   controller.value.isInitialized
-                ? Stack(
-                    children: [
-                      AspectRatio(
-                        aspectRatio: controller.value.aspectRatio,
-                        child: VideoPlayer(controller),
-                      ),
-                      Positioned(
-                        bottom: 0,
-                        left: 0,
-                        right: 0,
-                        child: Container(
-                          padding: const EdgeInsets.symmetric(vertical: 10),
-                          color: Colors.black.withOpacity(0.5),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              IconButton(
-                                icon: Icon(
-                                  _isPlaying ? Icons.pause : Icons.play_arrow,
-                                  color: Colors.white,
+                  controller.value.isInitialized
+                      ? Stack(
+                          children: [
+                            AspectRatio(
+                              aspectRatio: controller.value.aspectRatio,
+                              child: VideoPlayer(controller),
+                            ),
+                            Positioned(
+                              bottom: 0,
+                              left: 0,
+                              right: 0,
+                              child: Container(
+                                padding:
+                                    const EdgeInsets.symmetric(vertical: 10),
+                                color: Colors.black.withOpacity(0.5),
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    IconButton(
+                                      icon: Icon(
+                                        _isPlaying
+                                            ? Icons.pause
+                                            : Icons.play_arrow,
+                                        color: Colors.white,
+                                      ),
+                                      onPressed: () {
+                                        setState(() {
+                                          _isPlaying = !_isPlaying;
+                                          _isPlaying
+                                              ? controller.play()
+                                              : controller.pause();
+                                        });
+                                      },
+                                    ),
+                                    Text(
+                                      '${controller.value.position.inMinutes}:${(controller.value.position.inSeconds % 60).toString().padLeft(2, '0')} / ${controller.value.duration.inMinutes}:${(controller.value.duration.inSeconds % 60).toString().padLeft(2, '0')}',
+                                      style:
+                                          const TextStyle(color: Colors.white),
+                                    ),
+                                  ],
                                 ),
-                                onPressed: () {
-                                  setState(() {
-                                    _isPlaying = !_isPlaying;
-                                    _isPlaying
-                                        ? controller.play()
-                                        : controller.pause();
-                                  });
-                                },
                               ),
-                              Text(
-                                '${controller.value.position.inMinutes}:${(controller.value.position.inSeconds % 60).toString().padLeft(2, '0')} / ${controller.value.duration.inMinutes}:${(controller.value.duration.inSeconds % 60).toString().padLeft(2, '0')}',
-                                style: const TextStyle(color: Colors.white),
-                              ),
-                            ],
-                          ),
+                            ),
+                          ],
+                        )
+                      : const Center(
+                          child: CircularProgressIndicator(),
                         ),
-                      ),
-                    ],
-                  )
-                : const Center(
-                    child: CircularProgressIndicator(),
-                  ),
-
-                
-                
-                
-                
-                
-                
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 20),
                     child: Column(
@@ -259,17 +244,20 @@ class _CourseDetailPageState extends State<CourseDetailPage>
                         const SizedBox(height: 20),
                         ReadMoreText(
                           "These example sentences are selected automatically from various online news sources to reflect current usage of the word 'text.' Views expressed in the examples do not represent the opinion of Merriam-Webster or its editors",
-                           trimLines: 3,
-                  trimLength: 129,
-                style: TextStyle(color: Colors.black.withOpacity(0.7),height: 1.3, wordSpacing: 2),
-                colorClickableText: Colors.black,
-                trimMode: TrimMode.Length,
-                trimCollapsedText: 'Read more',
-                moreStyle: const TextStyle(
-                    color: Colors.black, fontWeight: FontWeight.bold),
-                trimExpandedText: ' Less',
-                lessStyle: const TextStyle(
-                    color: Colors.black, fontWeight: FontWeight.bold),
+                          trimLines: 3,
+                          trimLength: 129,
+                          style: TextStyle(
+                              color: Colors.black.withOpacity(0.7),
+                              height: 1.3,
+                              wordSpacing: 2),
+                          colorClickableText: Colors.black,
+                          trimMode: TrimMode.Length,
+                          trimCollapsedText: 'Read more',
+                          moreStyle: const TextStyle(
+                              color: Colors.black, fontWeight: FontWeight.bold),
+                          trimExpandedText: ' Less',
+                          lessStyle: const TextStyle(
+                              color: Colors.black, fontWeight: FontWeight.bold),
                         ),
                         const SizedBox(height: 40),
                       ],

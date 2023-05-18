@@ -1,5 +1,5 @@
 // ignore: file_names
-import 'package:e_learning_app/profile-information/base.dart';
+import 'package:e_learning_app/Home-Screens/base.dart';
 import 'package:flutter/material.dart';
 
 import 'package:google_fonts/google_fonts.dart';
