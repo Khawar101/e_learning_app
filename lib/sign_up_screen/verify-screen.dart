@@ -1,5 +1,5 @@
 // ignore: file_names
-import 'package:e_learning_app/Home-Screens/home-screeen1.dart';
+import 'package:e_learning_app/Home-Screens/home_buttom_bar.dart';
 import 'package:e_learning_app/utils/app_utils.dart';
 import 'package:numeric_keyboard/numeric_keyboard.dart';
 import 'package:flutter/material.dart';
@@ -158,7 +158,7 @@ class _VerifyScreenState extends State<VerifyScreen> {
                         Navigator.pushAndRemoveUntil(
                             context,
                             MaterialPageRoute(
-                                builder:(BuildContext context)  => const HomeScreen1()),    ModalRoute.withName('/'),);
+                                builder:(BuildContext context)  => const HomeButtomBar()),    ModalRoute.withName('/'),);
                       },
                       child: Container(
                         height: 50,

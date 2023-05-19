@@ -1,4 +1,5 @@
-import 'package:e_learning_app/log-in-screens/login-screen.dart';
+
+import 'package:e_learning_app/sign_up_screen/verify-screen.dart';
 import 'package:e_learning_app/utils/app_utils.dart';
 import 'package:e_learning_app/utils/custom_text_form_field.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -26,7 +27,7 @@ class _SignUpPhoneScreenState extends State<SignUpPhoneScreen> {
               "Sign In",
               textAlign: TextAlign.center,
               style: GoogleFonts.ibmPlexSans(
-                  fontSize: 15,
+                  fontSize: 18,
                   color:Colors.black,
                   fontWeight: FontWeight.w600),
             ),
@@ -116,7 +117,7 @@ class _SignUpPhoneScreenState extends State<SignUpPhoneScreen> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => const LogInScreen()),);
+                                builder: (context) => const VerifyScreen()),);
                       },
                       child: Container(
                         height: 50,

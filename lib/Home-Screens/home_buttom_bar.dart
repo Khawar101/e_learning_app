@@ -1,28 +1,27 @@
-import 'package:e_learning_app/Home-Screens/enter-profile-information.dart';
+
+import 'package:e_learning_app/Home-Screens/chat_page.dart';
+import 'package:e_learning_app/Home-Screens/contact_page.dart';
+import 'package:e_learning_app/Home-Screens/home-screeen1.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_snake_navigationbar/flutter_snake_navigationbar.dart';
 import 'profile-information-screen1.dart';
 
-class Base extends StatefulWidget {
-  const Base({Key? key}) : super(key: key);
+class HomeButtomBar extends StatefulWidget {
+  const HomeButtomBar({Key? key}) : super(key: key);
 
   @override
-  _BaseState createState() => _BaseState();
+  // ignore: library_private_types_in_public_api
+  _HomeButtomBarState createState() => _HomeButtomBarState();
 }
 
-class _BaseState extends State<Base> {
+class _HomeButtomBarState extends State<HomeButtomBar> {
   List<Widget> views = [
-    Container(
-      child: Center(child: Text("First Screen")),
-    ),
-    Container(
-      child: Center(child: Text("Second Screen")),
-    ),
-    ProfileScreen(),
-    EditInfo(),
-    Container(
-      child: Center(child: Text("Fifth Screen")),
-    ),
+    const HomeScreen1(),
+    const ContactPageScreen(),
+    const ChatPageScreen(),
+    const ProfileScreen(),
+    
+   
   ];
 
   ShapeBorder? bottomBarShape = const RoundedRectangleBorder(
@@ -31,13 +30,13 @@ class _BaseState extends State<Base> {
   SnakeBarBehaviour snakeBarStyle = SnakeBarBehaviour.floating;
   EdgeInsets padding = const EdgeInsets.all(12);
 
-  int _selectedItemPosition = 2;
+  int _selectedItemPosition = 0;
   SnakeShape snakeShape = SnakeShape.indicator;
 
   bool showSelectedLabels = false;
   bool showUnselectedLabels = false;
 
-  Color selectedColor = Color(0xFF1859dc);
+  Color selectedColor =  const Color(0xFF4873A6).withOpacity(0.7);
   Color unselectedColor = Colors.blueGrey;
 
   Gradient selectedGradient =
@@ -58,8 +57,8 @@ class _BaseState extends State<Base> {
     return Scaffold(
       body: views[_selectedItemPosition],
       bottomNavigationBar: SnakeNavigationBar.color(
-        shadowColor: Color(0xFF1859dc),
-        // height: 80,
+        shadowColor:  const Color(0xFF4873A6).withOpacity(0.7),
+        height: 40,
         behaviour: snakeBarStyle,
         snakeShape: snakeShape,
         shape: bottomBarShape,
@@ -82,13 +81,12 @@ class _BaseState extends State<Base> {
         currentIndex: _selectedItemPosition,
         onTap: (index) => setState(() => _selectedItemPosition = index),
         items: const [
+          
           BottomNavigationBarItem(
-              icon: Icon(Icons.notifications), label: 'tickets'),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.calendar_month), label: 'calendar'),
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'home'),
-          BottomNavigationBarItem(icon: Icon(Icons.list), label: 'chat'),
-          BottomNavigationBarItem(icon: Icon(Icons.search), label: 'search')
+              icon: Icon(Icons.home_outlined), label: 'Home'),
+          BottomNavigationBarItem(icon: Icon(Icons.contacts_outlined,size: 20,), label: 'Contacts'),
+          BottomNavigationBarItem(icon: Icon(Icons.chat_outlined,size: 20,), label: 'Chat'),
+          BottomNavigationBarItem(icon: Icon(Icons.person_2_outlined), label: 'Person')
         ],
         selectedLabelStyle: const TextStyle(fontSize: 10),
         unselectedLabelStyle: const TextStyle(fontSize: 10),

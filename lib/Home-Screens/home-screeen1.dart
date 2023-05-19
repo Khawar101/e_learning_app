@@ -1,4 +1,5 @@
 // ignore: file_names
+import 'package:e_learning_app/Home-Screens/home-screen2.dart';
 import 'package:e_learning_app/utils/app_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -32,7 +33,7 @@ class _HomeScreen1State extends State<HomeScreen1> {
           leading: const Icon(
             Icons.vertical_distribute_sharp,
             color: Colors.black54,
-            size: 20,
+            size: 18,
           ),
           title: Padding(
             padding: const EdgeInsets.symmetric(vertical: 15),
@@ -49,9 +50,9 @@ class _HomeScreen1State extends State<HomeScreen1> {
                 children: [
                    Icon(
                     Icons.language,
-                    size: 24, color:  const Color(0xff4873a6).withOpacity(0.7),
+                    size: 18, color:  const Color(0xff4873a6).withOpacity(0.7),
                   ),
-                  const SizedBox(width: 2),
+                  const SizedBox(width: 3),
                   Text(
                     "English",
                     textAlign: TextAlign.center,
@@ -76,7 +77,7 @@ class _HomeScreen1State extends State<HomeScreen1> {
               child: Icon(
                 Icons.notifications_active_outlined,
                 color: Colors.black54,
-                size: 24,
+                size: 20,
               ),
             )
           ]),
@@ -84,49 +85,41 @@ class _HomeScreen1State extends State<HomeScreen1> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Container(
-              color: Colors.white,
-              child: Column(
-                children: [
-                  SizedBox(height: MediaQuery.of(context).size.height * 0.02),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 15),
-                    child: Container(
-                      height: 40,
-                      width: double.infinity,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color: Colors.white),
-                      child: ListView.builder(
-                          scrollDirection: Axis.horizontal,
-                          itemCount: itemsnames.length,
-                          itemBuilder: (context, index) {
-                            return Padding(
-                              padding: const EdgeInsets.only(right: 8),
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(10),
-                                    color: const Color(0xFF4873A6).withOpacity(0.7),
-                                ),
-                                child: Padding(
-                                  padding:
-                                      const EdgeInsets.symmetric(horizontal: 8),
-                                  child: Center(
-                                      child: CustomText(
-                                    text: itemsnames[index],
-                                    color: Colors.white, size: 13, fontWeight: FontWeight.w500,
-                                  )),
-                                ),
-                              ),
-                            );
-                          }),
-                    ),
-                  ),
-                  SizedBox(height: MediaQuery.of(context).size.height * 0.04),
-                ],
+           
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 15,vertical: 10),
+              child: Container(
+                height: 35,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: Colors.white),
+                child: ListView.builder(
+                    scrollDirection: Axis.horizontal,
+                    itemCount: itemsnames.length,
+                    itemBuilder: (context, index) {
+                      return Padding(
+                        padding: const EdgeInsets.only(right: 8),
+                        child: Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                              color: const Color(0xFF4873A6).withOpacity(0.7),
+                          ),
+                          child: Padding(
+                            padding:
+                                const EdgeInsets.symmetric(horizontal: 8),
+                            child: Center(
+                                child: CustomText(
+                              text: itemsnames[index],
+                              color: Colors.white, size: 13, fontWeight: FontWeight.w500,
+                            )),
+                          ),
+                        ),
+                      );
+                    }),
               ),
             ),
-            //page change
+          
             Padding(
               padding: EdgeInsets.symmetric(
                   horizontal: MediaQuery.of(context).size.width * 0.04,
@@ -139,132 +132,139 @@ class _HomeScreen1State extends State<HomeScreen1> {
                       context: context,
                       removeTop: true,
                       child: ListView.builder(
+                        
                         scrollDirection: Axis.horizontal,
                         itemCount: 7, // Replace with the actual item count
                         itemBuilder: (context, index) {
-                          return Padding(
-                            padding: const EdgeInsets.only(right: 10),
-                            child: Container(
-                              width: MediaQuery.of(context).size.width * 0.45,
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(10),
-                                  border: Border.all(
-                                    color: const Color(0xff4873a6)
-                                        .withOpacity(0.1),
-                                  )),
-                              // color: const Color(0xff5085fc),
-
-                              child: Column(
-                                children: [
-                                  Image.asset(
-                                    'assets/images/promotion.png',
-                                    width: 150,
-                                  ),
-                                  Container(
-                                    decoration:  BoxDecoration(
-                                      borderRadius: const BorderRadius.only(
-                                        bottomLeft: Radius.circular(10),
-                                        bottomRight: Radius.circular(10),
-                                      ),
-                                      color: const Color(0xFF4873A6).withOpacity(0.7),
+                          
+                          return GestureDetector(
+                            onTap: () {
+                              Navigator.push(context, MaterialPageRoute(builder: (context)=>const HomeScreen2()));
+                            },
+                            child: Padding(
+                              padding: const EdgeInsets.only(right: 10),
+                              child: Container(
+                                width: MediaQuery.of(context).size.width * 0.45,
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(10),
+                                    border: Border.all(
+                                      color: const Color(0xff4873a6)
+                                          .withOpacity(0.1),
+                                    )),
+                                // color: const Color(0xff5085fc),
+                          
+                                child: Column(
+                                  children: [
+                                    Image.asset(
+                                      'assets/images/promotion.png',
+                                      width: 150,
                                     ),
-                                    child: Padding(
-                                      padding: EdgeInsets.symmetric(
-                                        horizontal:
-                                            MediaQuery.of(context).size.width *
-                                                0.02,
-                                        vertical:
-                                            MediaQuery.of(context).size.height *
-                                                0.01,
+                                    Container(
+                                      decoration:  BoxDecoration(
+                                        borderRadius: const BorderRadius.only(
+                                          bottomLeft: Radius.circular(10),
+                                          bottomRight: Radius.circular(10),
+                                        ),
+                                        color: const Color(0xFF4873A6).withOpacity(0.7),
                                       ),
-                                      child: Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          Row(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.spaceBetween,
-                                            children: [
-                                              Text(
-                                                'Marketing',
-                                                style: GoogleFonts.ibmPlexSans(
-                                                  color: Colors.white,
-                                                  fontSize: 12,
-                                                ),
-                                              ),
-                                              Text(
-                                                '\$50',
-                                                style: GoogleFonts.ibmPlexSans(
-                                                  color: Colors.white,
-                                                  fontSize: 12,
-                                                ),
-                                              ),
-                                            ],
-                                          ),
-                                          const SizedBox(height: 4),
-                                          Text(
-                                            'By: Salim',
-                                            style: GoogleFonts.ibmPlexSans(
-                                              color: Colors.white,
-                                              fontSize: 10,
-                                            ),
-                                          ),
-                                          const SizedBox(height: 10),
-                                          const Divider(
-                                            thickness: 1,
-                                            color: Colors.white,
-                                          ),
-                                          const SizedBox(height: 4),
-                                          Row(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.spaceBetween,
-                                            children: [
-                                              Row(
-                                                children: [
-                                                  Text(
-                                                    '50',
-                                                    style:
-                                                        GoogleFonts.ibmPlexSans(
-                                                      color: Colors.white,
-                                                      fontSize: 10,
-                                                    ),
-                                                  ),
-                                                  const SizedBox(width: 3),
-                                                  Text(
-                                                    'Lesson',
-                                                    style:
-                                                        GoogleFonts.ibmPlexSans(
-                                                      color: Colors.white,
-                                                      fontSize: 10,
-                                                    ),
-                                                  ),
-                                                ],
-                                              ),
-                                              Row(
-                                                children: [
-                                                  const Icon(
-                                                    Icons.star,
+                                      child: Padding(
+                                        padding: EdgeInsets.symmetric(
+                                          horizontal:
+                                              MediaQuery.of(context).size.width *
+                                                  0.02,
+                                          vertical:
+                                              MediaQuery.of(context).size.height *
+                                                  0.01,
+                                        ),
+                                        child: Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Row(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.spaceBetween,
+                                              children: [
+                                                Text(
+                                                  'Marketing',
+                                                  style: GoogleFonts.ibmPlexSans(
                                                     color: Colors.white,
-                                                    size: 12,
+                                                    fontSize: 12,
                                                   ),
-                                                  const SizedBox(width: 3),
-                                                  Text(
-                                                    '4.5',
-                                                    style:
-                                                        GoogleFonts.ibmPlexSans(
-                                                      color: Colors.white,
-                                                      fontSize: 10,
-                                                    ),
+                                                ),
+                                                Text(
+                                                  '\$50',
+                                                  style: GoogleFonts.ibmPlexSans(
+                                                    color: Colors.white,
+                                                    fontSize: 12,
                                                   ),
-                                                ],
+                                                ),
+                                              ],
+                                            ),
+                                            const SizedBox(height: 4),
+                                            Text(
+                                              'By: Salim',
+                                              style: GoogleFonts.ibmPlexSans(
+                                                color: Colors.white,
+                                                fontSize: 10,
                                               ),
-                                            ],
-                                          )
-                                        ],
+                                            ),
+                                            const SizedBox(height: 10),
+                                            const Divider(
+                                              thickness: 1,
+                                              color: Colors.white,
+                                            ),
+                                            const SizedBox(height: 4),
+                                            Row(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.spaceBetween,
+                                              children: [
+                                                Row(
+                                                  children: [
+                                                    Text(
+                                                      '50',
+                                                      style:
+                                                          GoogleFonts.ibmPlexSans(
+                                                        color: Colors.white,
+                                                        fontSize: 10,
+                                                      ),
+                                                    ),
+                                                    const SizedBox(width: 3),
+                                                    Text(
+                                                      'Lesson',
+                                                      style:
+                                                          GoogleFonts.ibmPlexSans(
+                                                        color: Colors.white,
+                                                        fontSize: 10,
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                                Row(
+                                                  children: [
+                                                    const Icon(
+                                                      Icons.star,
+                                                      color: Colors.white,
+                                                      size: 12,
+                                                    ),
+                                                    const SizedBox(width: 3),
+                                                    Text(
+                                                      '4.5',
+                                                      style:
+                                                          GoogleFonts.ibmPlexSans(
+                                                        color: Colors.white,
+                                                        fontSize: 10,
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ],
+                                            )
+                                          ],
+                                        ),
                                       ),
-                                    ),
-                                  )
-                                ],
+                                    )
+                                  ],
+                                ),
                               ),
                             ),
                           );
@@ -323,7 +323,7 @@ class _HomeScreen1State extends State<HomeScreen1> {
                                   Text(
                                     'Here 52 Lesson and complete 32 lesson',
                                     style: GoogleFonts.ibmPlexSans(
-                                        fontSize: 12,
+                                        fontSize: 12,color:Colors.black54,
                                         fontWeight: FontWeight.w500),
                                   ),
                                 ],
@@ -347,7 +347,7 @@ class _HomeScreen1State extends State<HomeScreen1> {
                                     child: Text(
                                       'what is marketing?',
                                       style: GoogleFonts.ibmPlexSans(
-                                          fontSize: 12,
+                                          fontSize: 12,color:Colors.black54,
                                           fontWeight: FontWeight.w500),
                                     ),
                                   ),
@@ -358,7 +358,7 @@ class _HomeScreen1State extends State<HomeScreen1> {
                                   Text(
                                     '56 Minutes',
                                     style: GoogleFonts.ibmPlexSans(
-                                        fontSize: 12,
+                                        fontSize: 12,color:Colors.black26,
                                         fontWeight: FontWeight.w500),
                                   ),
                                 ],
@@ -382,7 +382,7 @@ class _HomeScreen1State extends State<HomeScreen1> {
                                     child: Text(
                                       'what is your defination of marketing?',
                                       style: GoogleFonts.ibmPlexSans(
-                                          fontSize: 12,
+                                          fontSize: 12,color:Colors.black54,
                                           fontWeight: FontWeight.w500),
                                     ),
                                   ),
@@ -393,7 +393,7 @@ class _HomeScreen1State extends State<HomeScreen1> {
                                   Text(
                                     '10 Minutes',
                                     style: GoogleFonts.ibmPlexSans(
-                                        fontSize: 12,
+                                        fontSize: 12,color:Colors.black26,
                                         fontWeight: FontWeight.w500),
                                   ),
                                 ],
@@ -417,7 +417,7 @@ class _HomeScreen1State extends State<HomeScreen1> {
                                     child: Text(
                                       'what are 3 definatin of marketing?',
                                       style: GoogleFonts.ibmPlexSans(
-                                          fontSize: 12,
+                                          fontSize: 12,color:Colors.black54,
                                           fontWeight: FontWeight.w500),
                                     ),
                                   ),
@@ -428,7 +428,7 @@ class _HomeScreen1State extends State<HomeScreen1> {
                                   Text(
                                     '56 Minutes',
                                     style: GoogleFonts.ibmPlexSans(
-                                        fontSize: 12,
+                                        fontSize: 12,color:Colors.black26,
                                         fontWeight: FontWeight.w500),
                                   ),
                                 ],
@@ -452,7 +452,7 @@ class _HomeScreen1State extends State<HomeScreen1> {
                                     child: Text(
                                       'what are the 4 type of marketing?',
                                       style: GoogleFonts.ibmPlexSans(
-                                          fontSize: 12,
+                                          fontSize: 12,color:Colors.black54,
                                           fontWeight: FontWeight.w500),
                                     ),
                                   ),
@@ -463,7 +463,7 @@ class _HomeScreen1State extends State<HomeScreen1> {
                                   Text(
                                     '56 Minutes',
                                     style: GoogleFonts.ibmPlexSans(
-                                        fontSize: 12,
+                                        fontSize: 12,color:Colors.black26,
                                         fontWeight: FontWeight.w500),
                                   ),
                                 ],
@@ -487,7 +487,7 @@ class _HomeScreen1State extends State<HomeScreen1> {
                                     child: Text(
                                       'what the marketing is important? ',
                                       style: GoogleFonts.ibmPlexSans(
-                                          fontSize: 12,
+                                          fontSize: 12,color:Colors.black54,
                                           fontWeight: FontWeight.w500),
                                     ),
                                   ),
@@ -498,7 +498,7 @@ class _HomeScreen1State extends State<HomeScreen1> {
                                   Text(
                                     '56 Minutes',
                                     style: GoogleFonts.ibmPlexSans(
-                                        fontSize: 12,
+                                        fontSize: 12,color:Colors.black26,
                                         fontWeight: FontWeight.w500),
                                   ),
                                 ],
@@ -522,7 +522,7 @@ class _HomeScreen1State extends State<HomeScreen1> {
                                     child: Text(
                                       'what is marketing necessary?',
                                       style: GoogleFonts.ibmPlexSans(
-                                          fontSize: 12,
+                                          fontSize: 12,color:Colors.black54,
                                           fontWeight: FontWeight.w500),
                                     ),
                                   ),
@@ -533,7 +533,7 @@ class _HomeScreen1State extends State<HomeScreen1> {
                                   Text(
                                     '56 Minutes',
                                     style: GoogleFonts.ibmPlexSans(
-                                        fontSize: 12,
+                                        fontSize: 12,color:Colors.black26,
                                         fontWeight: FontWeight.w500),
                                   ),
                                 ],

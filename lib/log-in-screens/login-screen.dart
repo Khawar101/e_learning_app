@@ -1,7 +1,7 @@
 // ignore: file_names
+import 'package:e_learning_app/Home-Screens/home_buttom_bar.dart';
 import 'package:e_learning_app/forget_password/forgot-password-screen.dart';
-import 'package:e_learning_app/log-in-screens/verify-screen.dart';
-import 'package:e_learning_app/sign_up_screen.dart';
+import 'package:e_learning_app/sign_up_screen/sign_up_screen.dart';
 import 'package:e_learning_app/utils/app_utils.dart';
 import 'package:e_learning_app/utils/custom_text_form_field.dart';
 import 'package:flutter/material.dart';
@@ -262,11 +262,11 @@ class _LogInScreenState extends State<LogInScreen> {
               const SizedBox(height: 15),
               GestureDetector(
                 onTap: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const VerifyScreen()),);
-                },
+                        Navigator.pushAndRemoveUntil(
+                            context,
+                            MaterialPageRoute(
+                                builder:(BuildContext context)  => const HomeButtomBar()),    ModalRoute.withName('/'),);
+                      },
                 child: Container(
                   height: 50,
                   width: double.infinity,
