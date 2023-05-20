@@ -14,7 +14,6 @@ class HomeScreen2 extends StatefulWidget {
 }
 
 class _HomeScreen2State extends State<HomeScreen2> {
- 
 // List<ItemDataModel>ItemData=List.generate(itemsnames.length, (index) => ItemDataModel('${itemsnames[index]}'));
 
   @override
@@ -85,7 +84,6 @@ class _HomeScreen2State extends State<HomeScreen2> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-           
             Padding(
               padding: EdgeInsets.symmetric(
                   horizontal: MediaQuery.of(context).size.width * 0.04,

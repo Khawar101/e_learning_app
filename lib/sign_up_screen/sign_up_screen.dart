@@ -34,7 +34,7 @@ class _SignUpPhoneScreenState extends State<SignUpPhoneScreen> {
           ),
           centerTitle: true,
         ),
-        backgroundColor: const Color(0xffe5f1f8),
+    //    backgroundColor: const Color(0xffe5f1f8),
         body: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),

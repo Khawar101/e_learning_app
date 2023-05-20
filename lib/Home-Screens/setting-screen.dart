@@ -1,4 +1,6 @@
 // ignore: file_names
+import 'package:e_learning_app/Home-Screens/profile-information-screen1.dart';
+import 'package:e_learning_app/utils/app_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -29,403 +31,338 @@ class _SettingScreenState extends State<SettingScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xffe4f1f8),
-      body: SafeArea(
-        child: Column(
-          children: [
-            Padding(
-              padding: EdgeInsets.symmetric(
-                horizontal: MediaQuery.of(context).size.width * 0.06,
-                vertical: MediaQuery.of(context).size.height * 0.03,
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const Icon(
-                    Icons.arrow_back_ios_new_outlined,
-                    size: 18,
-                  ),
-                  Text(
-                    "Setting",
-                    style: GoogleFonts.ibmPlexSans(
-                        fontSize: 22, fontWeight: FontWeight.bold),
-                  ),
-                  Text(
-                    "Save",
-                    style: GoogleFonts.ibmPlexSans(
-                        color: const Color(0xff3787ff),
-                        fontSize: 16,
-                        fontWeight: FontWeight.w500),
-                  )
-                ],
-              ),
+      appBar: AppBar(
+          elevation: 0,
+          backgroundColor: Colors.white,
+          leading: GestureDetector(
+            onTap: () {
+              Navigator.pop(context);
+            },
+            child: const Icon(
+              Icons.arrow_back_ios,
+              color: Colors.black54,
+              size: 18,
             ),
-            SizedBox(height: MediaQuery.of(context).size.height * 0.03),
-            Expanded(
-              child: SingleChildScrollView(
-                child: Container(
-                  padding: EdgeInsets.symmetric(
-                      horizontal: MediaQuery.of(context).size.width * 0.07),
-                  child: Column(
+          ),
+          title: Text(
+            "Setting",
+            textAlign: TextAlign.center,
+            style: GoogleFonts.ibmPlexSans(
+                fontSize: 18,
+                color: const Color(0xff4873a6).withOpacity(0.7),
+                fontWeight: FontWeight.w600),
+          ),
+          centerTitle: true,
+          actions: [
+            Padding(
+              padding: const EdgeInsets.only(right: 20, top: 20),
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: ((context) => const ProfileScreen())));
+                },
+                child: CustomText(
+                    text: 'Save',
+                    size: 13,
+                    fontWeight: FontWeight.w400,
+                    color: const Color(0xff4873a6).withOpacity(0.7)),
+              ),
+            )
+          ]),
+      //   backgroundColor: const Color(0xffe4f1f8),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 14),
+          child: Column(
+            children: [
+              Container(
+                height: 40,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  color: const Color(0xFF4873A6).withOpacity(0.7),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 8),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Container(
-                        height: 55,
-                        decoration: BoxDecoration(
-                            color: const Color(0xff3787ff),
-                            borderRadius: BorderRadius.circular(30)),
-                        child: Padding(
-                          padding: EdgeInsets.symmetric(
-                              horizontal:
-                                  MediaQuery.of(context).size.width * 0.03),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(
-                                "Connect to Facebook",
-                                style: GoogleFonts.ibmPlexSans(
-                                    color: const Color(0xffffffff),
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w400),
-                              ),
-                              Switch(
-                                thumbIcon: thumbIcon,
-                                activeColor: Colors.white,
-                                activeTrackColor: Colors.black,
-                                inactiveThumbColor: Colors.black,
-                                inactiveTrackColor: Colors.white,
-                                splashRadius: 5000,
-                                value: light0,
-                                onChanged: (bool value) {
-                                  setState(() {
-                                    light0 = value;
-                                  });
-                                },
-                              ),
-                            ],
-                          ),
-                        ),
+                      const ButtonText(
+                          text: 'Connect to Facebook', color: Colors.white),
+                      Switch(
+                        thumbIcon: thumbIcon,
+                        activeColor: Colors.white,
+                        activeTrackColor: Colors.grey,
+                        inactiveThumbColor: Colors.grey,
+                        inactiveTrackColor: Colors.white,
+                        splashRadius: 5000,
+                        value: light0,
+                        onChanged: (bool value) {
+                          setState(() {
+                            light0 = value;
+                          });
+                        },
                       ),
-                      SizedBox(
-                          height: MediaQuery.of(context).size.height * 0.03),
-                      Container(
-                        height: 55,
-                        decoration: BoxDecoration(
-                            color: const Color(0xff3787ff),
-                            borderRadius: BorderRadius.circular(30)),
-                        child: Padding(
-                          padding: EdgeInsets.symmetric(
-                              horizontal:
-                                  MediaQuery.of(context).size.width * 0.03),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Row(
-                                children: [
-                                  Text(
-                                    "R",
-                                    style: GoogleFonts.ibmPlexSans(
-                                        color: const Color(0xffffffff),
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.w400),
-                                  ),
-                                  SizedBox(
-                                      width: MediaQuery.of(context).size.width *
-                                          0.04),
-                                  Text(
-                                    "Beta",
-                                    style: GoogleFonts.ibmPlexSans(
-                                        color: const Color(0xffffffff),
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.w400),
-                                  ),
-                                ],
-                              ),
-                              const Icon(
-                                Icons.arrow_forward_ios,
-                                size: 18,
-                                color: Color(0xffffffff),
-                              )
-                            ],
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                          height: MediaQuery.of(context).size.height * 0.03),
-                      Container(
-                        height: 55,
-                        decoration: BoxDecoration(
-                            color: const Color(0xff3787ff),
-                            borderRadius: BorderRadius.circular(30)),
-                        child: Padding(
-                          padding: EdgeInsets.symmetric(
-                              horizontal:
-                                  MediaQuery.of(context).size.width * 0.03),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Row(
-                                children: [
-                                  const Icon(
-                                    Icons.notifications_active,
-                                    size: 18,
-                                    color: Colors.white,
-                                  ),
-                                  SizedBox(
-                                      width: MediaQuery.of(context).size.width *
-                                          0.04),
-                                  Text(
-                                    "Notification",
-                                    style: GoogleFonts.ibmPlexSans(
-                                        color: const Color(0xffffffff),
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.w400),
-                                  ),
-                                ],
-                              ),
-                              const Icon(
-                                Icons.arrow_forward_ios,
-                                size: 18,
-                                color: Color(0xffffffff),
-                              )
-                            ],
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                          height: MediaQuery.of(context).size.height * 0.03),
-                      Container(
-                        height: 55,
-                        decoration: BoxDecoration(
-                            color: const Color(0xff3787ff),
-                            borderRadius: BorderRadius.circular(30)),
-                        child: Padding(
-                          padding: EdgeInsets.symmetric(
-                              horizontal:
-                                  MediaQuery.of(context).size.width * 0.03),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Row(
-                                children: [
-                                  const Icon(
-                                    Icons.surround_sound_sharp,
-                                    size: 18,
-                                    color: Colors.white,
-                                  ),
-                                  SizedBox(
-                                      width: MediaQuery.of(context).size.width *
-                                          0.04),
-                                  Text(
-                                    "Learning & sound setting",
-                                    style: GoogleFonts.ibmPlexSans(
-                                        color: const Color(0xffffffff),
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.w400),
-                                  ),
-                                ],
-                              ),
-                              const Icon(
-                                Icons.arrow_forward_ios,
-                                size: 18,
-                                color: Color(0xffffffff),
-                              )
-                            ],
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                          height: MediaQuery.of(context).size.height * 0.03),
-                      Container(
-                        height: 55,
-                        decoration: BoxDecoration(
-                            color: const Color(0xff3787ff),
-                            borderRadius: BorderRadius.circular(30)),
-                        child: Padding(
-                          padding: EdgeInsets.symmetric(
-                              horizontal:
-                                  MediaQuery.of(context).size.width * 0.03),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Row(
-                                children: [
-                                  const Icon(
-                                    Icons.dark_mode,
-                                    size: 18,
-                                    color: Colors.white,
-                                  ),
-                                  SizedBox(
-                                      width: MediaQuery.of(context).size.width *
-                                          0.04),
-                                  Text(
-                                    "Dark Mode",
-                                    style: GoogleFonts.ibmPlexSans(
-                                        color: const Color(0xffffffff),
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.w400),
-                                  ),
-                                ],
-                              ),
-                              Switch(
-                                thumbIcon: thumbIcon,
-                                activeColor: Colors.white,
-                                activeTrackColor: Colors.black,
-                                inactiveThumbColor: Colors.black,
-                                inactiveTrackColor: Colors.white,
-                                splashRadius: 5000,
-                                value: light1,
-                                onChanged: (bool value) {
-                                  setState(() {
-                                    light1 = value;
-                                  });
-                                },
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                          height: MediaQuery.of(context).size.height * 0.03),
-                      Container(
-                        height: 55,
-                        decoration: BoxDecoration(
-                            color: const Color(0xff3787ff),
-                            borderRadius: BorderRadius.circular(30)),
-                        child: Padding(
-                          padding: EdgeInsets.symmetric(
-                              horizontal:
-                                  MediaQuery.of(context).size.width * 0.03),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Row(
-                                children: [
-                                  const Icon(
-                                    Icons.question_mark,
-                                    size: 18,
-                                    color: Colors.white,
-                                  ),
-                                  SizedBox(
-                                      width: MediaQuery.of(context).size.width *
-                                          0.04),
-                                  Text(
-                                    "Help",
-                                    style: GoogleFonts.ibmPlexSans(
-                                        color: const Color(0xffffffff),
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.w400),
-                                  ),
-                                ],
-                              ),
-                              const Icon(
-                                Icons.arrow_forward_ios,
-                                size: 18,
-                                color: Color(0xffffffff),
-                              )
-                            ],
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                          height: MediaQuery.of(context).size.height * 0.03),
-                      Container(
-                        height: 55,
-                        decoration: BoxDecoration(
-                            color: const Color(0xff3787ff),
-                            borderRadius: BorderRadius.circular(30)),
-                        child: Padding(
-                          padding: EdgeInsets.symmetric(
-                              horizontal:
-                                  MediaQuery.of(context).size.width * 0.03),
-                          child: Row(
-                            children: [
-                              const Icon(
-                                Icons.logout,
-                                size: 18,
-                                color: Colors.white,
-                              ),
-                              SizedBox(
-                                  width:
-                                      MediaQuery.of(context).size.width * 0.04),
-                              Text(
-                                "Log out",
-                                style: GoogleFonts.ibmPlexSans(
-                                    color: const Color(0xffffffff),
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w400),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                          height: MediaQuery.of(context).size.height * 0.03),
-                      Container(
-                        height: 55,
-                        decoration: BoxDecoration(
-                            color: const Color(0xff3787ff),
-                            borderRadius: BorderRadius.circular(30)),
-                        child: Padding(
-                          padding: EdgeInsets.symmetric(
-                              horizontal:
-                                  MediaQuery.of(context).size.width * 0.03),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(
-                                "Privacy Policy",
-                                style: GoogleFonts.ibmPlexSans(
-                                    color: const Color(0xffffffff),
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w400),
-                              ),
-                              const Icon(
-                                Icons.arrow_forward_ios,
-                                size: 18,
-                                color: Color(0xffffffff),
-                              )
-                            ],
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                          height: MediaQuery.of(context).size.height * 0.03),
-                      Container(
-                        height: 55,
-                        decoration: BoxDecoration(
-                            color: const Color(0xff3787ff),
-                            borderRadius: BorderRadius.circular(30)),
-                        child: Padding(
-                          padding: EdgeInsets.symmetric(
-                              horizontal:
-                                  MediaQuery.of(context).size.width * 0.03),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(
-                                "Terms of Use",
-                                style: GoogleFonts.ibmPlexSans(
-                                    color: const Color(0xffffffff),
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w400),
-                              ),
-                              const Icon(
-                                Icons.arrow_forward_ios,
-                                size: 18,
-                                color: Color(0xffffffff),
-                              )
-                            ],
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                          height: MediaQuery.of(context).size.height * 0.04),
                     ],
                   ),
                 ),
               ),
-            ),
-          ],
+              SizedBox(height: MediaQuery.of(context).size.height * 0.03),
+              Container(
+                height: 40,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  color: const Color(0xFF4873A6).withOpacity(0.7),
+                ),
+                child: const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 8),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Row(
+                        children: [
+                          ButtonText(text: 'R', color: Colors.white),
+                          SizedBox(width: 10),
+                          ButtonText(text: 'Beta', color: Colors.white)
+                        ],
+                      ),
+                      Icon(
+                        Icons.arrow_forward_ios,
+                        size: 18,
+                        color: Color(0xffffffff),
+                      )
+                    ],
+                  ),
+                ),
+              ),
+              SizedBox(height: MediaQuery.of(context).size.height * 0.03),
+              Container(
+                height: 40,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  color: const Color(0xFF4873A6).withOpacity(0.7),
+                ),
+                child: const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 8),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Row(
+                        children: [
+                          Icon(
+                            Icons.notifications_active,
+                            size: 18,
+                            color: Colors.white,
+                          ),
+                          SizedBox(width: 10),
+                          ButtonText(text: 'Notification', color: Colors.white)
+                        ],
+                      ),
+                      Icon(
+                        Icons.arrow_forward_ios,
+                        size: 18,
+                        color: Color(0xffffffff),
+                      )
+                    ],
+                  ),
+                ),
+              ),
+              SizedBox(height: MediaQuery.of(context).size.height * 0.03),
+              Container(
+                height: 40,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  color: const Color(0xFF4873A6).withOpacity(0.7),
+                ),
+                child: const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 8),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Row(
+                        children: [
+                          Icon(
+                            Icons.surround_sound_sharp,
+                            size: 18,
+                            color: Colors.white,
+                          ),
+                          SizedBox(width: 10),
+                          ButtonText(
+                              text: 'Learning & sound setting',
+                              color: Colors.white)
+                        ],
+                      ),
+                      Icon(
+                        Icons.arrow_forward_ios,
+                        size: 18,
+                        color: Color(0xffffffff),
+                      )
+                    ],
+                  ),
+                ),
+              ),
+              SizedBox(height: MediaQuery.of(context).size.height * 0.03),
+              Container(
+                height: 40,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  color: const Color(0xFF4873A6).withOpacity(0.7),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 8),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      const Row(
+                        children: [
+                          Icon(
+                            Icons.dark_mode,
+                            size: 18,
+                            color: Colors.white,
+                          ),
+                          SizedBox(width: 10),
+                          ButtonText(text: 'Dark Mode', color: Colors.white)
+                        ],
+                      ),
+                      Switch(
+                        thumbIcon: thumbIcon,
+                        activeColor: Colors.white,
+                        activeTrackColor: Colors.grey,
+                        inactiveThumbColor: Colors.grey,
+                        inactiveTrackColor: Colors.white,
+                        splashRadius: 5000,
+                        value: light1,
+                        onChanged: (bool value) {
+                          setState(() {
+                            light1 = value;
+                          });
+                        },
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              SizedBox(height: MediaQuery.of(context).size.height * 0.03),
+              Container(
+                height: 40,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  color: const Color(0xFF4873A6).withOpacity(0.7),
+                ),
+                child: const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 8),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Row(
+                        children: [
+                          Icon(
+                            Icons.question_mark,
+                            size: 18,
+                            color: Colors.white,
+                          ),
+                          SizedBox(width: 10),
+                          ButtonText(text: 'Help', color: Colors.white)
+                        ],
+                      ),
+                      Icon(
+                        Icons.arrow_forward_ios,
+                        size: 18,
+                        color: Color(0xffffffff),
+                      )
+                    ],
+                  ),
+                ),
+              ),
+              SizedBox(height: MediaQuery.of(context).size.height * 0.03),
+              Container(
+                height: 40,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  color: const Color(0xFF4873A6).withOpacity(0.7),
+                ),
+                child: const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 8),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Row(
+                        children: [
+                          Icon(
+                            Icons.logout,
+                            size: 18,
+                            color: Colors.white,
+                          ),
+                          SizedBox(width: 10),
+                          ButtonText(text: 'Log Out', color: Colors.white)
+                        ],
+                      ),
+                      Icon(
+                        Icons.arrow_forward_ios,
+                        size: 18,
+                        color: Color(0xffffffff),
+                      )
+                    ],
+                  ),
+                ),
+              ),
+              SizedBox(height: MediaQuery.of(context).size.height * 0.03),
+              Container(
+                height: 40,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  color: const Color(0xFF4873A6).withOpacity(0.7),
+                ),
+                child: const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 8),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      ButtonText(text: 'Privacy Policy', color: Colors.white),
+                      Icon(
+                        Icons.arrow_forward_ios,
+                        size: 18,
+                        color: Color(0xffffffff),
+                      )
+                    ],
+                  ),
+                ),
+              ),
+              SizedBox(height: MediaQuery.of(context).size.height * 0.03),
+              Container(
+                height: 40,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  color: const Color(0xFF4873A6).withOpacity(0.7),
+                ),
+                child: const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 8),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      ButtonText(text: 'Terms of Use', color: Colors.white),
+                      Icon(
+                        Icons.arrow_forward_ios,
+                        size: 18,
+                        color: Color(0xffffffff),
+                      )
+                    ],
+                  ),
+                ),
+              ),
+              SizedBox(height: MediaQuery.of(context).size.height * 0.04),
+            ],
+          ),
         ),
       ),
     );

@@ -15,7 +15,7 @@ class _PasswordChangedDoneState extends State<PasswordChangedDone> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xffe4f1f8),
+   //   backgroundColor: const Color(0xffe4f1f8),
       body: Padding(
         padding: EdgeInsets.only(
             top: MediaQuery.of(context).size.height * 0.22,

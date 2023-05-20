@@ -1,3 +1,4 @@
+import 'package:e_learning_app/Home-Screens/drawer_page.dart';
 import 'package:e_learning_app/utils/app_utils.dart';
 import 'package:e_learning_app/utils/custom_text_form_field.dart';
 import 'package:flutter/material.dart';
@@ -14,14 +15,25 @@ class _ContactPageScreenState extends State<ContactPageScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        drawer: const DrawerHeaderPage(),
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.white,
-        leading: const Icon(
-          Icons.vertical_distribute_sharp,
-          color: Colors.black54,
-          size: 18,
-        ),
+       leading: Builder(
+    builder: (BuildContext context) {
+      return IconButton(
+        icon: const  Icon(
+               Icons.vertical_distribute_sharp,
+               color: Colors.black54,
+               size: 18,
+             ),
+        onPressed: () {
+          Scaffold.of(context).openDrawer();
+        },
+        tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
+      );
+    },
+  ),
         title: Text(
           "Contacts",
           textAlign: TextAlign.center,

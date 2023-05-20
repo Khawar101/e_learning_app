@@ -50,7 +50,7 @@ class _VerifyScreenState extends State<VerifyScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xffe4f1f8),
+  //    backgroundColor: const Color(0xffe4f1f8),
       appBar: AppBar(
         elevation: 0,
         backgroundColor: const Color(0xffe5f1f8),

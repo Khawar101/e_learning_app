@@ -1,4 +1,5 @@
 // ignore: file_names
+import 'package:e_learning_app/Home-Screens/drawer_page.dart';
 import 'package:e_learning_app/Home-Screens/home-screen2.dart';
 import 'package:e_learning_app/utils/app_utils.dart';
 import 'package:flutter/material.dart';
@@ -25,16 +26,27 @@ class _HomeScreen1State extends State<HomeScreen1> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-   //   backgroundColor: const Color(0xffe4f1f8),
+    return Scaffold( 
+      drawer: const DrawerHeaderPage(),
       appBar: AppBar(
           elevation: 0,
           backgroundColor: Colors.white,
-          leading: const Icon(
-            Icons.vertical_distribute_sharp,
-            color: Colors.black54,
-            size: 18,
-          ),
+           leading: Builder(
+    builder: (BuildContext context) {
+      return IconButton(
+        icon: const  Icon(
+               Icons.vertical_distribute_sharp,
+               color: Colors.black54,
+               size: 18,
+             ),
+        onPressed: () {
+          Scaffold.of(context).openDrawer();
+        },
+        tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
+      );
+    },
+  ),
+         
           title: Padding(
             padding: const EdgeInsets.symmetric(vertical: 15),
             child: Container(
@@ -127,7 +139,7 @@ class _HomeScreen1State extends State<HomeScreen1> {
               child: Column(
                 children: [
                   SizedBox(
-                    height: 240,
+                    height: MediaQuery.of(context).size.height*0.406,
                     child: MediaQuery.removePadding(
                       context: context,
                       removeTop: true,
