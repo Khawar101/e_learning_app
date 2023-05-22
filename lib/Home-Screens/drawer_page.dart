@@ -77,7 +77,7 @@ class DrawerHeaderPage extends StatelessWidget {
           ),
           Expanded(
             child: SingleChildScrollView(
-              child: Clumn(
+              child: Column(
                 children: [
                   ListTile(
                     leading:  Icon(Icons.home_outlined,color: const Color(0xff4873a6).withOpacity(0.7),),

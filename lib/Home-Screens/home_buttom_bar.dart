@@ -15,6 +15,10 @@ class HomeButtomBar extends StatefulWidget {
 }
 
 class _HomeButtomBarState extends State<HomeButtomBar> {
+  
+
+
+
   List<Widget> views = [
     const HomeScreen1(),
     const ContactPageScreen(),
@@ -63,7 +67,7 @@ class _HomeButtomBarState extends State<HomeButtomBar> {
         snakeShape: snakeShape,
         shape: bottomBarShape,
         padding: padding,
-
+       
         ///configuration for SnakeNavigationBar.color
         snakeViewColor: selectedColor,
         selectedItemColor:
@@ -91,6 +95,7 @@ class _HomeButtomBarState extends State<HomeButtomBar> {
         selectedLabelStyle: const TextStyle(fontSize: 10),
         unselectedLabelStyle: const TextStyle(fontSize: 10),
       ),
+      
     );
   }
 }

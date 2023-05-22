@@ -57,6 +57,9 @@ dependencies:
   local_auth: ^2.1.6
   carousel_slider: ^4.2.1
   pinput: ^2.2.31
+  flip: ^2.0.0
+  flip_card: ^0.7.0
+  
   
   
 
