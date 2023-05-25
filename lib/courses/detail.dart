@@ -1,5 +1,9 @@
 import 'dart:developer';
 
+import 'package:e_learning_app/courses/Poster-screen.dart';
+import 'package:e_learning_app/courses/comment.dart';
+import 'package:e_learning_app/courses/project-data.dart';
+import 'package:e_learning_app/utils/app_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:readmore/readmore.dart';
@@ -15,6 +19,7 @@ class CourseDetailPage extends StatefulWidget {
 class _CourseDetailPageState extends State<CourseDetailPage>
     with TickerProviderStateMixin {
   late TabController tabController;
+  // ignore: unused_field
   int _currentIndex = 0;
   @override
   void initState() {
@@ -49,33 +54,41 @@ class _CourseDetailPageState extends State<CourseDetailPage>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: const Color(0xffe4f1f8),
+        appBar: AppBar(
+            elevation: 0,
+            backgroundColor: Colors.white,
+            leading: GestureDetector(
+              onTap: () {
+                Navigator.pop(context);
+              },
+              child: const Icon(
+                Icons.arrow_back_ios,
+                color: Colors.black54,
+                size: 18,
+              ),
+            ),
+            title: Text(
+              "Details",
+              textAlign: TextAlign.center,
+              style: GoogleFonts.ibmPlexSans(
+                  fontSize: 18,
+                  color: const Color(0xff4873a6).withOpacity(0.7),
+                  fontWeight: FontWeight.w600),
+            ),
+            centerTitle: true,
+            actions: const [
+              Padding(
+                padding: EdgeInsets.only(right: 15),
+                child: Icon(
+                  Icons.bookmark_border_rounded,
+                  color: Colors.black54,
+                  size: 20,
+                ),
+              )
+            ]),
         body: SafeArea(
           child: Column(
             children: [
-              Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    const Icon(
-                      Icons.arrow_back_ios_new,
-                      color: Colors.black,
-                      size: 18,
-                    ),
-                    Text("Details",
-                        style: GoogleFonts.ibmPlexSans(
-                            color: Colors.black,
-                            fontSize: 20,
-                            fontWeight: FontWeight.w600)),
-                    const Icon(
-                      Icons.bookmark_border_rounded,
-                      color: Colors.black,
-                    )
-                  ],
-                ),
-              ),
               Expanded(
                 child: SingleChildScrollView(
                     child: Column(children: [
@@ -136,16 +149,19 @@ class _CourseDetailPageState extends State<CourseDetailPage>
                         Container(
                           height: 30,
                           width: 60,
-                          color: Colors.blue,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            color: const Color(0xff4873a6).withOpacity(0.7),
+                          ),
                           child: const Center(
-                              child: Text(
-                            "HOT",
-                            style: TextStyle(color: Colors.white),
+                              child: ButtonText(
+                            text: 'HOT',
+                            color: Colors.white,
                           )),
                         ),
                         const SizedBox(height: 15),
                         Row(
-                          crossAxisAlignment: CrossAxisAlignment.end,
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             const CircleAvatar(
                               radius: 25,
@@ -153,19 +169,26 @@ class _CourseDetailPageState extends State<CourseDetailPage>
                                   'assets/images/profile_picture.jpeg'),
                             ),
                             const SizedBox(width: 15),
-                            Text("Anny Morriarty",
-                                style: GoogleFonts.ibmPlexSans(
-                                    color: Colors.black,
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.bold)),
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text("Anny Morriarty",
+                                    style: GoogleFonts.ibmPlexSans(
+                                        color: Colors.black,
+                                        fontSize: 17,
+                                        fontWeight: FontWeight.bold)),
+                                const ButtonText(
+                                    text: 'Student', color: Colors.black45)
+                              ],
+                            ),
                           ],
                         ),
                         const SizedBox(height: 8),
-                        Text("Comic drawing essential for everyone!",
-                            style: GoogleFonts.ibmPlexSans(
-                                color: Colors.black,
-                                fontSize: 24,
-                                fontWeight: FontWeight.w500)),
+                        const BigText(
+                          text: "Comic drawing essential for everyone!",
+                          color: Colors.black,
+                        ),
                         const SizedBox(height: 25),
                         Row(
                           children: [
@@ -214,6 +237,7 @@ class _CourseDetailPageState extends State<CourseDetailPage>
                                     const Icon(
                                       Icons.videocam_sharp,
                                       size: 16,
+                                      color: Colors.black54,
                                     ),
                                     const SizedBox(width: 7),
                                     Text("12 Lessons",
@@ -245,7 +269,7 @@ class _CourseDetailPageState extends State<CourseDetailPage>
                         ReadMoreText(
                           "These example sentences are selected automatically from various online news sources to reflect current usage of the word 'text.' Views expressed in the examples do not represent the opinion of Merriam-Webster or its editors",
                           trimLines: 3,
-                          trimLength: 129,
+                          trimLength: 100,
                           style: TextStyle(
                               color: Colors.black.withOpacity(0.7),
                               height: 1.3,
@@ -255,7 +279,7 @@ class _CourseDetailPageState extends State<CourseDetailPage>
                           trimCollapsedText: 'Read more',
                           moreStyle: const TextStyle(
                               color: Colors.black, fontWeight: FontWeight.bold),
-                          trimExpandedText: ' Less',
+                          trimExpandedText: '...Show Less',
                           lessStyle: const TextStyle(
                               color: Colors.black, fontWeight: FontWeight.bold),
                         ),
@@ -266,19 +290,20 @@ class _CourseDetailPageState extends State<CourseDetailPage>
                   TabBar(
                     indicatorWeight: 1,
                     indicatorPadding: const EdgeInsets.only(bottom: 4),
-                    indicatorColor: Colors.blue,
+                    indicatorColor: const Color(0xff4873a6).withOpacity(0.7),
                     controller: tabController,
                     labelStyle: GoogleFonts.ibmPlexSans(
-                        fontSize: 18.0, fontWeight: FontWeight.w500),
+                        fontSize: 16.0, fontWeight: FontWeight.w600),
                     onTap: (value) {},
                     labelColor: Colors.black,
-                    unselectedLabelColor: Colors.black.withOpacity(0.4),
+                    unselectedLabelColor:
+                        const Color(0xff4873a6).withOpacity(0.7),
                     tabs: const [
                       Tab(
                         text: 'Overview',
                       ),
                       Tab(
-                        text: 'completed',
+                        text: 'Completed',
                       ),
                     ],
                   ),
@@ -292,7 +317,7 @@ class _CourseDetailPageState extends State<CourseDetailPage>
 
   Widget _getTabAtIndex(int index) {
     var list = [
-      Container(
+      SizedBox(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 15),
           child: Column(
@@ -316,25 +341,20 @@ class _CourseDetailPageState extends State<CourseDetailPage>
                 trimCollapsedText: 'Read more',
                 moreStyle: const TextStyle(
                     color: Colors.black, fontWeight: FontWeight.bold),
-                trimExpandedText: ' Less',
+                trimExpandedText: '...Show Less',
                 lessStyle: const TextStyle(
                     color: Colors.black, fontWeight: FontWeight.bold),
               ),
               const SizedBox(height: 30),
               Container(
-                height: 55,
+                height: 40,
                 width: double.infinity,
                 decoration: BoxDecoration(
-                    color: Colors.blue,
-                    borderRadius: BorderRadius.circular(30)),
-                child: Center(
-                    child: Text(
-                  "See more",
-                  style: GoogleFonts.ibmPlexSans(
-                      color: Colors.white,
-                      fontSize: 18,
-                      fontWeight: FontWeight.w500),
-                )),
+                  borderRadius: BorderRadius.circular(10),
+                  color: const Color(0xFF4873A6).withOpacity(0.7),
+                ),
+                child: const Center(
+                    child: ButtonText(text: 'See more', color: Colors.white)),
               ),
               const SizedBox(height: 30),
               Text(
@@ -352,79 +372,80 @@ class _CourseDetailPageState extends State<CourseDetailPage>
                     height: 100,
                     width: MediaQuery.of(context).size.width * 0.4,
                     decoration: BoxDecoration(
+                        border: Border.all(
+                            color: const Color(0xff4873a6).withOpacity(0.7)),
                         color: Colors.white,
-                        borderRadius: BorderRadius.circular(20)),
-                    child: Center(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Center(
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Icon(
-                                  Icons.star,
-                                  size: 22,
-                                  color: Colors.yellow[700],
-                                ),
-                                const SizedBox(width: 7),
-                                Text(
-                                  "4.7",
-                                  style: GoogleFonts.ibmPlexSans(
-                                      color: Colors.black,
-                                      fontWeight: FontWeight.w600),
-                                ),
-                              ],
-                            ),
+                        borderRadius: BorderRadius.circular(10)),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Center(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Icon(
+                                Icons.star,
+                                size: 22,
+                                color: const Color(0xff4873a6).withOpacity(0.7),
+                              ),
+                              const SizedBox(width: 08),
+                              Text(
+                                "4.7",
+                                style: GoogleFonts.ibmPlexSans(
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.w600),
+                              ),
+                            ],
                           ),
-                          Text(
-                            "Reviews",
-                            style: GoogleFonts.ibmPlexSans(
-                                color: Colors.black,
-                                fontWeight: FontWeight.w600),
-                          ),
-                        ],
-                      ),
+                        ),
+                        const SizedBox(height: 3),
+                        Text(
+                          "Reviews",
+                          style: GoogleFonts.ibmPlexSans(
+                              color: Colors.black, fontWeight: FontWeight.w600),
+                        ),
+                      ],
                     ),
                   ),
                   Container(
                     height: 100,
                     width: MediaQuery.of(context).size.width * 0.4,
                     decoration: BoxDecoration(
+                        border: Border.all(
+                            color: const Color(0xff4873a6).withOpacity(0.7)),
                         color: Colors.white,
-                        borderRadius: BorderRadius.circular(20)),
-                    child: Center(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Center(
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                const Icon(
-                                  Icons.person_outline,
-                                  size: 22,
-                                ),
-                                const SizedBox(width: 7),
-                                Text(
-                                  "753",
-                                  style: GoogleFonts.ibmPlexSans(
-                                      color: Colors.black,
-                                      fontWeight: FontWeight.w600),
-                                ),
-                              ],
-                            ),
+                        borderRadius: BorderRadius.circular(10)),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Center(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Icon(
+                                Icons.person_outline,
+                                size: 22,
+                                color: const Color(0xff4873a6).withOpacity(0.7),
+                              ),
+                              const SizedBox(width: 8),
+                              Text(
+                                "753",
+                                style: GoogleFonts.ibmPlexSans(
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.w600),
+                              ),
+                            ],
                           ),
-                          Text(
-                            "Students",
-                            style: GoogleFonts.ibmPlexSans(
-                                color: Colors.black,
-                                fontWeight: FontWeight.w600),
-                          ),
-                        ],
-                      ),
+                        ),
+                        const SizedBox(height: 3),
+                        Text(
+                          "Students",
+                          style: GoogleFonts.ibmPlexSans(
+                              color: Colors.black, fontWeight: FontWeight.w600),
+                        ),
+                      ],
                     ),
                   ),
                 ],
@@ -437,14 +458,14 @@ class _CourseDetailPageState extends State<CourseDetailPage>
                   itemCount: 3,
                   itemBuilder: (BuildContext context, int index) {
                     return Padding(
-                      padding: const EdgeInsets.only(bottom: 10),
+                      padding: const EdgeInsets.only(bottom: 15),
                       child: Column(
                         children: [
                           Row(
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               const CircleAvatar(
-                                radius: 25,
+                                radius: 20,
                                 backgroundImage:
                                     AssetImage('assets/images/profile-pic.jpg'),
                               ),
@@ -456,21 +477,17 @@ class _CourseDetailPageState extends State<CourseDetailPage>
                                     MainAxisAlignment.spaceBetween,
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Text(
-                                    "@mouni",
-                                    style: GoogleFonts.ibmPlexSans(
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.w600,
-                                        color: Colors.black),
-                                  ),
+                                  const ButtonText(
+                                      text: "@mouni", color: Colors.black),
                                   const SizedBox(
-                                    height: 12,
+                                    height: 2,
                                   ),
                                   Text(
                                     "11 min ago",
                                     style: GoogleFonts.ibmPlexSans(
                                         fontSize: 12,
-                                        fontWeight: FontWeight.bold),
+                                        color: Colors.black45,
+                                        fontWeight: FontWeight.w500),
                                   ),
                                 ],
                               ),
@@ -489,7 +506,7 @@ class _CourseDetailPageState extends State<CourseDetailPage>
                             moreStyle: const TextStyle(
                                 color: Colors.black,
                                 fontWeight: FontWeight.bold),
-                            trimExpandedText: ' Less',
+                            trimExpandedText: '...Show Less',
                             lessStyle: const TextStyle(
                                 color: Colors.black,
                                 fontWeight: FontWeight.bold),
@@ -500,19 +517,14 @@ class _CourseDetailPageState extends State<CourseDetailPage>
                   }),
               const SizedBox(height: 30),
               Container(
-                height: 55,
+                height: 40,
                 width: double.infinity,
                 decoration: BoxDecoration(
-                    color: Colors.blue,
-                    borderRadius: BorderRadius.circular(30)),
-                child: Center(
-                    child: Text(
-                  "Load more",
-                  style: GoogleFonts.ibmPlexSans(
-                      color: Colors.white,
-                      fontSize: 18,
-                      fontWeight: FontWeight.w500),
-                )),
+                  borderRadius: BorderRadius.circular(10),
+                  color: const Color(0xFF4873A6).withOpacity(0.7),
+                ),
+                child: const Center(
+                    child: ButtonText(text: 'Load more', color: Colors.white)),
               ),
               const SizedBox(height: 30),
               Row(
@@ -525,12 +537,20 @@ class _CourseDetailPageState extends State<CourseDetailPage>
                         fontSize: 16,
                         fontWeight: FontWeight.w500),
                   ),
-                  Text(
-                    "Add projet",
-                    style: GoogleFonts.ibmPlexSans(
-                        color: Colors.black,
-                        fontSize: 16,
-                        fontWeight: FontWeight.w500),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const ProjectInfo()));
+                    },
+                    child: Text(
+                      "Add projet",
+                      style: GoogleFonts.ibmPlexSans(
+                          color: Colors.black,
+                          fontSize: 16,
+                          fontWeight: FontWeight.w500),
+                    ),
                   ),
                 ],
               ),
@@ -548,40 +568,43 @@ class _CourseDetailPageState extends State<CourseDetailPage>
                       ),
                       itemCount: 4,
                       itemBuilder: (BuildContext context, int index) {
-                        return Card(
-                            shape: RoundedRectangleBorder(
-                              side: BorderSide(
-                                color: Theme.of(context).colorScheme.outline,
+                        return GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        const PosterScreen()));
+                          },
+                          child: Card(
+                              shape: RoundedRectangleBorder(
+                                side: BorderSide(
+                                  color: Theme.of(context).colorScheme.outline,
+                                ),
+                                borderRadius:
+                                    const BorderRadius.all(Radius.circular(10)),
                               ),
-                              borderRadius:
-                                  const BorderRadius.all(Radius.circular(12)),
-                            ),
-                            color: Colors.amber,
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(10),
-                              child: Image.asset(
-                                'assets/images/Paul-Wilson.jpg',
-                                fit: BoxFit.cover,
-                              ),
-                            ));
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(10),
+                                child: Image.asset(
+                                  'assets/images/Paul-Wilson.jpg',
+                                  fit: BoxFit.cover,
+                                ),
+                              )),
+                        );
                       }),
                 ),
               ),
               const SizedBox(height: 30),
               Container(
-                height: 55,
+                height: 40,
                 width: double.infinity,
                 decoration: BoxDecoration(
-                    color: Colors.blue,
-                    borderRadius: BorderRadius.circular(30)),
-                child: Center(
-                    child: Text(
-                  "Load more",
-                  style: GoogleFonts.ibmPlexSans(
-                      color: Colors.white,
-                      fontSize: 18,
-                      fontWeight: FontWeight.w500),
-                )),
+                  borderRadius: BorderRadius.circular(10),
+                  color: const Color(0xFF4873A6).withOpacity(0.7),
+                ),
+                child: const Center(
+                    child: ButtonText(text: 'Load more', color: Colors.white)),
               ),
               const SizedBox(height: 30),
               Row(
@@ -594,32 +617,40 @@ class _CourseDetailPageState extends State<CourseDetailPage>
                             text: '5',
                             style: GoogleFonts.ibmPlexSans(
                                 color: Colors.black,
-                                fontSize: 18,
+                                fontSize: 16,
                                 fontWeight: FontWeight.w600)),
                         TextSpan(
                             text: '  Comments',
                             style: GoogleFonts.ibmPlexSans(
                                 color: Colors.black,
-                                fontSize: 18,
+                                fontSize: 16,
                                 fontWeight: FontWeight.w600)),
                       ],
                     ),
                   ),
-                  Container(
-                    decoration: BoxDecoration(
-                        color: const Color(0xff767372),
-                        borderRadius: BorderRadius.circular(25)),
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 20, vertical: 10),
-                      child: Center(
-                          child: Text(
-                        "Add comment",
-                        style: GoogleFonts.ibmPlexSans(
-                            color: Colors.white,
-                            fontSize: 16,
-                            fontWeight: FontWeight.w500),
-                      )),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const CommentScreen()));
+                    },
+                    child: Container(
+                      decoration: BoxDecoration(
+                          color: const Color(0xFF4873A6).withOpacity(0.7),
+                          borderRadius: BorderRadius.circular(10)),
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 20, vertical: 10),
+                        child: Center(
+                            child: Text(
+                          "Add comment",
+                          style: GoogleFonts.ibmPlexSans(
+                              color: Colors.white,
+                              fontSize: 16,
+                              fontWeight: FontWeight.w500),
+                        )),
+                      ),
                     ),
                   )
                 ],
@@ -641,7 +672,7 @@ class _CourseDetailPageState extends State<CourseDetailPage>
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             const CircleAvatar(
-                              radius: 25,
+                              radius: 20,
                               //  backgroundColor: Colors.black,
                               backgroundImage:
                                   AssetImage('assets/images/profile-pic.jpg'),
@@ -653,15 +684,10 @@ class _CourseDetailPageState extends State<CourseDetailPage>
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text(
-                                  "@mouni",
-                                  style: GoogleFonts.ibmPlexSans(
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.w600,
-                                      color: Colors.black),
-                                ),
+                                const ButtonText(
+                                    text: "@mouni", color: Colors.black),
                                 const SizedBox(
-                                  height: 12,
+                                  height: 2,
                                 ),
                                 Row(
                                   children: [
@@ -682,7 +708,7 @@ class _CourseDetailPageState extends State<CourseDetailPage>
                                     Text(
                                       "Student",
                                       style:
-                                          GoogleFonts.ibmPlexSans(fontSize: 14),
+                                          GoogleFonts.ibmPlexSans(fontSize: 12),
                                     ),
                                   ],
                                 ),
@@ -710,11 +736,10 @@ class _CourseDetailPageState extends State<CourseDetailPage>
                             children: [
                               Row(
                                 children: [
-                                  Text(
-                                    "Liked",
-                                    style: GoogleFonts.ibmPlexSans(
-                                        fontSize: 12,
-                                        color: const Color(0xff3787ff)),
+                                  SmallText(
+                                    text: "Liked",
+                                    color: const Color(0xff4873a6)
+                                        .withOpacity(0.7),
                                   ),
                                   SizedBox(
                                       width: MediaQuery.of(context).size.width *
@@ -722,16 +747,17 @@ class _CourseDetailPageState extends State<CourseDetailPage>
                                   Text(
                                     "Reply",
                                     style:
-                                        GoogleFonts.ibmPlexSans(fontSize: 12),
+                                        GoogleFonts.ibmPlexSans(fontSize: 10),
                                   ),
                                 ],
                               ),
                               Row(
                                 children: [
-                                  const Icon(
+                                  Icon(
                                     Icons.thumb_up_off_alt_outlined,
                                     size: 15,
-                                    color: Color(0xff3787ff),
+                                    color: const Color(0xff4873a6)
+                                        .withOpacity(0.7),
                                   ),
                                   SizedBox(
                                       width: MediaQuery.of(context).size.width *
@@ -739,7 +765,7 @@ class _CourseDetailPageState extends State<CourseDetailPage>
                                   Text(
                                     "21",
                                     style:
-                                        GoogleFonts.ibmPlexSans(fontSize: 12),
+                                        GoogleFonts.ibmPlexSans(fontSize: 10),
                                   ),
                                 ],
                               )
@@ -757,12 +783,11 @@ class _CourseDetailPageState extends State<CourseDetailPage>
             ],
           ),
         ),
-      ), // FIRST ITEM
+      ),
+      // Second ITEM of tabbarview
       SizedBox(
           child: Padding(
-        padding: const EdgeInsets.symmetric(
-          horizontal: 20,
-        ),
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
         child: Column(
           children: [
             ListView.builder(
@@ -780,8 +805,8 @@ class _CourseDetailPageState extends State<CourseDetailPage>
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Container(
-                              height: 100,
-                              width: 140,
+                              height: 80,
+                              width: 100,
                               decoration: BoxDecoration(
                                   color: Colors.black,
                                   borderRadius: BorderRadius.circular(10)),
@@ -804,9 +829,10 @@ class _CourseDetailPageState extends State<CourseDetailPage>
                                   Text(
                                     "Adobe illustrator for all beginner artist",
                                     softWrap: true,
-                                    maxLines: 3,
+                                    maxLines: 2,
+                                    overflow: TextOverflow.ellipsis,
                                     style: GoogleFonts.ibmPlexSans(
-                                        fontSize: 18,
+                                        fontSize: 16,
                                         color: Colors.black,
                                         fontWeight: FontWeight.w600),
                                   ),
@@ -817,7 +843,7 @@ class _CourseDetailPageState extends State<CourseDetailPage>
                                   Text(
                                     "Lesson 1",
                                     style: GoogleFonts.ibmPlexSans(
-                                        fontSize: 16,
+                                        fontSize: 14,
                                         color: Colors.black54,
                                         fontWeight: FontWeight.w600),
                                   ),
@@ -839,7 +865,7 @@ class _CourseDetailPageState extends State<CourseDetailPage>
                           trimCollapsedText: 'Read more',
                           moreStyle: const TextStyle(
                               color: Colors.black, fontWeight: FontWeight.bold),
-                          trimExpandedText: ' Less',
+                          trimExpandedText: '...Show Less',
                           lessStyle: const TextStyle(
                               color: Colors.black, fontWeight: FontWeight.bold),
                         ),
@@ -847,7 +873,7 @@ class _CourseDetailPageState extends State<CourseDetailPage>
                     ),
                   );
                 }),
-            SizedBox(height: MediaQuery.of(context).size.height * 0.1),
+            SizedBox(height: MediaQuery.of(context).size.height * 0.06),
             Align(
               alignment: Alignment.topLeft,
               child: Text(
@@ -878,13 +904,14 @@ class _CourseDetailPageState extends State<CourseDetailPage>
                               height: 45,
                               width: 45,
                               decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(6),
-                                  color: Colors.blue),
+                                borderRadius: BorderRadius.circular(10),
+                                color: const Color(0xFF4873A6).withOpacity(0.7),
+                              ),
                               child: Center(
                                   child: Text(
                                 ".img",
                                 style: GoogleFonts.ibmPlexSans(
-                                    color: Colors.black,
+                                    color: Colors.white,
                                     fontSize: 12,
                                     fontWeight: FontWeight.bold),
                               )),
@@ -894,13 +921,11 @@ class _CourseDetailPageState extends State<CourseDetailPage>
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text(
-                                  "practice class sketches",
-                                  style: GoogleFonts.ibmPlexSans(
-                                      fontSize: 15,
-                                      color: Colors.black,
-                                      fontWeight: FontWeight.w600),
+                                const ButtonText(
+                                  text: "practice class sketches",
+                                  color: Colors.black,
                                 ),
+                                const SizedBox(height: 2),
                                 Row(
                                   children: [
                                     Text(
@@ -931,8 +956,11 @@ class _CourseDetailPageState extends State<CourseDetailPage>
                             )
                           ],
                         ),
-                        Image.asset('assets/icons/download-cloud.png',
-                            width: 26)
+                        Image.asset(
+                          'assets/icons/download-cloud.png',
+                          width: 26,
+                          color: const Color(0xFF4873A6).withOpacity(0.7),
+                        )
                       ],
                     ),
                   );

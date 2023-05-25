@@ -1,3 +1,8 @@
+import 'package:e_learning_app/Acount_screen.dart';
+import 'package:e_learning_app/Home-Screens/home_buttom_bar.dart';
+import 'package:e_learning_app/courses/courses-list.dart';
+import 'package:e_learning_app/search-book-pages/e-book-search.dart';
+import 'package:e_learning_app/search-book-pages/e-learning.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -12,10 +17,10 @@ class DrawerHeaderPage extends StatelessWidget {
       elevation: 0,
         shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.only(
-                topRight: Radius.circular(80),
-                bottomRight: Radius.circular(80)),
+                topRight: Radius.circular(20),
+                bottomRight: Radius.circular(20)),
           ),
-      width: MediaQuery.of(context).size.width * 0.6,
+      width: MediaQuery.of(context).size.width * 0.55,
       backgroundColor: Colors.white,
       // Add a ListView to the drawer. This ensures the user can scroll
       // through the options in the drawer if there isn't enough vertical
@@ -30,6 +35,10 @@ class DrawerHeaderPage extends StatelessWidget {
             child: DrawerHeader(
               decoration:  BoxDecoration(
                color:  const Color(0xff4873a6).withOpacity(0.7),
+               borderRadius: const BorderRadius.only(
+                bottomLeft: Radius.circular(10),
+                bottomRight: Radius.circular(10)
+               )
               ),
               child: Column(
                 children: [
@@ -84,10 +93,19 @@ class DrawerHeaderPage extends StatelessWidget {
                     title: const Text('Home'),
                     minLeadingWidth: 0.009,
                     onTap: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>const HomeButtomBar()));
                       // Update the state of the app
                       // ...
                       // Then close the drawer
-                      Navigator.pop(context);
+                      // Navigator.pop(context);
+                    },
+                  ),
+                   ListTile(
+                    leading:  Icon(Icons.account_box,color: const Color(0xff4873a6).withOpacity(0.7),),
+                    title: const Text('Account'),
+                    minLeadingWidth: 0.009,
+                    onTap: () {
+                      Navigator.push(context, MaterialPageRoute(builder: ((context) => const AcountScreen())));
                     },
                   ),
                   ListTile(
@@ -101,26 +119,14 @@ class DrawerHeaderPage extends StatelessWidget {
                       Navigator.pop(context);
                     },
                   ),
-                  ListTile(
-                    leading:  Icon(Icons.message,color: const Color(0xff4873a6).withOpacity(0.7),),
-                    title: const Text('Messages'),
-                    minLeadingWidth: 0.009,
-                    onTap: () {
-                      // Update the state of the app
-                      // ...
-                      // Then close the drawer
-                      Navigator.pop(context);
-                    },
-                  ),
+                 
                   ListTile(
                     leading:  Icon(Icons.book_outlined,color: const Color(0xff4873a6).withOpacity(0.7),),
                     title: const Text('Courses'),
                     minLeadingWidth: 0.009,
                     onTap: () {
-                      // Update the state of the app
-                      // ...
-                      // Then close the drawer
-                      Navigator.pop(context);
+                    Navigator.push(context, MaterialPageRoute(builder: ((context) => const ListOfCourses())));
+                     
                     },
                   ),
                   ListTile(
@@ -128,12 +134,18 @@ class DrawerHeaderPage extends StatelessWidget {
                     title: const Text('E-Book'),
                     minLeadingWidth: 0.009,
                     onTap: () {
-                      // Update the state of the app
-                      // ...
-                      // Then close the drawer
-                      Navigator.pop(context);
+                       Navigator.push(context, MaterialPageRoute(builder: ((context) => const EbookScreen())));
                     },
                   ),
+                  ListTile(
+                    leading:  Icon(Icons.keyboard_command_key_rounded,color: const Color(0xff4873a6).withOpacity(0.7),),
+                    title: const Text('E-Learning'),
+                    minLeadingWidth: 0.009,
+                    onTap: () {
+                       Navigator.push(context, MaterialPageRoute(builder: ((context) => const ELearningPage())));
+                    },
+                  ),
+                 
                   ListTile(
                     leading:  Icon(Icons.settings_outlined,color: const Color(0xff4873a6).withOpacity(0.7),),
                     title: const Text('Settings'),

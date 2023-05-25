@@ -1,4 +1,5 @@
 // ignore: file_names
+import 'package:e_learning_app/utils/app_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -12,234 +13,170 @@ class _AcountScreenState extends State<AcountScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xffe5f1f8),
+      // backgroundColor: const Color(0xffe5f1f8),
       appBar: AppBar(
+        elevation: 0,
+        backgroundColor: Colors.white,
+        leading: GestureDetector(
+          onTap: () {
+            Navigator.pop(context);
+          },
+          child: const Icon(
+            Icons.arrow_back_ios,
+            color: Colors.black54,
+            size: 18,
+          ),
+        ),
+        title: Text(
+          "Acount",
+          textAlign: TextAlign.center,
+          style: GoogleFonts.ibmPlexSans(
+              fontSize: 18,
+              color: const Color(0xff4873a6).withOpacity(0.7),
+              fontWeight: FontWeight.w600),
+        ),
         centerTitle: true,
       ),
-      drawer: Drawer(
-        backgroundColor: const Color(0xffe5f1f8),
-        width: MediaQuery.of(context).size.width * 0.6,
-        child: ListView(
-          padding: const EdgeInsets.all(0),
-          children: [
-            DrawerHeader(
-                decoration: const BoxDecoration(
-                  color: Colors.blue,
-                  borderRadius: BorderRadius.only(
-                      bottomLeft: Radius.circular(30),
-                      bottomRight: Radius.circular(30)),
+
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                height: 40,
+                //     width: double.infinity,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  color: const Color(0xFF4873A6).withOpacity(0.7),
+                ),
+                child: const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 8),
+                  child: Align(
+                      alignment: Alignment.centerLeft,
+                      child: CustomText(
+                          text: 'General Setting',
+                          size: 16,
+                          fontWeight: FontWeight.w600,
+                          color: Colors.white)),
+                ),
+              ),
+              SizedBox(height: MediaQuery.of(context).size.height * 0.015),
+              Container(
+                height: 40,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  border: Border.all(
+                    color: const Color(0xFF4873A6).withOpacity(0.7),
+                  ),
                 ),
                 child: Padding(
-                  padding: EdgeInsets.only(
-                      top: MediaQuery.of(context).size.height * 0.04),
+                  padding: const EdgeInsets.symmetric(horizontal: 8),
                   child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      const CircleAvatar(
-                        radius: 20,
-                        backgroundImage:
-                            AssetImage('assets/images/girl-images-1.jpg'),
+                      ButtonText(
+                        text: 'PIN',
+                        color: const Color(0xFF4873A6).withOpacity(0.7),
                       ),
-                      const SizedBox(width: 10),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Yousaf Saymon',
-                            style: GoogleFonts.ibmPlexSans(
-                                color: Colors.black,
-                                fontSize: 16,
-                                fontWeight: FontWeight.w700),
-                          ),
-                          Text(
-                            'Student',
-                            style: GoogleFonts.ibmPlexSans(
-                                color: Colors.black, fontSize: 12),
-                          ),
-                        ],
+                      Icon(
+                        Icons.arrow_forward_ios,
+                        size: 18,
+                        color: const Color(0xFF4873A6).withOpacity(0.7),
                       )
                     ],
                   ),
-                )),
-            ListTile(
-              title: const Text('Home'),
-              horizontalTitleGap: 0,
-              leading: const Icon(Icons.home_filled),
-              iconColor: Colors.black87,
-              onTap: () {
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              title: const Text('Videos'),
-              horizontalTitleGap: 0,
-              leading: const Icon(Icons.ondemand_video_outlined),
-              iconColor: Colors.black87,
-              onTap: () {
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              title: const Text('Messages'),
-              horizontalTitleGap: 0,
-              leading: const Icon(Icons.message_outlined),
-              iconColor: Colors.black87,
-              onTap: () {
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              title: const Text('Courses'),
-              horizontalTitleGap: 0,
-              leading: const Icon(Icons.book_outlined),
-              iconColor: Colors.black87,
-              onTap: () {
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              title: const Text('E-Book'),
-              horizontalTitleGap: 0,
-              leading: const Icon(Icons.menu_book_sharp),
-              iconColor: Colors.black87,
-              onTap: () {
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              title: const Text('Settings'),
-              horizontalTitleGap: 0,
-              leading: const Icon(Icons.settings),
-              iconColor: Colors.black87,
-              onTap: () {
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              title: const Text('Logout'),
-              horizontalTitleGap: 0,
-              leading: const Icon(Icons.logout),
-              iconColor: Colors.black87,
-              onTap: () {
-                Navigator.pop(context);
-              },
-            ),
-          ],
+                ),
+              ),
+              SizedBox(height: MediaQuery.of(context).size.height * 0.03),
+              Container(
+                height: 40,
+                //     width: double.infinity,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  color: const Color(0xFF4873A6).withOpacity(0.7),
+                ),
+                child: const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 8),
+                  child: Align(
+                      alignment: Alignment.centerLeft,
+                      child: CustomText(
+                          text: 'Support',
+                          size: 16,
+                          fontWeight: FontWeight.w600,
+                          color: Colors.white)),
+                ),
+              ),
+              SizedBox(height: MediaQuery.of(context).size.height * 0.015),
+              ListView.builder(
+                  itemCount: 10,
+                  shrinkWrap: true,
+                  physics: const NeverScrollableScrollPhysics(),
+                  scrollDirection: Axis.vertical,
+                  itemBuilder: (context, index) {
+                    return Column(
+                      children: [
+                        Padding(
+                          padding:  EdgeInsets.only(bottom:  MediaQuery.of(context).size.height * 0.015),
+                          child: Container(
+                            height: 40,
+                            width: double.infinity,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              border: Border.all(
+                                color: const Color(0xFF4873A6).withOpacity(0.7),
+                              ),
+                            ),
+                            child: Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 8),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  ButtonText(
+                                    text: index == 0
+                                        ? 'Take A Tour'
+                                        : index == 1
+                                            ? 'Take A Tour of Home Screen'
+                                            : index == 2
+                                                ? 'My Account'
+                                                : index == 3
+                                                    ? 'Support'
+                                                    : index == 4
+                                                        ? 'About'
+                                                        : index == 5
+                                                            ? 'Terms of Use'
+                                                            : index == 6
+                                                                ? 'Privacy Policy'
+                                                                : index == 7
+                                                                    ? 'Linked Device'
+                                                                    : index == 8
+                                                                        ? 'Account Activity'
+                                                                        : 'Log ',
+                                    color: const Color(0xFF4873A6)
+                                        .withOpacity(0.7),
+                                  ),
+                                  Icon(
+                                    Icons.arrow_forward_ios,
+                                    size: 18,
+                                    color: const Color(0xFF4873A6)
+                                        .withOpacity(0.7),
+                                  )
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    );
+                  }),
+            ],
+          ),
         ),
       ),
-      body: SafeArea(
-          child: Column(
-        children: [
-          Padding(
-            padding: EdgeInsets.symmetric(
-                horizontal: MediaQuery.of(context).size.width * 0.06,
-                vertical: MediaQuery.of(context).size.height * 0.03),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  'Account',
-                  style: GoogleFonts.ibmPlexSans(
-                      color: Colors.black,
-                      fontSize: 24,
-                      fontWeight: FontWeight.w500),
-                ),
-                SizedBox(height: MediaQuery.of(context).size.height * 0.03),
-                Center(
-                  child: Stack(
-                    children: [
-                      const CircleAvatar(
-                        radius: 30,
-                        backgroundImage:
-                            AssetImage('assets/images/girl-images-3.webp'),
-                      ),
-                      Positioned(
-                        left: MediaQuery.of(context).size.width * 0.1,
-                        child: const CircleAvatar(
-                          radius: 10,
-                          child: Center(
-                              child: Icon(
-                            Icons.camera_alt,
-                            size: 12,
-                          )),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                SizedBox(height: MediaQuery.of(context).size.height * 0.04),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      'Favourite',
-                      style: GoogleFonts.ibmPlexSans(
-                          color: Colors.black,
-                          fontSize: 18,
-                          fontWeight: FontWeight.w500),
-                    ),
-                    const Icon(
-                      Icons.arrow_forward_ios,
-                      size: 16,
-                    )
-                  ],
-                ),
-                SizedBox(height: MediaQuery.of(context).size.height * 0.03),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      'Edit Account',
-                      style: GoogleFonts.ibmPlexSans(
-                          color: Colors.black,
-                          fontSize: 18,
-                          fontWeight: FontWeight.w500),
-                    ),
-                    const Icon(
-                      Icons.arrow_forward_ios,
-                      size: 16,
-                    )
-                  ],
-                ),
-                SizedBox(height: MediaQuery.of(context).size.height * 0.03),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      'Setting and Privacy',
-                      style: GoogleFonts.ibmPlexSans(
-                          color: Colors.black,
-                          fontSize: 18,
-                          fontWeight: FontWeight.w500),
-                    ),
-                    const Icon(
-                      Icons.arrow_forward_ios,
-                      size: 16,
-                    )
-                  ],
-                ),
-                SizedBox(height: MediaQuery.of(context).size.height * 0.03),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      'Help',
-                      style: GoogleFonts.ibmPlexSans(
-                          color: Colors.black,
-                          fontSize: 18,
-                          fontWeight: FontWeight.w500),
-                    ),
-                    const Icon(
-                      Icons.arrow_forward_ios,
-                      size: 16,
-                    )
-                  ],
-                ),
-              ],
-            ),
-          ),
-        ],
-      )),
     );
   }
 }

@@ -1,5 +1,4 @@
 // ignore: file_names
-import 'package:e_learning_app/Home-Screens/home_buttom_bar.dart';
 import 'package:e_learning_app/Home-Screens/setting-screen.dart';
 import 'package:e_learning_app/utils/app_utils.dart';
 import 'package:e_learning_app/utils/custom_text_form_field.dart';
@@ -145,10 +144,7 @@ class _EditInfoState extends State<EditInfo> {
                   const SizedBox(height: 35),
                    GestureDetector(
                     onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: ((context) => const HomeButtomBar())));
+                      Navigator.pop(context);
                     },
                     child: Container(
                       height: 40,

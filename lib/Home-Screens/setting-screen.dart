@@ -58,10 +58,7 @@ class _SettingScreenState extends State<SettingScreen> {
               padding: const EdgeInsets.only(right: 20, top: 20),
               child: GestureDetector(
                 onTap: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: ((context) => const ProfileScreen())));
+                  Navigator.pop(context);
                 },
                 child: CustomText(
                     text: 'Save',
@@ -82,21 +79,22 @@ class _SettingScreenState extends State<SettingScreen> {
                 width: double.infinity,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
-                  color: const Color(0xFF4873A6).withOpacity(0.7),
+                  border: Border.all(color: const Color(0xFF4873A6).withOpacity(0.7),),
+                  
                 ),
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 8),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      const ButtonText(
-                          text: 'Connect to Facebook', color: Colors.white),
+                       ButtonText(
+                          text: 'Connect to Facebook', color: const Color(0xFF4873A6).withOpacity(0.7),),
                       Switch(
                         thumbIcon: thumbIcon,
-                        activeColor: Colors.white,
+                        activeColor: const Color(0xFF4873A6).withOpacity(0.7),
                         activeTrackColor: Colors.grey,
                         inactiveThumbColor: Colors.grey,
-                        inactiveTrackColor: Colors.white,
+                        inactiveTrackColor: const Color(0xFF4873A6).withOpacity(0.7),
                         splashRadius: 5000,
                         value: light0,
                         onChanged: (bool value) {
@@ -115,24 +113,25 @@ class _SettingScreenState extends State<SettingScreen> {
                 width: double.infinity,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
-                  color: const Color(0xFF4873A6).withOpacity(0.7),
+                  border: Border.all( color: const Color(0xFF4873A6).withOpacity(0.7),),
+                 
                 ),
-                child: const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 8),
+                child:  Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 8),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Row(
                         children: [
-                          ButtonText(text: 'R', color: Colors.white),
-                          SizedBox(width: 10),
-                          ButtonText(text: 'Beta', color: Colors.white)
+                          ButtonText(text: 'R', color:const Color(0xFF4873A6).withOpacity(0.7),),
+                          const SizedBox(width: 10),
+                          ButtonText(text: 'Beta', color: const Color(0xFF4873A6).withOpacity(0.7),)
                         ],
                       ),
                       Icon(
                         Icons.arrow_forward_ios,
                         size: 18,
-                        color: Color(0xffffffff),
+                        color: const Color(0xFF4873A6).withOpacity(0.7),
                       )
                     ],
                   ),
@@ -144,10 +143,11 @@ class _SettingScreenState extends State<SettingScreen> {
                 width: double.infinity,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
-                  color: const Color(0xFF4873A6).withOpacity(0.7),
+                  border: Border.all(color: const Color(0xFF4873A6).withOpacity(0.7),),
+                  
                 ),
-                child: const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 8),
+                child:  Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 8),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -156,16 +156,16 @@ class _SettingScreenState extends State<SettingScreen> {
                           Icon(
                             Icons.notifications_active,
                             size: 18,
-                            color: Colors.white,
+                            color: const Color(0xFF4873A6).withOpacity(0.7),
                           ),
-                          SizedBox(width: 10),
-                          ButtonText(text: 'Notification', color: Colors.white)
+                          const SizedBox(width: 10),
+                          ButtonText(text: 'Notification', color: const Color(0xFF4873A6).withOpacity(0.7),)
                         ],
                       ),
                       Icon(
                         Icons.arrow_forward_ios,
                         size: 18,
-                        color: Color(0xffffffff),
+                        color: const Color(0xFF4873A6).withOpacity(0.7),
                       )
                     ],
                   ),
@@ -177,10 +177,11 @@ class _SettingScreenState extends State<SettingScreen> {
                 width: double.infinity,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
-                  color: const Color(0xFF4873A6).withOpacity(0.7),
+                  border: Border.all(color: const Color(0xFF4873A6).withOpacity(0.7),),
+                  
                 ),
-                child: const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 8),
+                child:  Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 8),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -189,18 +190,18 @@ class _SettingScreenState extends State<SettingScreen> {
                           Icon(
                             Icons.surround_sound_sharp,
                             size: 18,
-                            color: Colors.white,
+                            color: const Color(0xFF4873A6).withOpacity(0.7),
                           ),
-                          SizedBox(width: 10),
+                          const SizedBox(width: 10),
                           ButtonText(
                               text: 'Learning & sound setting',
-                              color: Colors.white)
+                              color: const Color(0xFF4873A6).withOpacity(0.7),)
                         ],
                       ),
                       Icon(
                         Icons.arrow_forward_ios,
                         size: 18,
-                        color: Color(0xffffffff),
+                        color: const Color(0xFF4873A6).withOpacity(0.7),
                       )
                     ],
                   ),
@@ -212,30 +213,32 @@ class _SettingScreenState extends State<SettingScreen> {
                 width: double.infinity,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
-                  color: const Color(0xFF4873A6).withOpacity(0.7),
+                  
+                  border: Border.all( color: const Color(0xFF4873A6).withOpacity(0.7),),
+                 
                 ),
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 8),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      const Row(
+                       Row(
                         children: [
-                          Icon(
+                           Icon(
                             Icons.dark_mode,
                             size: 18,
-                            color: Colors.white,
+                            color:  const Color(0xFF4873A6).withOpacity(0.7),
                           ),
-                          SizedBox(width: 10),
-                          ButtonText(text: 'Dark Mode', color: Colors.white)
+                          const SizedBox(width: 10),
+                          ButtonText(text: 'Dark Mode', color: const Color(0xFF4873A6).withOpacity(0.7),)
                         ],
                       ),
                       Switch(
                         thumbIcon: thumbIcon,
-                        activeColor: Colors.white,
+                        activeColor: const Color(0xFF4873A6).withOpacity(0.7),
                         activeTrackColor: Colors.grey,
                         inactiveThumbColor: Colors.grey,
-                        inactiveTrackColor: Colors.white,
+                        inactiveTrackColor: const Color(0xFF4873A6).withOpacity(0.7),
                         splashRadius: 5000,
                         value: light1,
                         onChanged: (bool value) {
@@ -254,10 +257,11 @@ class _SettingScreenState extends State<SettingScreen> {
                 width: double.infinity,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
-                  color: const Color(0xFF4873A6).withOpacity(0.7),
+                  border: Border.all(color: const Color(0xFF4873A6).withOpacity(0.7)),
+                  
                 ),
-                child: const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 8),
+                child:  Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 8),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -266,16 +270,16 @@ class _SettingScreenState extends State<SettingScreen> {
                           Icon(
                             Icons.question_mark,
                             size: 18,
-                            color: Colors.white,
+                            color: const Color(0xFF4873A6).withOpacity(0.7),
                           ),
-                          SizedBox(width: 10),
-                          ButtonText(text: 'Help', color: Colors.white)
+                          const SizedBox(width: 10),
+                          ButtonText(text: 'Help', color: const Color(0xFF4873A6).withOpacity(0.7),)
                         ],
                       ),
                       Icon(
                         Icons.arrow_forward_ios,
                         size: 18,
-                        color: Color(0xffffffff),
+                        color: const Color(0xFF4873A6).withOpacity(0.7),
                       )
                     ],
                   ),
@@ -287,10 +291,11 @@ class _SettingScreenState extends State<SettingScreen> {
                 width: double.infinity,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
-                  color: const Color(0xFF4873A6).withOpacity(0.7),
+                  border: Border.all( color: const Color(0xFF4873A6).withOpacity(0.7),),
+                 
                 ),
-                child: const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 8),
+                child:  Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 8),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -299,16 +304,16 @@ class _SettingScreenState extends State<SettingScreen> {
                           Icon(
                             Icons.logout,
                             size: 18,
-                            color: Colors.white,
+                            color: const Color(0xFF4873A6).withOpacity(0.7),
                           ),
-                          SizedBox(width: 10),
-                          ButtonText(text: 'Log Out', color: Colors.white)
+                          const SizedBox(width: 10),
+                          ButtonText(text: 'Log Out', color: const Color(0xFF4873A6).withOpacity(0.7),)
                         ],
                       ),
                       Icon(
                         Icons.arrow_forward_ios,
                         size: 18,
-                        color: Color(0xffffffff),
+                        color: const Color(0xFF4873A6).withOpacity(0.7),
                       )
                     ],
                   ),
@@ -320,18 +325,19 @@ class _SettingScreenState extends State<SettingScreen> {
                 width: double.infinity,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
-                  color: const Color(0xFF4873A6).withOpacity(0.7),
+                  border: Border.all( color: const Color(0xFF4873A6).withOpacity(0.7),),
+                 
                 ),
-                child: const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 8),
+                child:  Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 8),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      ButtonText(text: 'Privacy Policy', color: Colors.white),
+                      ButtonText(text: 'Privacy Policy', color: const Color(0xFF4873A6).withOpacity(0.7)),
                       Icon(
                         Icons.arrow_forward_ios,
                         size: 18,
-                        color: Color(0xffffffff),
+                        color: const Color(0xFF4873A6).withOpacity(0.7),
                       )
                     ],
                   ),
@@ -343,18 +349,19 @@ class _SettingScreenState extends State<SettingScreen> {
                 width: double.infinity,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
-                  color: const Color(0xFF4873A6).withOpacity(0.7),
+                  border: Border.all(color: const Color(0xFF4873A6).withOpacity(0.7),),
+                  
                 ),
-                child: const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 8),
+                child:  Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 8),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      ButtonText(text: 'Terms of Use', color: Colors.white),
+                      ButtonText(text: 'Terms of Use', color: const Color(0xFF4873A6).withOpacity(0.7),),
                       Icon(
                         Icons.arrow_forward_ios,
                         size: 18,
-                        color: Color(0xffffffff),
+                        color: const Color(0xFF4873A6).withOpacity(0.7),
                       )
                     ],
                   ),

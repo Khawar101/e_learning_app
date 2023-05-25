@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class AppUtils {
-
+// const Color(0xff4873a6).withOpacity(0.7),
 // color: const Color(0xff4873a6),
 //backgroundColor: const Color(0xffe4f1f8),
     static CustomTextFormField getEditTextField(

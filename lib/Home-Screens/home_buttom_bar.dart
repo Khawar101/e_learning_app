@@ -2,6 +2,7 @@
 import 'package:e_learning_app/Home-Screens/chat_page.dart';
 import 'package:e_learning_app/Home-Screens/contact_page.dart';
 import 'package:e_learning_app/Home-Screens/home-screeen1.dart';
+import 'package:e_learning_app/student-profile-setting/student-profile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_snake_navigationbar/flutter_snake_navigationbar.dart';
 import 'profile-information-screen1.dart';
@@ -23,6 +24,7 @@ class _HomeButtomBarState extends State<HomeButtomBar> {
     const HomeScreen1(),
     const ContactPageScreen(),
     const ChatPageScreen(),
+    const StudentProfile(),
     const ProfileScreen(),
     
    
@@ -53,6 +55,7 @@ class _HomeButtomBarState extends State<HomeButtomBar> {
     const Color(0xFFFDE1D7),
     const Color(0xFFE4EDF5),
     const Color(0xFFE7EEED),
+    const Color(0xFFF4E4CE),
     const Color(0xFFF4E4CE),
   ];
 
@@ -90,6 +93,7 @@ class _HomeButtomBarState extends State<HomeButtomBar> {
               icon: Icon(Icons.home_outlined), label: 'Home'),
           BottomNavigationBarItem(icon: Icon(Icons.contacts_outlined,size: 20,), label: 'Contacts'),
           BottomNavigationBarItem(icon: Icon(Icons.chat_outlined,size: 20,), label: 'Chat'),
+            BottomNavigationBarItem(icon: Icon(Icons.groups_2_outlined,size: 30,), label: 'Student'),
           BottomNavigationBarItem(icon: Icon(Icons.person_2_outlined), label: 'Person')
         ],
         selectedLabelStyle: const TextStyle(fontSize: 10),

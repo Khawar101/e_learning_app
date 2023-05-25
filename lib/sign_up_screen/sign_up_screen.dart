@@ -73,7 +73,7 @@ class _SignUpPhoneScreenState extends State<SignUpPhoneScreen> {
                             height: 40,
                             width: 55,
                             decoration: BoxDecoration(
-                              color: const Color(0xff4873a6),
+                              color: const Color(0xff4873a6).withOpacity(0.7),
                               borderRadius: BorderRadius.circular(25),
                             ),
                             child: const Icon(Icons.edit_outlined,
@@ -123,7 +123,7 @@ class _SignUpPhoneScreenState extends State<SignUpPhoneScreen> {
                         height: 50,
                         width: double.infinity,
                         decoration: BoxDecoration(
-                          color: const Color(0xff4873a6),
+                          color: const Color(0xff4873a6).withOpacity(0.7),
                           borderRadius: BorderRadius.circular(10),
                         ),
                         child: const Center(
@@ -161,26 +161,30 @@ class _SignUpPhoneScreenState extends State<SignUpPhoneScreen> {
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         Container(
-                          padding: const EdgeInsets.all(20),
-                          height: 60,
-                          width: 60,
-                          decoration: const BoxDecoration(
-                              color: Color(0xff868686), shape: BoxShape.circle),
-                          child: Image.asset('assets/icons/apple-logo.png'),
+                         
+                          height: 40,
+                          width: 40,
+                          decoration:  BoxDecoration(
+                           border: Border.all(color: const Color(0xff4873a6).withOpacity(0.7),width: 1),
+                              color: const Color(0xff868686), shape: BoxShape.circle
+                              ),
+                          child: Center(child: Image.asset('assets/icons/apple-logo.png',width: 22,)),
                         ),
                         Container(
-                          padding: const EdgeInsets.all(20),
-                          height: 60,
-                          width: 60,
-                          decoration: const BoxDecoration(
-                              color: Color(0xff5085fc), shape: BoxShape.circle),
-                          child: Image.asset('assets/icons/google-logo.png'),
+                          // padding: const EdgeInsets.all(20),
+                          height: 40,
+                          width: 40,
+                          decoration:  BoxDecoration(
+                              border: Border.all(color:const Color(0xff4873a6).withOpacity(0.7),width: 1),
+                              shape: BoxShape.circle),
+                          child: Center(child: Image.asset('assets/icons/google-48.png',width: 22,)),
                         ),
                         Container(
-                          height: 60,
-                          width: 60,
-                          decoration: const BoxDecoration(
-                              color: Color(0xff5085fc), shape: BoxShape.circle),
+                          height: 40,
+                          width: 40,
+                          decoration:  BoxDecoration(
+                            border: Border.all(color:const Color(0xff4873a6).withOpacity(0.7), width: 1),
+                              color: const Color(0xff5085fc), shape: BoxShape.circle),
                           child: Center(
                               child: Image.asset(
                             'assets/icons/icons8-fb-24.png',
