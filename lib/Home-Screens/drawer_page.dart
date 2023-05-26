@@ -3,6 +3,7 @@ import 'package:e_learning_app/Home-Screens/home_buttom_bar.dart';
 import 'package:e_learning_app/courses/courses-list.dart';
 import 'package:e_learning_app/search-book-pages/e-book-search.dart';
 import 'package:e_learning_app/search-book-pages/e-learning.dart';
+import 'package:e_learning_app/student-profile-setting/popular-teachers.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -109,14 +110,11 @@ class DrawerHeaderPage extends StatelessWidget {
                     },
                   ),
                   ListTile(
-                    leading:  Icon(Icons.ondemand_video,color: const Color(0xff4873a6).withOpacity(0.7),),
-                    title: const Text('Videos'),
+                    leading:  Icon(Icons.groups_2_outlined,color: const Color(0xff4873a6).withOpacity(0.7),),
+                    title: const Text('Teachers'),
                     minLeadingWidth: 0.009,
                     onTap: () {
-                      // Update the state of the app
-                      // ...
-                      // Then close the drawer
-                      Navigator.pop(context);
+                      Navigator.push(context, MaterialPageRoute(builder: ((context) => const PopularTeacher())));
                     },
                   ),
                  
