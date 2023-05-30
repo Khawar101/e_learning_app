@@ -1,6 +1,7 @@
 // ignore: file_names
 import 'dart:developer';
 
+import 'package:e_learning_app/notifications/notifications.dart';
 import 'package:e_learning_app/utils/app_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -50,22 +51,30 @@ class _BookDetailState extends State<BookDetail> with TickerProviderStateMixin {
           actions: [
             Padding(
               padding: const EdgeInsets.only(right: 15, top: 10),
-              child: Stack(
-                children: [
-                  const Icon(
-                    Icons.notifications_none_outlined,
-                    color: Colors.black45,
-                    size: 26,
-                  ),
-                  Positioned(
-                    top: 3,
-                    left: 2.5,
-                    child: CircleAvatar(
-                      radius: 4.5,
-                      backgroundColor: const Color(0xff4873a6).withOpacity(0.7),
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: ((context) => const NotificationScreen())));
+                },
+                child: Stack(
+                  children: [
+                    const Icon(
+                      Icons.notifications_none_outlined,
+                      color: Colors.black45,
+                      size: 26,
                     ),
-                  )
-                ],
+                    Positioned(
+                      top: 3,
+                      left: 2.5,
+                      child: CircleAvatar(
+                        radius: 4.5,
+                        backgroundColor: const Color(0xff4873a6).withOpacity(0.7),
+                      ),
+                    )
+                  ],
+                ),
               ),
             )
           ]),

@@ -1,5 +1,6 @@
 // ignore: file_names
-import 'package:e_learning_app/search-book-pages/book-detail.dart';
+import 'package:e_learning_app/notifications/notifications.dart';
+import 'package:e_learning_app/search-book-pages/book_detail.dart';
 import 'package:e_learning_app/utils/app_utils.dart';
 import 'package:e_learning_app/utils/custom_text_form_field.dart';
 import 'package:flutter/material.dart';
@@ -30,33 +31,42 @@ class _EbookScreenState extends State<EbookScreen> {
             ),
           ),
           title: Text(
-              "E-Book",
-              textAlign: TextAlign.center,
-              style: GoogleFonts.ibmPlexSans(
-                  fontSize: 18,
-                  color: const Color(0xff4873a6).withOpacity(0.7),
-                  fontWeight: FontWeight.w600),
-            ),
-            centerTitle: true,
+            "E-Book",
+            textAlign: TextAlign.center,
+            style: GoogleFonts.ibmPlexSans(
+                fontSize: 18,
+                color: const Color(0xff4873a6).withOpacity(0.7),
+                fontWeight: FontWeight.w600),
+          ),
+          centerTitle: true,
           actions: [
             Padding(
               padding: const EdgeInsets.only(right: 15, top: 10),
-              child: Stack(
-                children: [
-                  const Icon(
-                    Icons.notifications_none_outlined,
-                    color: Colors.black45,
-                    size: 26,
-                  ),
-                  Positioned(
-                    top: 3,
-                    left: 2.5,
-                    child: CircleAvatar(
-                      radius: 4.5,
-                      backgroundColor: const Color(0xff4873a6).withOpacity(0.7),
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: ((context) => const NotificationScreen())));
+                },
+                child: Stack(
+                  children: [
+                    const Icon(
+                      Icons.notifications_none_outlined,
+                      color: Colors.black45,
+                      size: 26,
                     ),
-                  )
-                ],
+                    Positioned(
+                      top: 3,
+                      left: 2.5,
+                      child: CircleAvatar(
+                        radius: 4.5,
+                        backgroundColor:
+                            const Color(0xff4873a6).withOpacity(0.7),
+                      ),
+                    )
+                  ],
+                ),
               ),
             )
           ]),
@@ -96,7 +106,10 @@ class _EbookScreenState extends State<EbookScreen> {
                   itemBuilder: (context, index) {
                     return GestureDetector(
                       onTap: () {
-                        Navigator.push(context, MaterialPageRoute(builder: ((context) => const BookDetail())));
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: ((context) => const BookDetail())));
                       },
                       child: Padding(
                         padding: EdgeInsets.only(
@@ -134,8 +147,11 @@ class _EbookScreenState extends State<EbookScreen> {
                   scrollDirection: Axis.horizontal,
                   itemBuilder: (context, index) {
                     return GestureDetector(
-                        onTap: () {
-                        Navigator.push(context, MaterialPageRoute(builder: ((context) => const BookDetail())));
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: ((context) => const BookDetail())));
                       },
                       child: Padding(
                         padding: EdgeInsets.only(

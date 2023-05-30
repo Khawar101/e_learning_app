@@ -1,5 +1,5 @@
 // ignore: file_names
-import 'package:e_learning_app/log-in-screens/login-screen.dart';
+import 'package:e_learning_app/log-in-screens/login_screen.dart';
 import 'package:e_learning_app/utils/app_utils.dart';
 import 'package:flutter/material.dart';
 

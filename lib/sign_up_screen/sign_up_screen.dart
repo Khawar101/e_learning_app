@@ -1,5 +1,5 @@
 
-import 'package:e_learning_app/sign_up_screen/verify-screen.dart';
+import 'package:e_learning_app/sign_up_screen/verify_screen.dart';
 import 'package:e_learning_app/utils/app_utils.dart';
 import 'package:e_learning_app/utils/custom_text_form_field.dart';
 import 'package:google_fonts/google_fonts.dart';

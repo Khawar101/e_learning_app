@@ -1,5 +1,5 @@
 
-import 'package:e_learning_app/student-profile-setting/teacher-booking.dart';
+import 'package:e_learning_app/teacher-detail.dart/teacher_booking.dart';
 import 'package:e_learning_app/utils/app_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';

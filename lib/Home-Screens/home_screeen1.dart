@@ -1,6 +1,7 @@
 // ignore: file_names
 import 'package:e_learning_app/Home-Screens/drawer_page.dart';
-import 'package:e_learning_app/Home-Screens/home-screen2.dart';
+import 'package:e_learning_app/Home-Screens/home_screen2.dart';
+import 'package:e_learning_app/notifications/notifications.dart';
 import 'package:e_learning_app/utils/app_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -83,13 +84,18 @@ class _HomeScreen1State extends State<HomeScreen1> {
             ),
           ),
           centerTitle: true,
-          actions: const [
-            Padding(
-              padding: EdgeInsets.only(right: 15),
-              child: Icon(
-                Icons.notifications_active_outlined,
-                color: Colors.black54,
-                size: 20,
+          actions:  [
+            GestureDetector(
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: ((context) => const NotificationScreen())));
+              },
+              child: const Padding(
+                padding: EdgeInsets.only(right: 15),
+                child: Icon(
+                  Icons.notifications_active_outlined,
+                  color: Colors.black54,
+                  size: 20,
+                ),
               ),
             )
           ]),

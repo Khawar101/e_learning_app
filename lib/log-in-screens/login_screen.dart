@@ -1,6 +1,6 @@
 // ignore: file_names
 import 'package:e_learning_app/Home-Screens/home_buttom_bar.dart';
-import 'package:e_learning_app/forget_password/forgot-password-screen.dart';
+import 'package:e_learning_app/forget_password/forgot_password_screen.dart';
 import 'package:e_learning_app/sign_up_screen/sign_up_screen.dart';
 import 'package:e_learning_app/utils/app_utils.dart';
 import 'package:e_learning_app/utils/custom_text_form_field.dart';

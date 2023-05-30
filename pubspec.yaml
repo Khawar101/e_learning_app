@@ -59,6 +59,8 @@ dependencies:
   pinput: ^2.2.31
   flip: ^2.0.0
   flip_card: ^0.7.0
+  calendar_date_picker2: ^0.5.2
+  fl_chart: ^0.62.0
   
   
   

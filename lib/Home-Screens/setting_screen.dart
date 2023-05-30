@@ -1,5 +1,4 @@
 // ignore: file_names
-import 'package:e_learning_app/Home-Screens/profile-information-screen1.dart';
 import 'package:e_learning_app/utils/app_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';

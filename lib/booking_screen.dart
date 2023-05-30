@@ -154,7 +154,7 @@ class _BookingScreenState extends State<BookingScreen> {
                                             ]),
                                       ),
 
-                                      content: Container(
+                                      content: SizedBox(
                                         height: 300,
                                         width:
                                             MediaQuery.of(context).size.width *
@@ -268,11 +268,11 @@ class _BookingScreenState extends State<BookingScreen> {
                                                   fontSize: 17),
                                             ),
                                             const SizedBox(height: 14),
-                                            Row(
+                                            const Row(
                                               mainAxisAlignment:
                                                   MainAxisAlignment
                                                       .spaceBetween,
-                                              children: const [
+                                              children: [
                                                 CircleAvatar(
                                                   radius: 16,
                                                   backgroundColor:

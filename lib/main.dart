@@ -1,9 +1,7 @@
-
-import 'package:e_learning_app/search-book-pages/search-filter.dart';
-import 'package:flutter/material.dart';
+import 'package:e_learning_app/my_activity/chart_page.dart';
+import 'package:e_learning_app/my_activity/my_activity.dart';
 import 'package:flutter/services.dart';
-
-
+import 'package:flutter/material.dart';
 import 'splash-screens/splash_screen.dart';
 
 void main() async {
@@ -27,7 +25,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       debugShowCheckedModeBanner: false,
-      home:  const   SplashScreen(),
+      home:    const MyActivity(),
     );
   }
 }

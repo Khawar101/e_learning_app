@@ -1,8 +1,8 @@
 import 'dart:developer';
 
-import 'package:e_learning_app/courses/Poster-screen.dart';
+import 'package:e_learning_app/courses/Poster_screen.dart';
 import 'package:e_learning_app/courses/comment.dart';
-import 'package:e_learning_app/courses/project-data.dart';
+import 'package:e_learning_app/courses/project_data.dart';
 import 'package:e_learning_app/utils/app_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';

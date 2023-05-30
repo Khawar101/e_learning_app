@@ -1,5 +1,5 @@
 // ignore: file_names
-import 'package:e_learning_app/courses/detail.dart';
+import 'package:e_learning_app/courses/Course_detail.dart';
 import 'package:e_learning_app/utils/app_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';

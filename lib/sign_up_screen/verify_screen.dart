@@ -51,28 +51,26 @@ class _VerifyScreenState extends State<VerifyScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
   //    backgroundColor: const Color(0xffe4f1f8),
-      appBar: AppBar(
+       appBar: AppBar(
         elevation: 0,
-        backgroundColor: const Color(0xffe5f1f8),
-        leading: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
-          child: GestureDetector(
-            onTap: () => Navigator.pop(context),
-            child: const Icon(
-              Icons.arrow_back_ios,
-              color: Colors.black,
-              size: 24,
-            ),
+        backgroundColor: Colors.white,
+        leading: GestureDetector(
+          onTap: () {
+            Navigator.pop(context);
+          },
+          child: const Icon(
+            Icons.arrow_back_ios,
+            color: Colors.black54,
+            size: 18,
           ),
         ),
-        title: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
-          child: Text(
-            "Verify Phone",
-            textAlign: TextAlign.center,
-            style: GoogleFonts.ibmPlexSans(
-                fontSize: 15, color: Colors.black, fontWeight: FontWeight.w600),
-          ),
+        title: Text(
+          "Verify Phone",
+          textAlign: TextAlign.center,
+          style: GoogleFonts.ibmPlexSans(
+              fontSize: 18,
+              color: const Color(0xff4873a6).withOpacity(0.7),
+              fontWeight: FontWeight.w600),
         ),
         centerTitle: true,
       ),
@@ -132,6 +130,7 @@ class _VerifyScreenState extends State<VerifyScreen> {
                               height: 50,
                               decoration: BoxDecoration(
                                 color: Colors.white,
+                                border: Border.all( color: const Color(0xff4873a6).withOpacity(0.7),width: 1),
                                 borderRadius: BorderRadius.circular(10),
                               ),
                               alignment: Alignment.center,

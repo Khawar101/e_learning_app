@@ -1,4 +1,4 @@
-import 'package:e_learning_app/forget_password/change-password-screen.dart';
+import 'package:e_learning_app/forget_password/change_password_screen.dart';
 import 'package:e_learning_app/utils/app_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -16,7 +16,7 @@ class _EnterOtpScreenState extends State<EnterOtpScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       // resizeToAvoidBottomInset: false,
-     // backgroundColor: const Color(0xffe4f1f8),
+      // backgroundColor: const Color(0xffe4f1f8),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -65,7 +65,7 @@ class _EnterOtpScreenState extends State<EnterOtpScreen> {
                       TextSpan(
                         text: '(+92)3012345678',
                         style: TextStyle(
-                          color: const Color(0xff4873a6),
+                          color: Color(0xff4873a6),
                           overflow: TextOverflow.ellipsis,
                         ),
                       ),
@@ -104,7 +104,7 @@ class _EnterOtpScreenState extends State<EnterOtpScreen> {
                 child: Text(
                   "Resend Code",
                   style: GoogleFonts.ibmPlexSans(
-                     color: const Color(0xff4873a6),
+                      color: const Color(0xff4873a6),
                       fontSize: 13,
                       decoration: TextDecoration.underline),
                 ),

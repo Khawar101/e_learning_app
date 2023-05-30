@@ -1,5 +1,5 @@
 // ignore: file_names
-import 'package:e_learning_app/forget_password/password-changed-Done.dart';
+import 'package:e_learning_app/forget_password/password_changed_Done.dart';
 import 'package:e_learning_app/utils/app_utils.dart';
 import 'package:e_learning_app/utils/custom_text_form_field.dart';
 import 'package:flutter/material.dart';

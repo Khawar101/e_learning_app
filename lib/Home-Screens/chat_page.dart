@@ -15,25 +15,25 @@ class _ChatPageScreenState extends State<ChatPageScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        drawer: const DrawerHeaderPage(),
+      drawer: const DrawerHeaderPage(),
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.white,
-       leading: Builder(
-    builder: (BuildContext context) {
-      return IconButton(
-        icon: const  Icon(
-               Icons.vertical_distribute_sharp,
-               color: Colors.black54,
-               size: 18,
-             ),
-        onPressed: () {
-          Scaffold.of(context).openDrawer();
-        },
-        tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
-      );
-    },
-  ),
+        leading: Builder(
+          builder: (BuildContext context) {
+            return IconButton(
+              icon: const Icon(
+                Icons.vertical_distribute_sharp,
+                color: Colors.black54,
+                size: 18,
+              ),
+              onPressed: () {
+                Scaffold.of(context).openDrawer();
+              },
+              tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
+            );
+          },
+        ),
         title: Text(
           "Chats",
           textAlign: TextAlign.center,
@@ -176,18 +176,18 @@ class ChatPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          elevation: 0,
-          backgroundColor: Colors.white,
-          leading: GestureDetector(
-            onTap: () {
-              Navigator.pop(context);
-            },
-            child: const Icon(
-              Icons.arrow_back_ios,
-              color: Colors.black54,
-              size: 18,
-            ),
+        elevation: 0,
+        backgroundColor: Colors.white,
+        leading: GestureDetector(
+          onTap: () {
+            Navigator.pop(context);
+          },
+          child: const Icon(
+            Icons.arrow_back_ios,
+            color: Colors.black54,
+            size: 18,
           ),
+        ),
         title: Text(
           "Name",
           textAlign: TextAlign.center,
@@ -231,9 +231,7 @@ class ChatPage extends StatelessWidget {
                 ),
                 IconButton(
                   icon: const Icon(Icons.send),
-                  onPressed: () {
-                    // TODO: Implement sending the message
-                  },
+                  onPressed: () {},
                 ),
               ],
             ),

@@ -1,7 +1,7 @@
 // ignore: file_names
 import 'package:e_learning_app/Home-Screens/drawer_page.dart';
-import 'package:e_learning_app/Home-Screens/enter-profile-information.dart';
-import 'package:e_learning_app/Home-Screens/setting-screen.dart';
+import 'package:e_learning_app/Home-Screens/enter_profile_information.dart';
+import 'package:e_learning_app/Home-Screens/setting_screen.dart';
 import 'package:e_learning_app/utils/app_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';

@@ -1,6 +1,6 @@
 
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:e_learning_app/log-in-screens/login-screen.dart';
+import 'package:e_learning_app/log-in-screens/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:step_progress_indicator/step_progress_indicator.dart';

@@ -1,7 +1,7 @@
-// ignore: file_names
-import 'package:e_learning_app/courses/detail.dart';
-import 'package:e_learning_app/saved-screens/save-screen.dart';
 
+import 'package:e_learning_app/courses/Course_detail.dart';
+import 'package:e_learning_app/Home-Screens/home_screeen1.dart';
+import 'package:e_learning_app/courses/save_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -21,9 +21,13 @@ class _ListOfCoursesState extends State<ListOfCourses> {
       appBar: AppBar(
           elevation: 0,
           backgroundColor: Colors.white,
-         leading: GestureDetector(
+          leading: GestureDetector(
             onTap: () {
-              Navigator.pop(context);
+              // Navigator.pop(context);
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: ((context) => const HomeScreen1())));
             },
             child: const Icon(
               Icons.arrow_back_ios,
@@ -154,6 +158,7 @@ class _ListOfCoursesState extends State<ListOfCourses> {
                                         .withOpacity(0.7),
                                   ),
                                   onRatingUpdate: (rating) {
+                                    // ignore: avoid_print
                                     print(rating);
                                   },
                                 ),

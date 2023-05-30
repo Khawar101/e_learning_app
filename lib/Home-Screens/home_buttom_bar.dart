@@ -1,11 +1,11 @@
 
 import 'package:e_learning_app/Home-Screens/chat_page.dart';
 import 'package:e_learning_app/Home-Screens/contact_page.dart';
-import 'package:e_learning_app/Home-Screens/home-screeen1.dart';
-import 'package:e_learning_app/student-profile-setting/student-profile.dart';
+import 'package:e_learning_app/Home-Screens/home_screeen1.dart';
+import 'package:e_learning_app/student-profile-setting/student_profile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_snake_navigationbar/flutter_snake_navigationbar.dart';
-import 'profile-information-screen1.dart';
+import 'profile_information_screen.dart';
 
 class HomeButtomBar extends StatefulWidget {
   const HomeButtomBar({Key? key}) : super(key: key);
