@@ -1,4 +1,3 @@
-
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 
@@ -11,14 +10,12 @@ class LineChartPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        height: MediaQuery.of(context).size.height*0.4,
+        height: MediaQuery.of(context).size.height * 0.4,
         width: double.infinity,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
-          color:const Color(0xff4873a6)
-                                        .withOpacity(0.7),
+          color: const Color(0xff4873a6).withOpacity(0.7),
         ),
-        
         child: LineChart(
           isShowingMainData ? sampleData1 : sampleData2,
           // duration: const Duration(milliseconds: 250),
@@ -53,19 +50,17 @@ class LineChartPage extends StatelessWidget {
 
   LineTouchData get lineTouchData1 => LineTouchData(
         handleBuiltInTouches: true,
-        touchTooltipData: LineTouchTooltipData(
-          tooltipBgColor: Colors.black
-        ),
+        touchTooltipData: LineTouchTooltipData(tooltipBgColor: Colors.black),
       );
 
   FlTitlesData get titlesData1 => FlTitlesData(
         bottomTitles: AxisTitles(
           sideTitles: bottomTitles,
         ),
-        rightTitles:  AxisTitles(
+        rightTitles: AxisTitles(
           sideTitles: SideTitles(showTitles: false),
         ),
-        topTitles:  AxisTitles(
+        topTitles: AxisTitles(
           sideTitles: SideTitles(showTitles: false),
         ),
         leftTitles: AxisTitles(
@@ -75,10 +70,9 @@ class LineChartPage extends StatelessWidget {
 
   List<LineChartBarData> get lineBarsData1 => [
         lineChartBarData1_1,
-        
       ];
 
-  LineTouchData get lineTouchData2 =>  LineTouchData(
+  LineTouchData get lineTouchData2 => LineTouchData(
         enabled: false,
       );
 
@@ -86,10 +80,10 @@ class LineChartPage extends StatelessWidget {
         bottomTitles: AxisTitles(
           sideTitles: bottomTitles,
         ),
-        rightTitles:  AxisTitles(
+        rightTitles: AxisTitles(
           sideTitles: SideTitles(showTitles: false),
         ),
-        topTitles:  AxisTitles(
+        topTitles: AxisTitles(
           sideTitles: SideTitles(showTitles: false),
         ),
         leftTitles: AxisTitles(
@@ -97,14 +91,9 @@ class LineChartPage extends StatelessWidget {
         ),
       );
 
-  
-
   Widget leftTitleWidgets(double value, TitleMeta meta) {
     const style = TextStyle(
-      fontWeight: FontWeight.bold,
-      fontSize: 10,
-      color: Colors.white
-    );
+        fontWeight: FontWeight.bold, fontSize: 10, color: Colors.white);
     String text;
     switch (value.toInt()) {
       case 1:
@@ -122,10 +111,10 @@ class LineChartPage extends StatelessWidget {
       case 5:
         text = '2h0m';
         break;
-        case 6:
+      case 6:
         text = '2h30m';
         break;
-         case 7:
+      case 7:
         text = '3h0m';
         break;
       default:
@@ -159,13 +148,13 @@ class LineChartPage extends StatelessWidget {
       case 6:
         text = const Text('10AM', style: style);
         break;
-         case 8:
+      case 8:
         text = const Text('11AM', style: style);
         break;
-         case 10:
+      case 10:
         text = const Text('12PM', style: style);
         break;
-         case 12:
+      case 12:
         text = const Text('01PM', style: style);
         break;
       default:
@@ -187,16 +176,15 @@ class LineChartPage extends StatelessWidget {
         getTitlesWidget: bottomTitleWidgets,
       );
 
-  FlGridData get gridData =>  FlGridData(show: true,drawVerticalLine: false);
+  FlGridData get gridData => FlGridData(show: true, drawVerticalLine: false);
 
   FlBorderData get borderData => FlBorderData(
         show: true,
-        border:  Border(
-          bottom:
-              BorderSide(color:const Color(0xff4873a6)
-                                          .withOpacity(0.7), width: 1),
-          left: BorderSide(color:const Color(0xff4873a6)
-                                          .withOpacity(0.7), width: 1),
+        border: Border(
+          bottom: BorderSide(
+              color: const Color(0xff4873a6).withOpacity(0.7), width: 1),
+          left: BorderSide(
+              color: const Color(0xff4873a6).withOpacity(0.7), width: 1),
           right: const BorderSide(color: Colors.transparent),
           top: const BorderSide(color: Colors.transparent),
         ),
@@ -204,10 +192,10 @@ class LineChartPage extends StatelessWidget {
 
   LineChartBarData get lineChartBarData1_1 => LineChartBarData(
         isCurved: true,
-        color:Colors.white,
+        color: Colors.white,
         barWidth: 4,
         isStrokeCapRound: true,
-        dotData:  FlDotData(show: false),
+        dotData: FlDotData(show: false),
         belowBarData: BarAreaData(show: false),
         spots: const [
           FlSpot(1, 2),
@@ -219,5 +207,4 @@ class LineChartPage extends StatelessWidget {
           FlSpot(13, 1.8),
         ],
       );
-
 }

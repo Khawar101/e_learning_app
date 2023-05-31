@@ -1,5 +1,4 @@
-import 'package:e_learning_app/my_activity/chart_page.dart';
-import 'package:e_learning_app/my_activity/my_activity.dart';
+
 import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
 import 'splash-screens/splash_screen.dart';
@@ -25,7 +24,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       debugShowCheckedModeBanner: false,
-      home:    const MyActivity(),
+      home:    const SplashScreen(),
     );
   }
 }
