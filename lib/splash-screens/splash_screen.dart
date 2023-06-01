@@ -104,7 +104,7 @@ class _SplashContainer1State extends State<SplashContainer1> {
                 width: 50,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(12),
-                  color: Colors.blue
+                  color: const Color(0xff4873a6).withOpacity(0.7),
                 ),
                 child: Center(child: Image.asset('assets/icons/graduation-cap.png',width: 30,)),
                 
@@ -159,7 +159,7 @@ class _SplashContainer1State extends State<SplashContainer1> {
                 width: 40,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(11),
-                  color: Colors.blue
+                  color: const Color(0xff4873a6).withOpacity(0.7),
                 ),
                 child: const Center(child:Icon(Icons.phone_android_sharp,color: Colors.white,size: 18,)),
                 
@@ -248,7 +248,7 @@ class _SplashContainer2State extends State<SplashContainer2> {
         totalSteps: 4,
         currentStep: 1,
         stepSize: 2,
-        selectedColor: Colors.lightBlue,
+        selectedColor: const Color(0xff4873a6).withOpacity(0.7),
         unselectedColor: Colors.grey[200],
         padding: 0,
         width: 40,
@@ -263,9 +263,9 @@ class _SplashContainer2State extends State<SplashContainer2> {
             },
             child: Container(
               height: 20,width: 20,
-              decoration: const BoxDecoration(
+              decoration:  BoxDecoration(
                 shape: BoxShape.circle,
-                color: Colors.blue
+                color: const Color(0xff4873a6).withOpacity(0.7),
               ),
               child: const Icon(Icons.arrow_forward,color: Colors.white,size: 16,),
             ),
@@ -346,7 +346,7 @@ class _SplashContainer2State extends State<SplashContainer2> {
                 width: 50,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(12),
-                  color: Colors.blue
+                  color: const Color(0xff4873a6).withOpacity(0.7),
                 ),
                 child: Center(child: Image.asset('assets/icons/graduation-cap.png',width: 30,)),
                 
@@ -412,7 +412,7 @@ class _SplashContainer3State extends State<SplashContainer3> {
         totalSteps: 4,
         currentStep: 2,
         stepSize: 2,
-        selectedColor: Colors.lightBlue,
+        selectedColor: const Color(0xff4873a6).withOpacity(0.7),
         unselectedColor: Colors.grey[200],
         padding: 0,
         width: 40,
@@ -427,9 +427,9 @@ class _SplashContainer3State extends State<SplashContainer3> {
             },
             child: Container(
               height: 20,width: 20,
-              decoration: const BoxDecoration(
+              decoration:  BoxDecoration(
                 shape: BoxShape.circle,
-                color: Colors.blue
+                color:const Color(0xff4873a6).withOpacity(0.7),
               ),
               child: const Icon(Icons.arrow_forward,color: Colors.white,size: 16,),
             ),
@@ -452,7 +452,7 @@ class _SplashContainer3State extends State<SplashContainer3> {
                 width: 40,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(11),
-                  color: Colors.blue
+                  color: const Color(0xff4873a6).withOpacity(0.7),
                 ),
                 child: const Center(child:Icon(Icons.phone_android_sharp,color: Colors.white,size: 18,)),
                 
@@ -484,7 +484,7 @@ class _SplashContainer3State extends State<SplashContainer3> {
                 width: 50,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(12),
-                  color: Colors.blue
+                  color:const Color(0xff4873a6).withOpacity(0.7),
                 ),
                 child: Center(child: Image.asset('assets/icons/graduation-cap.png',width: 30,)),
                 
@@ -572,7 +572,7 @@ class _SplashContainer4State extends State<SplashContainer4> {
         totalSteps: 4,
         currentStep: 3,
         stepSize: 2,
-        selectedColor: Colors.lightBlue,
+        selectedColor: const Color(0xff4873a6).withOpacity(0.7),
         unselectedColor: Colors.grey[200],
         padding: 0,
         width: 40,
@@ -587,9 +587,9 @@ class _SplashContainer4State extends State<SplashContainer4> {
             },
             child: Container(
               height: 20,width: 20,
-              decoration: const BoxDecoration(
+              decoration:  BoxDecoration(
                 shape: BoxShape.circle,
-                color: Colors.blue
+                color: const Color(0xff4873a6).withOpacity(0.7),
               ),
               child: const Icon(Icons.arrow_forward,color: Colors.white,size: 16,),
             ),
@@ -612,7 +612,7 @@ class _SplashContainer4State extends State<SplashContainer4> {
                 width: 40,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(11),
-                  color: Colors.blue
+                  color: const Color(0xff4873a6).withOpacity(0.7),
                 ),
                 child: const Center(child:Icon(Icons.phone_android_sharp,color: Colors.white,size: 18,)),
                 
@@ -744,7 +744,7 @@ class _SplashContainer5State extends State<SplashContainer5> {
                               totalSteps: 4,
                               currentStep: 4,
                               stepSize: 2,
-                              selectedColor: Colors.lightBlue,
+                              selectedColor: const Color(0xff4873a6).withOpacity(0.7),
                               unselectedColor: Colors.grey[200],
                               padding: 0,
                               width: 40,
@@ -755,9 +755,9 @@ class _SplashContainer5State extends State<SplashContainer5> {
                                 padding: const EdgeInsets.all(6.0),
                                 child: Container(
                                   height: 20,width: 20,
-                                  decoration: const BoxDecoration(
+                                  decoration:  BoxDecoration(
                                     shape: BoxShape.circle,
-                                    color: Colors.blue
+                                    color: const Color(0xff4873a6).withOpacity(0.7),
                                   ),
                                   child: const Icon(Icons.arrow_forward,color: Colors.white,size: 16,),
                                 ),
@@ -838,7 +838,7 @@ class _SplashContainer5State extends State<SplashContainer5> {
                 width: 50,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(12),
-                  color: Colors.blue
+                  color: const Color(0xff4873a6).withOpacity(0.7),
                 ),
                 child: Center(child: Image.asset('assets/icons/graduation-cap.png',width: 30,)),
                 

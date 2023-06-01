@@ -1,9 +1,9 @@
-// ignore: file_names
+// ignore_for_file: file_names
+
+import 'package:flutter/material.dart';
 import 'package:e_learning_app/e-learning-page/search_filter.dart';
 import 'package:e_learning_app/utils/app_utils.dart';
 import 'package:e_learning_app/utils/custom_text_form_field.dart';
-import 'package:flutter/material.dart';
-
 import 'package:google_fonts/google_fonts.dart';
 
 class CategoriesSearch extends StatefulWidget {

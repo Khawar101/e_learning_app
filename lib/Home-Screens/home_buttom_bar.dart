@@ -1,7 +1,7 @@
 
 import 'package:e_learning_app/Home-Screens/chat_page.dart';
-import 'package:e_learning_app/Home-Screens/contact_page.dart';
 import 'package:e_learning_app/Home-Screens/home_screeen1.dart';
+import 'package:e_learning_app/my_activity/my_activity.dart';
 import 'package:e_learning_app/student-profile-setting/student_profile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_snake_navigationbar/flutter_snake_navigationbar.dart';
@@ -21,8 +21,8 @@ class _HomeButtomBarState extends State<HomeButtomBar> {
 
 
   List<Widget> views = [
-    const HomeScreen1(),
-    const ContactPageScreen(),
+    const MyActivity(),
+    const HomeScreen1(), 
     const ChatPageScreen(),
     const StudentProfile(),
     const ProfileScreen(),
@@ -87,11 +87,11 @@ class _HomeButtomBarState extends State<HomeButtomBar> {
 
         currentIndex: _selectedItemPosition,
         onTap: (index) => setState(() => _selectedItemPosition = index),
-        items: const [
-          
+        items:  const[
+           
           BottomNavigationBarItem(
-              icon: Icon(Icons.home_outlined), label: 'Home'),
-          BottomNavigationBarItem(icon: Icon(Icons.contacts_outlined,size: 20,), label: 'Contacts'),
+              icon: Icon(Icons.home_outlined), label: 'Activity'),
+        BottomNavigationBarItem(icon: Icon(Icons.play_lesson_outlined,size: 20,), label: 'Lessons'),
           BottomNavigationBarItem(icon: Icon(Icons.chat_outlined,size: 20,), label: 'Chat'),
             BottomNavigationBarItem(icon: Icon(Icons.groups_2_outlined,size: 30,), label: 'Student'),
           BottomNavigationBarItem(icon: Icon(Icons.person_2_outlined), label: 'Person')

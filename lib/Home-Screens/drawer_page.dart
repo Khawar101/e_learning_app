@@ -1,4 +1,5 @@
 import 'package:e_learning_app/Acount_screen.dart';
+import 'package:e_learning_app/Home-Screens/contact_page.dart';
 import 'package:e_learning_app/Home-Screens/home_buttom_bar.dart';
 import 'package:e_learning_app/Home-Screens/setting_screen.dart';
 import 'package:e_learning_app/courses/courses_list.dart';
@@ -111,6 +112,20 @@ class DrawerHeaderPage extends StatelessWidget {
                           context,
                           MaterialPageRoute(
                               builder: ((context) => const AcountScreen())));
+                    },
+                  ),
+                   ListTile(
+                    leading: Icon(
+                      Icons.contacts_outlined,
+                      color: const Color(0xff4873a6).withOpacity(0.7),
+                    ),
+                    title: const Text('Contacts'),
+                    minLeadingWidth: 0.009,
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: ((context) => const ContactPageScreen())));
                     },
                   ),
                   ListTile(

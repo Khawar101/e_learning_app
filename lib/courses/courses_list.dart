@@ -1,7 +1,8 @@
 
 import 'package:e_learning_app/courses/Course_detail.dart';
-import 'package:e_learning_app/Home-Screens/home_screeen1.dart';
+
 import 'package:e_learning_app/courses/save_screen.dart';
+import 'package:e_learning_app/my_activity/my_activity.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -27,7 +28,7 @@ class _ListOfCoursesState extends State<ListOfCourses> {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: ((context) => const HomeScreen1())));
+                      builder: ((context) => const MyActivity())));
             },
             child: const Icon(
               Icons.arrow_back_ios,

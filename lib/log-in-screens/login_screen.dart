@@ -158,13 +158,13 @@ class _LogInScreenState extends State<LogInScreen> {
                   height: 60,
                   width: 60,
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
+                    borderRadius: BorderRadius.circular(10),
                     border:
-                        Border.all(color: const Color(0xff4873a6), width: 1),
+                        Border.all(color: const Color(0xff4873a6).withOpacity(0.7), width: 1),
                   ),
-                  child: const Icon(
+                  child:  Icon(
                     Icons.lock,
-                    color:  Color(0xff4873a6),
+                    color: const Color(0xff4873a6).withOpacity(0.7),
                     size: 34,
                   ),
                 ),
@@ -196,7 +196,7 @@ class _LogInScreenState extends State<LogInScreen> {
                     //    height: 50,
                     decoration: BoxDecoration(
                         color: Colors.white,
-                        borderRadius: BorderRadius.circular(30)),
+                        borderRadius: BorderRadius.circular(10)),
                     child: CustomTextFormField(
                       hintText: 'Password',
                       isObscureText: visibleCheck,
@@ -219,6 +219,7 @@ class _LogInScreenState extends State<LogInScreen> {
                     width: 70,
                     decoration: BoxDecoration(
                         color: Colors.white,
+                        border: Border.all(color: const Color(0xff4873a6).withOpacity(0.7),),
                         borderRadius: BorderRadius.circular(10)),
                     child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
@@ -255,7 +256,7 @@ class _LogInScreenState extends State<LogInScreen> {
                     'Forgot Password?',
                     style: GoogleFonts.ibmPlexSans(
                         decoration: TextDecoration.underline,
-                        color: const Color(0xff4873a6)),
+                        color: const Color(0xff4873a6).withOpacity(0.7),),
                   ),
                 ),
               ),
@@ -271,7 +272,7 @@ class _LogInScreenState extends State<LogInScreen> {
                   height: 50,
                   width: double.infinity,
                   decoration: BoxDecoration(
-                    color: const Color(0xff4873a6),
+                    color: const Color(0xff4873a6).withOpacity(0.7),
                     borderRadius: BorderRadius.circular(10),
                   ),
                   child: const Center(
@@ -332,8 +333,8 @@ class _LogInScreenState extends State<LogInScreen> {
                               builder: ((context) =>
                                   const SignUpPhoneScreen())));
                     },
-                    child: const SmallText(
-                        text: 'Sign up', color:  Color(0xff4873a6)),
+                    child:  SmallText(
+                        text: 'Sign up', color: const Color(0xff4873a6).withOpacity(0.7),),
                   ),
                 ],
               ),

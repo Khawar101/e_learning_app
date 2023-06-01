@@ -200,7 +200,7 @@ class _HomeScreen3State extends State<HomeScreen3> {
                             ],
                           ),
                           const SizedBox(height: 12),
-                          Container(
+                          SizedBox(
                             //  height: 400,
                             child: ListView.builder(
                                 shrinkWrap: true,

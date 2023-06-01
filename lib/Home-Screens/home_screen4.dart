@@ -132,7 +132,7 @@ class _HomeScreen4State extends State<HomeScreen4> {
                                     color: Colors.white,
                                   ),
                                   onRatingUpdate: (rating) {
-                                    print(rating);
+                                    // print(rating);
                                   },
                                 ),
                                 const SizedBox(height: 8),

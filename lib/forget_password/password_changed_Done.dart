@@ -1,4 +1,4 @@
-// ignore: file_names
+// ignore_for_file: file_names
 import 'package:e_learning_app/log-in-screens/login_screen.dart';
 import 'package:e_learning_app/utils/app_utils.dart';
 import 'package:flutter/material.dart';
@@ -60,7 +60,7 @@ class _PasswordChangedDoneState extends State<PasswordChangedDone> {
                 height: 50,
                 width: double.infinity,
                 decoration: BoxDecoration(
-                  color: const Color(0xff4873a6),
+                  color:const Color(0xff4873a6).withOpacity(0.7),
                   borderRadius: BorderRadius.circular(10),
                 ),
                 child: const Center(

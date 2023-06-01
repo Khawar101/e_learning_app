@@ -174,7 +174,7 @@ class _TimerScreenState extends State<TimerScreen> {
                                             Text(
                                               "Figma",
                                               style: GoogleFonts.ibmPlexSans(
-                                                  color: Color(0xffffffff)),
+                                                  color: const Color(0xffffffff)),
                                             ),
                                             SizedBox(
                                                 height: MediaQuery.of(context)

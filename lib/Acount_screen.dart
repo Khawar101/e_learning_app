@@ -1,4 +1,4 @@
-// ignore: file_names
+// ignore_for_file: file_names
 import 'package:e_learning_app/utils/app_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -119,7 +119,9 @@ class _AcountScreenState extends State<AcountScreen> {
                     return Column(
                       children: [
                         Padding(
-                          padding:  EdgeInsets.only(bottom:  MediaQuery.of(context).size.height * 0.015),
+                          padding: EdgeInsets.only(
+                              bottom:
+                                  MediaQuery.of(context).size.height * 0.015),
                           child: Container(
                             height: 40,
                             width: double.infinity,

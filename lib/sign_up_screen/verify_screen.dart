@@ -108,7 +108,7 @@ class _VerifyScreenState extends State<VerifyScreen> {
                           TextSpan(
                             text: "283 835 2999",
                             style: GoogleFonts.ibmPlexSans(
-                             color: const Color(0xff4873a6),
+                             color: const Color(0xff4873a6).withOpacity(0.7),
                               fontSize: 16,
                               fontWeight: FontWeight.w500,
                             ),
@@ -163,7 +163,7 @@ class _VerifyScreenState extends State<VerifyScreen> {
                         height: 50,
                         width: double.infinity,
                         decoration: BoxDecoration(
-                          color: const Color(0xff4873a6),
+                          color: const Color(0xff4873a6).withOpacity(0.7),
                           borderRadius: BorderRadius.circular(10),
                         ),
                         child: const Center(

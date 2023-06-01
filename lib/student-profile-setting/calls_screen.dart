@@ -2,7 +2,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-
 class CallScreen extends StatefulWidget {
   const CallScreen({super.key});
 
@@ -14,7 +13,7 @@ class _CallScreenState extends State<CallScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xffe5f1f8),
+      backgroundColor: Colors.white,
       body: SafeArea(
         child: Stack(
           children: [
@@ -28,7 +27,6 @@ class _CallScreenState extends State<CallScreen> {
             Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-
                 Padding(
                   padding: EdgeInsets.only(
                     top: MediaQuery.of(context).size.height * 0.03,
@@ -98,92 +96,93 @@ class _CallScreenState extends State<CallScreen> {
                           fontSize: 26,
                           fontWeight: FontWeight.w600),
                     ),
-                     SizedBox(height: 8),
-              
-                Text(
-                  'Figma teacher',
-                  style: GoogleFonts.ibmPlexSans(
-                    color: const Color(0xffffffff),
-                    fontSize: 12,
-                  ),
-                ),
-                 SizedBox(height: 20),
-                Container(
-                  height: 140,
-                    width: double.infinity,
-                  child: Stack(
-                    children: [
-                      Align(
-                        alignment: Alignment.bottomCenter,
-                        child: Container(
-                          height: 90,
-                          width: double.infinity,
-                          decoration: const BoxDecoration(
-                            borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(10),
-                              topRight: Radius.circular(10),
-                            ),
-                            color: Color(0xff3787ff),
-                          ),
-                          child: Padding(
-                            padding: EdgeInsets.only(
-                                top: MediaQuery.of(context).size.height * 0.03),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceAround,
-                              children: [
-                                Column(
-                                  children: [
-                                    const Icon(
-                                      Icons.home_outlined,
-                                      color: Colors.white,
-                                    ),
-                                    Text(
-                                      'Home',
-                                      style: GoogleFonts.ibmPlexSans(
-                                          color: Colors.white),
-                                    )
-                                  ],
-                                ),
-                                Column(
-                                  children: [
-                                    const Icon(
-                                      Icons.menu,
-                                      color: Colors.white,
-                                    ),
-                                    Text(
-                                      'Menu',
-                                      style: GoogleFonts.ibmPlexSans(
-                                          color: Colors.white),
-                                    )
-                                  ],
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
+                    const SizedBox(height: 8),
+                    Text(
+                      'Figma teacher',
+                      style: GoogleFonts.ibmPlexSans(
+                        color: const Color(0xffffffff),
+                        fontSize: 12,
                       ),
-                        Align(
-                          alignment: Alignment.topCenter,
-                          child: Container(
-                                              height: 100,
-                                              width: 100,
-                                              decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(50),
-                            color: const Color(0xff3787ff),
-                            border: Border.all(color: Colors.black, width: 10)),
-                                              child: Padding(
-                          padding: const EdgeInsets.all(22),
-                          child: Image.asset(
-                            'assets/icons/telephone-handler.png',
-                            color: const Color(0xffffffff),
+                    ),
+                    const SizedBox(height: 20),
+                    SizedBox(
+                      height: 140,
+                      width: double.infinity,
+                      child: Stack(
+                        children: [
+                          Align(
+                            alignment: Alignment.bottomCenter,
+                            child: Container(
+                              height: 90,
+                              width: double.infinity,
+                              decoration: const BoxDecoration(
+                                borderRadius: BorderRadius.only(
+                                  topLeft: Radius.circular(10),
+                                  topRight: Radius.circular(10),
+                                ),
+                                color: Color(0xff3787ff),
+                              ),
+                              child: Padding(
+                                padding: EdgeInsets.only(
+                                    top: MediaQuery.of(context).size.height *
+                                        0.03),
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceAround,
+                                  children: [
+                                    Column(
+                                      children: [
+                                        const Icon(
+                                          Icons.home_outlined,
+                                          color: Colors.white,
+                                        ),
+                                        Text(
+                                          'Home',
+                                          style: GoogleFonts.ibmPlexSans(
+                                              color: Colors.white),
+                                        )
+                                      ],
+                                    ),
+                                    Column(
+                                      children: [
+                                        const Icon(
+                                          Icons.menu,
+                                          color: Colors.white,
+                                        ),
+                                        Text(
+                                          'Menu',
+                                          style: GoogleFonts.ibmPlexSans(
+                                              color: Colors.white),
+                                        )
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
                           ),
-                                              )),
-                        ),
-                    ],
-                  ),
-                ),
-             
-                            ],
+                          Align(
+                            alignment: Alignment.topCenter,
+                            child: Container(
+                                height: 100,
+                                width: 100,
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(50),
+                                    color: const Color(0xff3787ff),
+                                    border: Border.all(
+                                        color: Colors.black, width: 10)),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(22),
+                                  child: Image.asset(
+                                    'assets/icons/telephone-handler.png',
+                                    color: const Color(0xffffffff),
+                                  ),
+                                )),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
                 ),
               ],
             ),

@@ -1,4 +1,5 @@
 // ignore: file_names
+import 'package:e_learning_app/Home-Screens/drawer_page.dart';
 import 'package:e_learning_app/my_activity/chart_page.dart';
 import 'package:e_learning_app/notifications/notifications.dart';
 import 'package:flutter/material.dart';
@@ -19,19 +20,25 @@ class _MyActivityState extends State<MyActivity> {
     return DefaultTabController(
       length: 2,
       child: Scaffold(
+           drawer: const DrawerHeaderPage(),
         appBar: AppBar(
             elevation: 0,
             backgroundColor: Colors.white,
-            leading: GestureDetector(
-              onTap: () {
-                Navigator.pop(context);
-              },
-              child: const Icon(
-                Icons.arrow_back_ios,
-                color: Colors.black54,
-                size: 18,
-              ),
-            ),
+           leading: Builder(
+    builder: (BuildContext context) {
+      return IconButton(
+        icon: const  Icon(
+               Icons.vertical_distribute_sharp,
+               color: Colors.black54,
+               size: 18,
+             ),
+        onPressed: () {
+          Scaffold.of(context).openDrawer();
+        },
+        tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
+      );
+    },
+  ),
             title: Text(
               "My Activity",
               textAlign: TextAlign.center,

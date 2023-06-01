@@ -1,6 +1,8 @@
-// ignore: file_names
-import 'package:e_learning_app/utils/app_utils.dart';
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
+import 'package:e_learning_app/utils/app_utils.dart';
+
 import 'package:google_fonts/google_fonts.dart';
 
 class PosterScreen extends StatefulWidget {

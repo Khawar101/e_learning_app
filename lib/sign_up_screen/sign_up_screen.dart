@@ -20,7 +20,7 @@ class _SignUpPhoneScreenState extends State<SignUpPhoneScreen> {
       child: Scaffold(
         appBar: AppBar(
           elevation: 0,
-          backgroundColor: const Color(0xffe5f1f8),
+          backgroundColor: Colors.white,
           title: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
             child: Text(
@@ -28,7 +28,7 @@ class _SignUpPhoneScreenState extends State<SignUpPhoneScreen> {
               textAlign: TextAlign.center,
               style: GoogleFonts.ibmPlexSans(
                   fontSize: 18,
-                  color:Colors.black,
+                  color:const Color(0xff4873a6).withOpacity(0.7),
                   fontWeight: FontWeight.w600),
             ),
           ),

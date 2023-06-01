@@ -32,16 +32,16 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                     height: 60,
                     width: 60,
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
+                      borderRadius: BorderRadius.circular(10),
                       border:
-                          Border.all(color: const Color(0xff4873a6),width: 1),
+                          Border.all(color:const Color(0xff4873a6).withOpacity(0.7),width: 1),
                     ),
                     child: Center(
                       child: Container(
-                          height: 30,
-                          width: 30,
+                          height: 40,
+                          width: 40,
                           decoration: BoxDecoration(
-                              color: const Color(0xff4873a6),
+                              color: const Color(0xff4873a6).withOpacity(0.7),
                               borderRadius: BorderRadius.circular(10)),
                           child: Center(
                               child: Image.asset(
@@ -116,7 +116,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                     height: 50,
                     width: double.infinity,
                     decoration: BoxDecoration(
-                      color: const Color(0xff4873a6),
+                      color:const Color(0xff4873a6).withOpacity(0.7),
                       borderRadius: BorderRadius.circular(10),
                     ),
                     child: const Center(
