@@ -1,7 +1,6 @@
 import 'package:e_learning_app/utils/app_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
 class CommentScreen extends StatefulWidget {
   const CommentScreen({super.key});
 
@@ -12,8 +11,7 @@ class CommentScreen extends StatefulWidget {
 class _CommentScreenState extends State<CommentScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      
+    return Scaffold(      
       appBar: AppBar(
          elevation: 0,
           backgroundColor: Colors.white,
