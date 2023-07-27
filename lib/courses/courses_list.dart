@@ -1,6 +1,5 @@
 
 import 'package:e_learning_app/courses/Course_detail.dart';
-
 import 'package:e_learning_app/courses/save_screen.dart';
 import 'package:e_learning_app/my_activity/my_activity.dart';
 import 'package:flutter/material.dart';
